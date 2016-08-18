@@ -1,0 +1,67 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isErrorPage="true" %>
+<html>
+<head>
+    <%
+        String t = request.getParameter("t");
+        if(t != null){
+            t = "_" + t;
+        }else{
+            t = "";
+        }
+
+
+    %>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>客户端下载</title>
+    <link rel="stylesheet" href="${systemPath}/resources/css/mobile.css?v=${ver}" />
+    <link rel="stylesheet" href="${systemPath}/resources/css/ec/${themeCss}.css?v=${ver}" />
+</head>
+
+<body class="down" style="background:url(${systemPath}/resources/images/ec/${themeCss}/download.png) center top repeat; background-size: 100% auto;">
+<input type="hidden" id="systemPath" name="systemPath" value="${systemPath}">
+
+<div class="down-btns">
+    <a class="anzuo" id="android" href="${systemPath}/download/${sysName}/${sysName}<%=t%>.apk">Android版下载</a>
+    <a class="ios" id="iphone"
+       href="itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/qilu89lgl/jerei/master/${sysName}/${sysName}<%=t%>.plist">IPhone版下载</a>
+</div>
+<div class="_cover">
+    <div class="_img tip_android"><img src="${systemPath}/resources/images/ec/tip_android.png"></div>
+    <div class="_img tip_iphone"><img src="${systemPath}/resources/images/ec/tip_iphone.png"></div>
+</div>
+<script type="text/javascript" src="${systemPath}/resources/js/jquery/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var ua = navigator.userAgent.toLowerCase();
+        //begin
+        $('#android').click(function (e) {
+            if (/micromessenger/.test(ua)) {
+                e.preventDefault();
+                $('._cover').show().find('.tip_android').show();
+                return;
+            }
+
+        });
+        $('#iphone').click(function (e) {
+            if (/micromessenger/.test(ua)) {
+                e.preventDefault();
+                $('._cover').show().find('.tip_iphone').show();
+                return;
+            }
+            setTimeout(function () {
+                window.location = $("#systemPath").val() + "/download/app_ios.jsp";
+            }, 0);
+        });
+
+        $('._cover').click(function () {
+            $(this).hide().find('._img').hide();
+        });
+        //end
+    })
+
+</script>
+</body>
+
+</html>

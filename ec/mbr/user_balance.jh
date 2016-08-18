@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的钱包</title>
+		<#include "/temp/htmlHead.ftl"/>
+        <script type="text/javascript" src="${jsEcRoot}/mbr/user_balance.js?v=${ver}"></script>
+	</head>
+	<body class="user-cerdit">
+		<header id="header" class="mui-bar mui-bar-nav trans">
+			<a class="mui-pull-left c-fff" href="#"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+			<h1 class="mui-title c-fff fs-17">我的钱包</h1>
+            <#--<a class="mui-pull-right c-fff" href="javascript:void(0);"><i class="iconfont icon-wode c-fff"></i></a>-->
+		</header>
+		<style type="text/css">
+            .user-info .to-recharge{
+                position: absolute;
+                top: 22px;
+                right: 12px;
+                color: #000;
+                font-weight: bold;
+                border: solid 1px #000;
+                padding: 0 22px;
+                border-radius: 8px;
+            }
+		</style>
+		<div class="user-info fs-50 c-fff" style="line-height: 70%;padding-top: 20px;">
+			<p class="fs-12" style="line-height: 30px;">账户余额：</p>
+		${totalBalance.balanceAmount}<span class="fs-15"> 元</span>
+			<p class="fs-12">账户余额等同于预付款，请放心使用！</p>
+			<a href="${vars.root}/ec/mbr/recharge_center.html?amount=${totalBalance.balanceAmount}" class="to-recharge fs-14">去充值</a>
+		</div>
+		<div class="cerdit-slider mui-slider mui-fullscreen">
+            <div class="cerdit-control mui-slider-indicator fs-14">
+                <ul>
+                    <li data-type="all" class="mui-indicator mui-active">全部</li>
+                    <li data-type="add" class="mui-indicator">收入明细</li>
+                    <li data-type="slow" class="mui-indicator">支出明细</li>
+                </ul>
+            </div>
+            <div class="cerdit-content mui-slider-group">
+                <!--全部-->
+                <div class="cerdit-content-block mui-slider-item mui-control-content mui-active">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll" id="all">
+                            <ul class="mui-table-view">
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cerdit-content-block mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll" id="add">
+                            <ul class="mui-table-view">
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cerdit-content-block mui-slider-item mui-control-content">
+                    <div class="mui-scroll-wrapper">
+                        <div class="mui-scroll" id="slow">
+                            <ul class="mui-table-view">
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+		</div>
+	</body>
+
+</html>

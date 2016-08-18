@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品列表</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/shop/list.js?v=${ver}"></script>
+</head>
+<body class="goods-list">
+<input type="hidden" id="shopId" name="shopId" value="${shop.id}">
+<input type="hidden" id="cat" name="cat" value="${cat}">
+
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title">
+        <input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索商品关键词"/>
+    </h1>
+    <!--
+    <a class="mui-pull-right c-fff" href="#"><i class="iconfont icon-msg c-fff"></i></a>
+    -->
+</header>
+<div class="tools-bar clearfix fs-13">
+    <div class="tools-bar-content">
+        <div class="goods-sort fl pos-relative">
+            <a class="goods-sort-btn" href="javascript:void(0)"><span>综合排序</span><i
+                    class="iconfont icon-jiantou"></i></a>
+
+            <div class="goods-sort-list" style="display: none;">
+                <ul>
+                    <li class="on" sort="rk:d"><span>综合排序</span><i class="iconfont icon-duihao"></i></li>
+                    <li sort="pr:a"><span>价格从低到高</span><i class="iconfont"></i></li>
+                    <li sort="pr:d"><span>价格从高到低</span><i class="iconfont"></i></li>
+                    <li sort="sl:d"><span>销量排序</span><i class="iconfont"></i></li>
+                    <li sort="ht:d"><span>人气排序</span><i class="iconfont"></i></li>
+                    <li sort="nw:d"><span>新品排序</span><i class="iconfont"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="change-view fr">
+            <i class="iconfont icon-liebiao"></i>
+        </div>
+    </div>
+    <div class="tools-cover" style="display: none;"></div>
+</div>
+<div class="goods-list-content">
+
+    <div class="good-lists-list mui-scroll-wrapper" id="pullrefresh">
+        <div class="mui-scroll" id="goods_list_div">
+            <ul class='mui-table-view'>
+
+            </ul>
+        </div>
+    </div>
+    <!--工具条结束，内容开始-->
+</div>
+
+</body>
+</html>

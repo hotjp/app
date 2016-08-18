@@ -1,0 +1,24 @@
+<input type="hidden" name="imageUrls${model.id}" id="imageUrls${model.id}"/>
+
+<ul id="J_UploaderQueue${model.id}" class="grid fl clearfix"></ul>
+
+<div class="grid fs-14 fl" id="uploadForm${model.id}">
+    <div class="g-u">
+
+        <input style="display: none" class="g-u upload_img fs-14" id="J_UploaderBtn${model.id}" name="Filedata"
+               type="image-uploader"
+               value="<i class='iconfont icon-tianjiazhaopian fs-50'></i><br />可上传<em class='c-ff5b53' id='J_UploadCount'>${model.max}</em>张"
+               queueTarget="#J_UploaderQueue${model.id}"
+               action="${vars.root}/comm/upload/kfUploadPic.do" urlsInputName="imageUrls${model.id}"
+               required maxSize="${model.maxSize}" max="${model.max}" allowExts="${model.allowExts}"
+               restoreHook="#J_ImageUploaderRestore${model.id}">
+    <#--<span class="tips fr">${model.title}，还可上传<em id="J_UploadCount">${model.max}</em>张</span>-->
+    </div>
+</div>
+<#if isKissy!=true>
+<script type="text/javascript" src="${resRoot}/js/module/kissy/kissy-form-uploader/kissy.js"></script>
+<script type="text/javascript" src="${resRoot}/js/comm/kissyUtil.js?v=${ver}"></script>
+<script type="text/javascript" src="${jsEcRoot}/include/c_img_upload_mobile2.js"></script>
+</#if>
+
+<#assign isKissy=true>

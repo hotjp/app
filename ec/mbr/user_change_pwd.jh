@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>密码修改</title>
+<#include "/temp/htmlHead.ftl"/>
+<#include "/temp/validate.ftl"/>
+
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_change_pwd.js?v=${ver}"></script>
+</head>
+<body class="user-msg">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="sort.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <h1 class="mui-title c-fff fs-17">密码修改</h1>
+    <div class="mui-pull-right c-fff">完成</div>
+</header>
+<div class="user-msg-content bg-none">
+    <form action="" method="post" id="form-passWord">
+        <div class="mui-card appfrom">
+            <dl class="mui-input-row">
+                <dt><i class="c-ff5b53">*</i>原密码:</dt>
+                <dd>
+                    <input class="user-ipt mui-input-clear" type="password" name="oldPwd" id="oldPwd" value="" placeholder="6－20个字符" />
+                </dd>
+            </dl>
+            <dl class="mui-input-row">
+                <dt><i class="c-ff5b53">*</i>新密码:</dt>
+                <dd>
+                    <input class="user-ipt mui-input-clear" type="password" name="newPwd" id="newPwd" value="" placeholder="6－20个字符" />
+                </dd>
+            </dl>
+            <dl class="mui-input-row">
+                <dt><i class="c-ff5b53">*</i>确认密码:</dt>
+                <dd>
+                    <input class="user-ipt" type="password" name="definePwd" id="definePwd" value="" placeholder="请再次输入新密码" />
+                </dd>
+            </dl>
+        </div>
+    </form>
+
+</div>
+<span class="fs-14 c-777" style="margin: 0 2%;"></span>
+</body>
+
+</html>

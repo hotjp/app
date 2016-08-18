@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>退款/退货</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_refund_info.js?v=${ver}"></script>
+</head>
+<body class="user-refund-info">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="${vars.root}/ec/user/user_center.html"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">退款/退货</h1>
+</header>
+
+<div class="goods-order-content mui-slider mui-fullscreen">
+    <input type="hidden" id="refundId" name="refundId" value="${refund.id}">
+
+    <div class="order-control fs-13">
+        <ul class="mui-slider-indicator clearfix">
+            <li class="mui-indicator js-active"><span><i class="iconfont icon-duihao"></i></span>退款申请</li>
+        <#if index gte 1>
+            <li class="mui-indicator js-active"><span><i class="iconfont icon-duihao"></i></span>商家确认</li>
+        <#else>
+            <li class="mui-indicator"><span><i class="iconfont"></i></span>商家确认</li>
+        </#if>
+        <#if refund.returnsGoods == true>
+            <#if index gte 2>
+                <li class="mui-indicator js-active"><span><i class="iconfont icon-duihao"></i></span>物流凭证</li>
+            <#else>
+                <li class="mui-indicator"><span><i class="iconfont"></i></span>物流凭证</li>
+            </#if>
+        </#if>
+        <#if index gte 3>
+            <li class="mui-indicator js-active"><span><i class="iconfont icon-duihao"></i></span>商家退款</li>
+        <#else>
+            <li class="mui-indicator"><span><i class="iconfont"></i></span>商家退款</li>
+        </#if>
+        </ul>
+    </div>
+
+    <div class="mui-slider-group">
+        <!--退款申请-->
+        <div class="order-content mui-slider-item mui-control-content" id="first">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!---->
+                    <div class="mui-card">
+                        <ul class="mui-table-view fs-14">
+                            <li class="mui-table-view-cell">
+                                当前状态：<span class="c-ff5b53">${refundName}</span>
+                            </li>
+                            <li class="mui-table-view-cell">
+                            <#if refund.returnsGoods>
+                                退款类型：我要退货
+                            <#else>
+                                退款类型：我要退款（不退货）
+                            </#if>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                退款原因：${refund.reasonName}
+                            </li>
+                            <li class="mui-table-view-cell">
+                                申请退款金额：${formatPositiveMoney(refund.amount)}元
+                            </li>
+                            <li class="mui-table-view-cell">
+                                申请时间：${refund.time?string("yyyy-MM-dd HH:mm:ss")}
+                            </li>
+                            <li class="mui-table-view-cell">
+                                上传凭证：
+                            <#list refund.picUrls as pic>
+                                <img src="${buildUrl(pic)}" onerror="errorImg(this);"/>
+                            </#list>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="mui-card">
+                        <a class="user-sub mui-btn">下一步</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <#if index gt 0>
+        <!--商家确认-->
+        <div class="order-content mui-slider-item mui-control-content" id="second">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-card">
+                        <ul class="mui-table-view fs-14">
+                            <li class="mui-table-view-cell">
+                                当前状态：<span class="c-ff5b53">${refundName}</span>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                商家接受申请时间：${refund.sellerAcceptTime}
+                            </li>
+                            <li class="mui-table-view-cell">
+                                寄回地址：${refund.refundAddress}
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="mui-card">
+                        <a class="user-sub mui-btn">下一步</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </#if>
+    <#if index gt 1 && refund.returnsGoods == true>
+        <!--物流凭证-->
+        <div class="order-content mui-slider-item mui-control-content" id="third">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <#if refund.logiSn??>
+                        <div class="mui-card">
+                            <ul class="mui-table-view fs-14">
+                                <li class="mui-table-view-cell">
+                                    当前状态：<span class="c-ff5b53">${refundName}</span>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    物流公司：${refund.logiCompanyName}
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    物流单号：${refund.logiSn}
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    物流联系方式：${refund.logiContact}
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    物流凭证：
+                                    <#list refund.logiPicUrls as pic>
+                                        <img src="${buildUrl(pic)}" onerror="errorImg(this);"/>
+                                    </#list>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <div class="mui-card">
+                            <a class="user-sub mui-btn">下一步</a>
+                        </div>
+
+
+                    <#else>
+                        <!---->
+                        <div class="mui-card">
+                            <ul class="mui-table-view fs-14">
+                                <li class="mui-table-view-cell">
+                                    当前状态：<span class="c-ff5b53">${refundName}</span>
+                                </li>
+                                <li class="mui-table-view-cell">
+
+                                    <dl class="mui-input-row">
+                                        <dt>物流公司：</dt>
+                                        <dd>
+                                            <select class="c-777 fs-14" name="comp" id="comp">
+                                                <#list logiCompanies as item>
+                                                    <option value="${item.id}">${item.name}</option>
+                                                </#list>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="mui-table-view-cell mui-input-row">
+                                    <dl class="mui-input-row">
+                                        <dt>物流单号：</dt>
+                                        <dd><input class="user-ipt mui-input-clear" type="number" id="sn" maxlength="30"
+                                                   value="" placeholder="在此输入寄出物流单号"/></dd>
+                                    </dl>
+                                </li>
+                                <li class="mui-table-view-cell">
+                                    <dl class="mui-input-row">
+                                        <dt>物流联系方式：</dt>
+                                        <dd><input class="user-ipt mui-input-clear" type="number" id="contact"
+                                                   maxlength="13"
+                                                   value="" placeholder="在此输入物流联系电话"/></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <@moImgUpload max="3" title="上传凭证"/>
+                        <div class="mui-card">
+                            <a class="user-sub mui-btn" id="upload-logi">保存</a>
+                        </div>
+                    </#if>
+                </div>
+
+            </div>
+
+        </div>
+    </#if>
+    <#if index gt 2>
+        <!--商家退款-->
+        <div class="order-content mui-slider-item mui-control-content" id="fourth">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!---->
+                    <div class="mui-card">
+                        <ul class="mui-table-view fs-14">
+                            <li class="mui-table-view-cell">
+                                当前状态：<span class="c-ff5b53">${refundName}</span>
+                            </li>
+                            <li class="mui-table-view-cell">
+                                <a href="#topPopover">
+                                    退款金额：<span class="c-ff5b53">${formatPositiveMoney(refund.paidAmount)}</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                    <div class="mui-card">
+                        <a class="user-sub mui-btn">完成</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </#if>
+
+    </div>
+</div>
+<!--弹出菜单-->
+<#--<div id="topPopover" class="mui-popover">
+    <div class="mui-popover-arrow"></div>
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#">物流公司1</a>
+                </li>
+                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                </li>
+                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                </li>
+                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                </li>
+                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                </li>
+                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>-->
+
+<!--/弹出菜单-->
+</body>
+</html>

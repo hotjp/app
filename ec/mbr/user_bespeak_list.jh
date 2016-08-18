@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我的预约</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_bespeak_list.js?v=${ver}"></script>
+</head>
+
+<body class="bespeak-list">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <#include "/ec/include/i_back.ftl"/>
+    <h1 class="mui-title c-fff">我的预约</h1>
+    <#--<#include "/ec/include/i_user.ftl"/>-->
+</header>
+<div class="goods-list-content">
+    <!--工具条结束，内容开始-->
+    <div class="bespeak-lists-list mui-scroll-wrapper" id="pullrefresh">
+        <div class="mui-scroll">
+            <ul class="mui-table-view clearfix">
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

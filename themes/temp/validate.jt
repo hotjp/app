@@ -1,0 +1,2 @@
+<script type="text/javascript" src="${resRoot}/js/jquery/jquery.validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="${resRoot}/js/comm/validateUtil.js?v=${ver}"></script>

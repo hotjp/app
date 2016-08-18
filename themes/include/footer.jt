@@ -1,0 +1,28 @@
+<#if MO_CLIENT != "android"&&MO_CLIENT != "ios">
+<!--底部-->
+<footer id="footer" class="bottom-nav">
+    <nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item" data-id="index" href="${vars.root}/ec/goods/index.html">
+            <span class="mui-icon iconfont icon-shouye"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" data-id="sort" href="${vars.root}/ec/goods/sort.html">
+            <span class="mui-icon iconfont icon-wajueji"></span>
+            <span class="mui-tab-label">我要买</span>
+        </a>
+        <a class="mui-tab-item" data-id="cart" href="${vars.root}/ec/mbr/goods_cart.html">
+            <span class="mui-icon iconfont icon-temai" id="footerCartCount"></span>
+            <span class="mui-tab-label">我要卖</span>
+        </a>
+        <a class="mui-tab-item" data-id="" href="${vars.root}/ec/user/user_center.html">
+            <span class="mui-icon iconfont icon-gongju"></span>
+            <span class="mui-tab-label">工具</span>
+        </a>
+        <a class="mui-tab-item" data-id="user" href="${vars.root}/ec/user/user_center.html">
+            <span class="mui-icon iconfont icon-wode"></span>
+            <span class="mui-tab-label">我的</span>
+        </a>
+    </nav>
+</footer>
+<script type="text/javascript" src="${jsEcRoot}/include/footer.js"></script>
+</#if>

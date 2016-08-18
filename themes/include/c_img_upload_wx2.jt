@@ -1,0 +1,19 @@
+<input type="hidden" name="imageUrls${model.id}" id="imageUrls${model.id}"/>
+<div data-id="uploadModule" data-key="${model.id}" data-max="${model.max}">
+    <ul data-id="uploaderQueue" class="grid imageUploader-queue fl clearfix"></ul>
+
+    <div class="grid fs-14 fl" id="uploadForm">
+        <div class="g-u">
+            <a href="javascript:void(0)" class="g-u imageUploader-button" data-id="uploadBtn">
+                <i class="iconfont icon-tianjiazhaopian fs-50"></i><br>可上传<em class='c-ff5b53'
+                                                                              data-id='remainCount'>${model.max}</em>张
+            </a>
+        </div>
+    <#--/样式-->
+    </div>
+</div>
+<#if isKissy!=true>
+<script type="text/javascript" src="${jsEcRoot}/include/c_img_upload_wx2.js?v=${ver}"></script>
+</#if>
+
+<#assign isKissy=true>

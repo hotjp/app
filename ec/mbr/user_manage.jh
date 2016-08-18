@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户中心</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_manage.js?v=${ver}"></script>
+</head>
+<body class="user-manage">
+<input type="hidden" id="oldProvinceId" name="oldProvinceId" value="${_MBR_.provinceId}">
+<input type="hidden" id="oldCityId" name="oldCityId" value="${_MBR_.cityId}">
+<input type="hidden" id="oldDistrictId" name="oldDistrictId" value="${_MBR_.districtId}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i></a>
+
+    <h1 class="mui-title c-fff fs-17">账户管理</h1>
+    <a class="mui-pull-right c-fff" href="javascript:;"><i
+            class="iconfont icon-wode c-fff"></i></a>
+</header>
+<div class="user-manage-content">
+    <ul class="user-info-list">
+        <li>
+            <a class="fs-14" href="#">头像<img class="pull-right c-999" src="${ecImg}/user-img.png"></a>
+        </li>
+    <#if _MBR_ == null>
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
+                    class="pull-right c-999"><i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+    <#else>
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
+                    class="pull-right c-999">${_MBR_.nickName}<i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+    </#if>
+        <!--<li>
+            <a class=" fs-14" href="#">性别<span class="pull-right c-999">男<i class="iconfont icon-you fs-14"></i></span></a>
+        </li>-->
+
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=2">手机号<span
+                    class="pull-right c-999">${_MBR_.mobile}<i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+        <li>
+            <a class="fs-14" id="showCityPicker">所在地区<span class="pull-right c-999"><span id="cityResult"></span><i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=3">邮箱<span
+                    class="pull-right c-999">${_MBR_.email}<i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+
+    </ul>
+    <ul class="user-info-list tools-list">
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_address_edit.html">我的收货地址<span class="pull-right c-999"><i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+        <li>
+            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_pwd.html">账户安全<span class="pull-right c-999">可修改密码<i
+                    class="iconfont icon-you fs-14"></i></span></a>
+        </li>
+    </ul>
+    <div class="sub-form">
+        <input class="user-sub" type="button" value="退出登录"/>
+    </div>
+</div>
+</body>
+</html>

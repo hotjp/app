@@ -1,0 +1,25 @@
+<div class="servers clearfix">
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+        <#list model.data as catNode>
+            <#if (catNode_index)%5==0>
+            <div class="mui-slider-item">
+            <ul class="clearfix">
+            </#if>
+            <li><a href="${vars.root}${catNode.linkUrl}"><i class="${catNode.iconClass}"></i>${catNode.title}</a></li>
+            <#if (catNode_index + 1)%5==0 || ((catNode_index + 1)%5!=0 && catNode_index + 1 == model.data_size)>
+            </ul>
+            </div>
+            </#if>
+        </#list>
+        </div>
+    </div>
+    <div class="mui-slider-indicator">
+    <#list model.data as catNode>
+        <#if (catNode_index)%5==0>
+            <div class="mui-indicator<#if catNode_index == 0> mui-active</#if>"></div>
+        </#if>
+    </#list>
+    </div>
+</div>
+</div>

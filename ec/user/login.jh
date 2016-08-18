@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户登录</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/user/login.js?v=${ver}"></script>
+</head>
+<body class="user-reg-log appfrom">
+<input type="hidden" id="url" name="url" value="${url}">
+<input type="hidden" id="platform" name="platform" value="${MO_PLATFORM}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title"></h1>
+</header>
+<div class="user-top">
+    <div class="user-top-content clearfix">
+        <div class="user-pic">
+            <img src="${ecImg}/user-img.png"/>
+        </div>
+    </div>
+</div>
+<div class="reg-log-form">
+    <form action="" method="post">
+        <dl class="mui-input-row">
+            <dt>账号:</dt>
+            <dd><input class="user-ipt mui-input-clear" type="text" name="loginname" id="loginname" value=""
+                       placeholder="请输入账号"/></dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt>密码:</dt>
+            <dd><input class="user-ipt mui-input-clear" type="password" name="loginpwd" id="loginpwd" value=""
+                       placeholder="请输入密码"/></dd>
+        </dl>
+        <br/>
+
+        <div class="sub-form">
+            <input class="user-sub" type="button" value="登录"/>
+            <a class="fl fs-13 c-777" href="${vars.root}/ec/user/register.html">快速注册</a>
+            <a class="fr fs-13 c-777" href="${vars.root}/ec/user/findPwd.html">找回密码</a>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>

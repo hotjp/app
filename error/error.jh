@@ -1,0 +1,48 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8" isErrorPage="true" %>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+  <title>出错啦</title>
+  
+
+    <link rel="stylesheet" href="${systemPath}/resources/css/mobile.css?v=${ver}" />
+    <style>
+    .fs-16 {
+      font-size: 0.941rem !important;
+    }
+  </style>
+</head>
+<body style="background: #f4f4f4; text-align: center;">
+<img style="margin: 20% auto 0;" src="${systemPath}/resources/images/error_img.png"/>
+
+<p><br/>系统错误，请联系我们<br/><br/></p>
+<%--<a class="fs-16" href="${systemPath}/">返回首页</a>--%>
+<a class="fs-16" href="javascript:;" onclick="toIndexPage();">返回首页</a>
+
+<script type="text/javascript">
+    var connectWebViewJavascriptBridge= function (callback) {
+      if (window.WebViewJavascriptBridge) {
+        callback(WebViewJavascriptBridge)
+      } else {
+        document.addEventListener('WebViewJavascriptBridgeReady', function() {
+          callback(WebViewJavascriptBridge)
+        }, false)
+      }
+    }
+    function toIndexPage() {
+      //ios返回首页代码
+      connectWebViewJavascriptBridge(function(bridge) {
+        bridge.send("dismiss");
+      })
+      //微信返回首页代码
+      var href = "/ec/goods/index.html";
+      if (href == "#" || href == "" || href == "javascript:void(0)" || href == "javascript:void(0);" || href == "javascript:;") {
+        return;
+      }
+      location.href = href;
+    }
+  </script>
+</body>
+</html>

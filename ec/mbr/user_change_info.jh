@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>信息修改</title>
+<#include "/temp/htmlHead.ftl"/>
+<#include "/temp/validate.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_change_info.js?v=${ver}"></script>
+</head>
+<body class="user-msg">
+<input type="hidden" id="type" name="type" value="${type}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff fs-17">信息修改</h1>
+
+    <a class="mui-pull-right c-fff" href="javascript:void(0)">完成</a>
+</header>
+<div class="user-msg-content">
+    <form action="" method="post" id="form-userInfo">
+        <div class="mui-input-group">
+            <div class="mui-input-row">
+            <#if type=1>
+                <input class="mui-input-clear fs-14" type="text" id="nickName" name="nickName" value="${_MBR_.nickName}"
+                       placeholder="1－20个字符,数字,汉字等"/>
+            <#elseif type=2>
+                <input class="mui-input-clear fs-14" type="text" id="mobile" name="mobile" value="${_MBR_.mobile}"
+                       placeholder="请输入有效手机号" />
+            <#elseif type=3>
+                <input class="mui-input-clear fs-14" type="text" id="email" name="email" value="${_MBR_.email}"
+                       placeholder="请输入有效邮箱，用于密码找回"/>
+
+            </#if>
+
+            </div>
+        </div>
+    </form>
+
+</div>
+<span class="fs-14 c-777" style="margin: 0 2%;"></span>
+</body>
+</html>

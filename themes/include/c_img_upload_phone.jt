@@ -1,0 +1,16 @@
+<input type="hidden" name="imageUrls${model.id}" id="imageUrls${model.id}"/>
+<div data-id="uploadModule" data-key="${model.id}" data-max="${model.max}">
+    <div class="mui-card fs-14">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell no-bg fs-14 c-777" data-id="uploadBtn">
+                <i class="iconfont icon-tianjiazhaopian fs-23 fl"></i>
+                <span class="tips fr">${model.title}，还可上传<em data-id="remainCount">${model.max}</em>张</span>
+            </li>
+        </ul>
+    </div>
+    <div class="card-title fs-14">
+        <ul data-id="uploaderQueue" class="grid imageUploader-queue clearfix">
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="${jsEcRoot}/include/c_img_upload_phone.js?v=${ver}"></script>

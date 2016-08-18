@@ -1,0 +1,16 @@
+<div class="mui-slider" id="banner">
+    <div class="mui-slider-group">
+    <#list model.data as slide>
+        <div class="mui-slider-item">
+            <a href="${vars.root}${slide.linkUrl}" title="${slide.remark}">
+                <img src="${buildUrl(slide.imgUrl)}" onerror="errorImg(this,3);"/>
+            </a>
+        </div>
+    </#list>
+    </div>
+    <div class="mui-slider-indicator">
+    <#list model.data as slide>
+        <div class="mui-indicator<#if slide_index==0> mui-active</#if>"></div>
+    </#list>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>退款/售后</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_refund.js?v=${ver}"></script>
+</head>
+<body class="user-refund">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">退款/售后</h1>
+<#--<#include "/ec/include/i_user.ftl"/>-->
+</header>
+<div class="user-refund-content mui-scroll-wrapper" id="pullrefresh">
+    <!--退款-->
+    <div class="mui-scroll">
+        <ul class="mui-table-view clearfix">
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

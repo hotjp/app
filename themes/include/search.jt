@@ -1,0 +1,4 @@
+<h1 class="mui-title">
+    <form action="${vars.root}/ec/goods/goods_list.html"><input type="search" name="kw" id="" value=""
+                                                                placeholder="搜索商品关键词"/></form>
+</h1>

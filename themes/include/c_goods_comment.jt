@@ -1,0 +1,16 @@
+<div class="index-block bg-fff" id="comment">
+    <div class="index-block-tit clearfix">
+        <span class="title fs-13 fl">商品评价(<i id="commentCount"></i>)</span>
+    </div>
+    <div class="comment-content" id="all">
+        <ul  class="mui-table-view">
+
+        </ul>
+
+        <a class="comment-show-more mui-text-center c-333 fs-13" href="${vars.root}/ec/goods/goods_comment.html?goodsId=${goodsId}">查看所有评价</a>
+
+    </div>
+</div>
+<script type="text/javascript" src="${jsEcRoot}/include/c_goods_comment.js"></script>
+
+<!--评价结束-->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>密码找回</title>
+<#include "/temp/htmlHead.ftl"/>
+<#include "/temp/validate.ftl"/>
+
+    <script type="text/javascript" src="${jsEcRoot}/user/user_find_pwd.js?v=${ver}"></script>
+</head>
+<body class="user-msg">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="sort.html"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff fs-17">密码找回</h1>
+
+    <div class="mui-pull-right c-fff">完成</div>
+</header>
+<div class="user-msg-content bg-none">
+    <form action="" method="post" id="form-findPwd">
+        <div class="mui-card appfrom">
+            <dl class="mui-input-row">
+                <dt><i class="c-ff5b53">*</i>用户名:</dt>
+                <dd>
+                    <input class="user-ipt mui-input-clear" type="text" name="name" id="name" value=""
+                           placeholder="待找回用户名"/>
+                </dd>
+            </dl>
+            <dl class="mui-input-row">
+                <dt><i class="c-ff5b53">*</i>邮箱:</dt>
+                <dd>
+                    <input class="user-ipt mui-input-clear" type="text" name="emailOrMobile" id="emailOrMobile" value=""
+                           placeholder="注册时填写的邮箱"/>
+                </dd>
+            </dl>
+        </div>
+    </form>
+
+</div>
+<span class="fs-14 c-777" style="margin: 0 2%;"></span>
+</body>
+
+</html>

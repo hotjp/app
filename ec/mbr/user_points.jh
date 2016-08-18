@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的积分</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_points.js?v=${ver}"></script>
+</head>
+<body class="user-cerdit">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:void(0);"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff fs-17">我的积分</h1>
+    <#--<a class="mui-pull-right c-fff" href="javascript:void(0);"><i class="iconfont icon-wode c-fff"></i></a>-->
+</header>
+<div class="user-info fs-50 c-fff">
+${totalPoint.points}<span class="fs-15"> 积分</span>
+
+    <p class="fs-12">积分可以抵现金哦，购买评论都有积分赠送！</p>
+</div>
+<div class="cerdit-slider mui-slider mui-fullscreen">
+    <div class="cerdit-control mui-slider-indicator fs-14">
+        <ul>
+            <li data-type="all" class="mui-indicator mui-active">全部</li>
+            <li data-type="add" class="mui-indicator">收入明细</li>
+            <li data-type="slow" class="mui-indicator">支出明细</li>
+        </ul>
+    </div>
+    <div class="cerdit-content mui-slider-group">
+        <!--全部-->
+        <div class="cerdit-content-block mui-slider-item mui-control-content mui-active">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="all">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="cerdit-content-block mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="add">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="cerdit-content-block mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="slow">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    <title>支付宝</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript">
+        $(function(){
+            toIndexPage();
+        });
+    </script>
+</head>
+<body style="background: #f4f4f4; text-align: center;">
+
+</body>
+</html>

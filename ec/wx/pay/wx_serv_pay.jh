@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信支付</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsWxRoot}/pay/wx_serv_pay.js?v=${ver}"></script>
+</head>
+<body>
+<input type="hidden" id="payId" name="payId" value="${payId}">
+</body>
+</html>

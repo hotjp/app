@@ -1,0 +1,48 @@
+<div class="index-block bg-fff" id="hot-sale">
+    <div class="index-block-tit clearfix">
+        <i class="mod-icon-left shichang-bg fl"></i>
+        <span class="title blod fs-14 fl">热门市场</span>
+    <#--<a class="more fr" href="#"><i class="iconfont icon-you"></i></a>-->
+    </div>
+    <!--内容开始-->
+    <div class="act_top">
+        <ul class="clearfix">
+        <#list model.pageList.rows as goods>
+            <#if goods_index lte 1>
+                <li>
+                    <a class="clearfix" href="${vars.root}/ec/goods/${goods.id}.html">
+                        <img data-lazyload="${buildUrl(goods.iconUrl)}.200x200.jpg" onerror="errorImg(this);"/>
+
+                        <div class="item-info">
+                            <span class="title fs-11"><#if goods.simplePromoLabel><span class='act-style1'><i
+                                    class='act-left-icon'>${goods.simplePromoLabel}</i></span></#if>${goods.name}</span>
+                            <span class="abstract fs-11 c-ff5b53"><@goodsPriceText goods=goods/></span>
+                        </div>
+                    </a>
+                </li>
+            </#if>
+        </#list>
+        </ul>
+    </div>
+    <div class="act_bottom">
+        <ul class="clearfix">
+        <#list model.pageList.rows as goodsL>
+            <#if goodsL_index gt 1>
+                <li>
+                    <a href="${vars.root}/ec/goods/${goodsL.id}.html">
+                        <div class="item-info">
+                            <span class="title fs-11">${goodsL.name}</span>
+                            <span class="abstract fs-11 c-ff5b53"><@goodsPriceText goods=goodsL/></span>
+                        </div>
+                        <img data-lazyload="${buildUrl(goodsL.iconUrl)}.200x200.jpg" onerror="errorImg(this);"/>
+                    </a>
+                </li>
+                <#if goodsL_index==9>
+                    <#break>
+                </#if>
+            </#if>
+        </#list>
+
+        </ul>
+    </div>
+</div>

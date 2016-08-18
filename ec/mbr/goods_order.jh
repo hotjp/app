@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>确认订单</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/goods_order.js?v=${ver}"></script>
+</head>
+<body class="goods-order">
+<input type="hidden" id="key" name="key" value="${key}">
+<input type="hidden" id="provinceId" name="provinceId" value="${mbrAddresses.provinceId}">
+<input type="hidden" id="cityId" name="cityId" value="${mbrAddresses.cityId}">
+<input type="hidden" id="districtId" name="districtId" value="${mbrAddresses.districtId}">
+<input type="hidden" id="address" name="address" value="${mbrAddresses.address}">
+<input type="hidden" id="postcode" name="postcode" value="${mbrAddresses.postCode}">
+<input type="hidden" id="contact" name="contact" value="${mbrAddresses.contactName}">
+<input type="hidden" id="tel" name="tel" value="${mbrAddresses.contactTel}">
+<input type="hidden" id="tel2" name="tel2" value="${mbrAddresses.contactTel2}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">确认订单</h1>
+</header>
+<!--底部-->
+<div class="cart-tools-bar">
+    <a class="balance fr fs-15" href="javascript:void(0)" id="confirm">确认</a>
+    <span class="balance-info fr c-fff fs-12">合计：<i class="fs-13" id="order-amount">￥${formatPositiveMoney(order.totalPrice)}</i></span>
+</div>
+
+<div class="goods-order-content">
+    <!--收货地址-->
+    <div class="order-address">
+        <i class="iconfont icon-biaozhu"></i>
+
+        <div class="address-info fs-14" id="${mbrAddresses.id}">
+            <a>
+                收货人:${mbrAddresses.contactName}
+                <span class="fr">${mbrAddresses.contactTel}</span>
+
+                <p class="c-333 fs-13">
+                    收货地址: <span id="areaName">${mbrAddresses.provinceName} ${mbrAddresses.cityName} ${mbrAddresses.districtName} ${mbrAddresses.address}</span> </p>
+            </a>
+        </div>
+        <i class="iconfont icon-you c-999"></i>
+    </div>
+    <!--店铺-->
+<#list order.preOrderings as orderInfo>
+    <div class="shop-order" data-shop="${orderInfo.shop.id}">
+        <div class="shop-title fs-12" data-shop="${orderInfo.shop.id}">
+            <i class="iconfont icon-dianpu c-9c4b0f"></i>
+        ${orderInfo.shop.name}
+            <#if orderInfo.activePromo??>
+                <i class="promo-icon">满减</i><label class="fs-13">${orderInfo.activePromo.name}</label>
+            </#if>
+        </div>
+        <ul class="goods-list" data-shop="${orderInfo.shop.id}">
+            <#list orderInfo.skus as good>
+                <li class="clearfix" id="${good.skuId}" data-sku="${good.skuId}">
+                    <img class="fl" src="${buildUrl(good.skuIconUrl)}" onerror="errorImg(this);"/>
+
+                    <div class="goods-info fl">
+                        <p class="c-333 fs-13">
+                        ${good.skuName}
+                        </p>
+
+                        <p class="c-999 fs-11">
+                        ${good.skuPropTextList}
+                        </p>
+                        <span class="fs-13 price">¥<#if good.skuPromoPrice??>${formatPositiveMoney(good.skuPromoPrice)}<#else>${formatPositiveMoney(good.skuPrice)}</#if></span>
+                        <span class="fs-13 fr">x${good.buyQty}</span>
+                        <#if good.promos?? &&  good.promos?size gt 0>
+                            <div class=" clr">
+                                <select class="c-ff5b53 fs-14" style="border: solid 1px #ccc!important;"
+                                        data-type="promo">
+                                    <#list good.promos as promo>
+                                        <option value="${promo.promoId}"
+                                                data-launcher="${promo.launcher.value}">${promo.promoName}
+                                            ¥${promo.promoPrice}</option>
+                                    </#list>
+                                </select>
+                            </div>
+                        </#if>
+                    </div>
+                </li>
+            </#list>
+        </ul>
+        <div class="mui-input-group js-act">
+            <#if orderInfo.cashCoupons?size gt 0>
+                <div class="mui-table-view-cell">
+                    <label class="mui-navigate-right fs-13">
+                        <select class="fs-13" data-type="cashCoupon">
+                            <#list orderInfo.cashCoupons as cashCoupons>
+                                <#if cashCoupons.id == 0>
+                                    <#assign cashCouponsName="不使用优惠券">
+                                <#else>
+                                    <#assign freeShippingView="">
+                                    <#if !freeShipping??><#assign freeShippingView="+包邮"></#if>
+                                    <#assign cashCouponsName="满${cashCoupons.orderMinAmount}减${cashCoupons.amount}${freeShippingView}">
+                                </#if>
+                                <option value="${cashCoupons.id}">${cashCouponsName}</option>
+                            </#list>
+                        </select>
+                    </label>
+
+                </div>
+
+
+            </#if>
+
+
+            <div class="mui-input-row mui-checkbox" data-shop="${orderInfo.shop.id}" data-type="invoice">
+                <label class="fs-13" data-invoice="label">
+                    需要发票
+                    <span class="c-999" data-invoice="title"></span>
+                </label>
+                <input data-invoice="check" value="" type="checkbox">
+            </div>
+
+            <#--<div class="mui-input-row mui-checkbox<#if orderInfo.memberRebates.balanceAmount==0> mui-disabled</#if>"
+                 data-shop="${orderInfo.shop.id}">
+                <label class="fs-13">账户余额 <span
+                        class="c-999 fs-10">${formatPositiveMoney(orderInfo.memberRebates.balanceAmount!0)}
+                    元</span></label>
+                <input id="ck-balance" name="useBalance" value=""
+                       type="checkbox"<#if orderInfo.memberRebates.balanceAmount==0> disabled="disabled"</#if>>
+
+            </div>-->
+            <#--<div class="mui-input-row mui-checkbox<#if orderInfo.memberRebates.creditsAmount==0> mui-disabled</#if>"-->
+                 <#--data-shop="${orderInfo.shop.id}">-->
+                <#--<label class="fs-13">信用额度 <span-->
+                        <#--class="c-999 fs-10">${formatPositiveMoney(orderInfo.memberRebates.creditsAmount!0)}-->
+                    <#--元</span></label>-->
+                <#--<input id="ck-credits" name="useCredits" value=""-->
+                       <#--type="checkbox"<#if orderInfo.memberRebates.creditsAmount==0> disabled="disabled"</#if>>-->
+            <#--</div>-->
+
+        </div>
+        <div class="shop-balance kuaidi clearfix fs-13">
+            配送方式
+            <span class="c-ff5b53 fr" data-type="dlvAcount">&nbsp;${orderInfo.deliveryFeeAmount}元</span>
+            <span class="fr js-dlv" dtp-id="${orderInfo.deliveryTypes[0].id}"
+                  data-shop="${orderInfo.shop.id}">${orderInfo.deliveryTypes[0].name}</span>
+        </div>
+        <div class="select-balance mui-fullscreen" shop-id="${orderInfo.shop.id}">
+            <div class="mui-card">
+                <form class="mui-input-group">
+                    <#list orderInfo.deliveryTypes as dlv>
+                        <div class="mui-input-row mui-radio" data-id="${dlv.id}" data-inner-text="${dlv.name}">
+                            <label for="a${orderInfo.shop.id}_${dlv.id}" class="fs-18">${dlv.name}</label>
+                            <input id="a${orderInfo.shop.id}_${dlv.id}" name="radio_${orderInfo.shop.id}"
+                                   type="radio"<#if dlv_index == 0> checked</#if> >
+                        </div>
+                    </#list>
+                </form>
+            </div>
+        </div>
+        <div class="shop-balance clearfix fs-13">
+            买家留言:
+            <input type="text" name="remark" value="" placeholder="选填，给卖家留言"/>
+        </div>
+        <div class="shop-balance clearfix fs-13">
+                <span class="fr">合计: <i class="fs-13" id="shop-amount-${orderInfo_index}"
+                                        data-shop="${orderInfo.shop.id}">￥${formatPositiveMoney(orderInfo.totalPrice)}</i>
+                <span>共${orderInfo.skus?size}件商品</span>
+        </div>
+    </div>
+
+
+</div>
+</#list>
+</div>
+<span class="fs-16 c-333" style="line-height: 35px">&nbsp;&nbsp;商城优惠</span>
+
+<div class="goods-order-payment">
+    <ul class="mui-table-view mui-table-view-radio">
+
+        <li class="js-jifen mui-checkbox<#if order.memberRebates.points == 0> mui-disabled</#if>">
+            <label class="fs-16">
+                使用积分
+                <span class="c-999 fs-10">最多可使用${order.memberRebates.points!0}积分</span>
+            </label>
+            <input id="ck-pt-points" name="usePoints" value="" type="checkbox"<#if order.memberRebates.points == 0>
+                   disabled="disabled"</#if>>
+        </li>
+
+        <li class="js-jifen mui-checkbox<#if order.memberRebates.balanceAmount==0> mui-disabled</#if>">
+            <label class="fs-16">
+                账户余额
+                <span class="c-999 fs-10">最多可使用${order.memberRebates.balanceAmount!0}余额</span>
+            </label>
+            <input id="ck-pt-balance" name="useBalance" value=""
+                   type="checkbox"<#if order.memberRebates.balanceAmount == 0>
+                   disabled="disabled"</#if>>
+        </li>
+
+        <#--<li class="js-jifen mui-checkbox<#if order.memberRebates.creditsAmount==0> mui-disabled</#if>">-->
+            <#--<label class="fs-16">-->
+                <#--信用额度-->
+                <#--<span class="c-999 fs-10">最多可使用${order.memberRebates.creditsAmount!0}信用额度</span>-->
+            <#--</label>-->
+            <#--<input id="ck-pt-credits" name="useCredits" value=""-->
+                   <#--type="checkbox"<#if order.memberRebates.creditsAmount == 0>-->
+                   <#--disabled="disabled"</#if>>-->
+        <#--</li>-->
+    </ul>
+    <div id="info">
+
+    </div>
+</div>
+
+</body>
+</html>

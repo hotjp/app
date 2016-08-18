@@ -1,0 +1,26 @@
+<div class="good-lists-list">
+    <ul class="clearfix">
+    <#list model.goodsListData.rows as goods>
+        <#if goods_index gte model.start>
+            <li>
+                <a class="clearfix" href="${vars.root}/ec/goods/${goods.id}.html">
+                    <img src="${buildUrl(goods.iconUrl)}.400x400.jpg" onerror="errorImg(this);"/>
+
+                    <div class="goods-info">
+                    <span class="goods-tit fs-13"><#if goods.simplePromoLabel><span class='act-style1'><i
+                            class='act-left-icon'>${goods.simplePromoLabel}</i></span></#if>${goods.name}</span>
+                        <span class="sale-price fs-15 c-ff5b53"><@goodsPriceText goods=goods/></span>
+                    </div>
+                </a>
+            </li>
+        </#if>
+    </#list>
+    </ul>
+</div>
+<script type="text/javascript">
+    mui.init();
+    mui('.good-lists-list').on('tap', 'a', function (e) {//mui冲突链接
+        href = $(this).attr("href");
+        toNewPage(href);
+    });
+</script>

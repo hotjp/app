@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品详情</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${resRoot}/js/mui/mui.zoom.js"></script>
+    <script type="text/javascript" src="${resRoot}/js/mui/mui.previewimage.js"></script>
+    <script type="text/javascript" src="${jsEcRoot}/goods/goods_view.js?v=${ver}"></script>
+</head>
+<body class="goods-view">
+
+<input type="hidden" id="goodsId" name="goodsId" value="${goods.id}">
+<input type="hidden" id="isGroupBuy" name="isGroupBuy" value="${isGroupBuy}">
+<input type="hidden" id="isSeckill" name="isSeckill" value="${isSeckill}">
+
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff fs-17">商品详情</h1>
+    <a class="mui-pull-right c-fff" href="${vars.root}/ec/mbr/goods_cart.html"><i
+            class="iconfont icon-cart c-fff fs-20"></i></a>
+</header>
+<!--底部-->
+<footer class="bottom-nav">
+    <nav class="footer-nav">
+        <a class="footer-s-btn mui-col-xs-2 c-fff  mui-text-center" id="btn_index"
+           href="${vars.root}/ec/goods/index.html">
+            <span class="iconfont icon-shouye fs-20 mui-block"></span>
+            <span class="mui-text-center fs-11">首页</span>
+        </a>
+        <a class="footer-s-btn mui-col-xs-2 c-fff  mui-text-center" href="${vars.root}/ec/shop/${goods.shopId}.html">
+            <span class="iconfont icon-dianpu fs-20 mui-block"></span>
+            <span class="mui-text-center fs-11">店铺</span>
+        </a>
+
+    <#if goods.buyType.value==2>
+        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="appointNow" href="javascript:;">立即预约</a>
+    <#elseif goods.buyType.value==3>
+        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="enquiryNow" href="javascript:;">立即询价</a>
+    <#else>
+        <#if !isGroupBuy && !isSeckill>
+            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCartF" href="javascript:;">加入购物车</a>
+        <#else>
+            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+        </#if>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="buyNowF" href="javascript:;">立即购买</a>
+    </#if>
+
+
+    </nav>
+</footer>
+<div class="goods-view-content">
+    <div class="mui-slider" id="goods-img">
+        <div class="mui-slider-group">
+        <#list goods.pics as pic>
+            <div class="mui-slider-item">
+                <a href="#">
+                    <img src="${buildUrl(pic)}" onerror="errorImg(this);">
+                </a>
+            </div>
+        </#list>
+        </div>
+        <div class="mui-slider-indicator">
+        <#list goods.pics as pic>
+            <#if pic_index==0>
+                <div class="mui-indicator mui-active"></div>
+            <#else>
+                <div class="mui-indicator"></div>
+            </#if>
+        </#list>
+        </div>
+    </div>
+    <!--产品图结束-->
+    <div class="goods-info clearfix">
+			<span class="title mui-block fs-14 fl">
+            ${goods.name}
+            </span>
+			<span class="collcet mui-block fs-10 fr">
+				<i class="iconfont icon-xing fs-20"></i>
+				收藏
+			</span>
+    <#if goods.buyType.value!=2 && goods.buyType.value!=3 >
+        <div class="view-price clr clearfix">
+            <span id="sale-price" class="sale-price fs-20\ c-ff5b53"
+                  style="display: none;">￥${formatPositiveMoney(goods.minPrice)}<#if goods.maxPrice!=goods.minPrice>
+                -${formatPositiveMoney(goods.maxPrice)}</#if></span>
+            <span class="old-price fs-15"></span>
+        </div>
+        <div class="goods-more clearfix">
+            <span class="goods-num fs-11 c-999 mui-text-left fl">库存<i>${goods.stockQty!'0'}</i>件</span>
+            <span class="goods-sale-num fs-11 c-999 mui-text-center fl">月销<i>0</i>笔</span>
+            <span class="goods-place fs-11 c-999 mui-text-right fr">${goods.provinceName} ${goods.cityName}</span>
+        </div>
+    </#if>
+    </div>
+
+<#if goods.buyType.value==2>
+    <div class="goods-sort-content clearfix" style="display: none;">
+        <div data-type="exSort" id="goods-sort-content"></div>
+    </div>
+    <!--预约-->
+    <@moEcPage name="c_form_appointments"/>
+<#elseif goods.buyType.value==3>
+    <div class="goods-sort-content clearfix">
+        <div data-type="exSort" id="goods-sort-content"></div>
+    </div>
+    <div id="goods-sort-content"></div>
+    <!--询价-->
+    <@moEcPage name="c_form_enquiry"/>
+<#else>
+    <ul class="mui-table-view active-now c-777" id="promoList">
+    </ul>
+    <!--商品信息结束-->
+    <div class="index-block bg-fff">
+        <div class="index-block-tit clearfix">
+            <a class="show-goods-sort c-333 clearfix mui-block" href="javascript:void(0)">
+                <span class="title fs-14 fl">选择商品属性</span>
+                <i class="iconfont icon-you more fr"></i>
+            </a>
+        </div>
+    </div>
+    <!--产品属性弹出层-->
+    <div class="goods-sort">
+        <div class="goods-sort-info clearfix" id="goods-sort-info">
+            <img class="fl b-r-4" id='goods-info-img' src="" onerror='errorImg(this);'>
+            <i class="close-goods-sort iconfont icon-guanbi fs-20 c-333"></i>
+
+            <div class="goods-sort-info-content fr">
+                <span class="cart-price fs-15 c-ff5b53 mui-block"
+                      id='goods-info-price'>
+                    ￥${formatPositiveMoney(goods.minPrice)}<#if goods.maxPrice!=goods.minPrice>
+                    -${formatPositiveMoney(goods.maxPrice)}</#if>
+                </span>
+                <span class="goods-num fs-13 c-777 mui-block" id='goods-info-sq'>&nbsp;</span>
+                <span class="sort-content fs-13 c-333 mui-block">请选择商品属性</span>
+            </div>
+        </div>
+        <div class="goods-sort-content clearfix">
+            <div id="goods-sort-content"></div>
+            <dl>
+                <dd><i class="fs-13">购买数量</i>
+
+                    <div class="mui-numbox fr" data-numbox-min='1' style="height: 30px;">
+                        <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                        <input class="mui-input-numbox" type="number" id="buy-qty" value="1"/>
+                        <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <div class="goods-sort-footer">
+            <#if !isGroupBuy && !isSeckill>
+                <a class="addcart fs-14" id="addCartT" href="#">加入购物车</a>
+            <#else>
+                <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+            </#if>
+            <a class="buynow fs-14" id="buyNowT" href="goods_cart.html">立即购买</a>
+        </div>
+    </div>
+    <div class="goods-sort-cover"></div>
+</#if>
+    <!--颜色分类结束-->
+<#if goods.buyType.value!=2 && goods.buyType.value!=3>
+        <@moGoodsComment/><!--商品评价-->
+</#if>
+
+    <div class="index-block bg-fff" id="shop">
+        <div class="index-block-tit clearfix">
+            <a href="${vars.root}/ec/shop/${goods.shopId}.html"><span class="title fs-14 fl"><i
+                    class="iconfont icon-dianpu c-9c4b0f fs-20"> </i>${goods.shopName}</span></a>
+            <i class="more fr fs-12 c-fd433a"></i>
+        </div>
+        <div class="shop-info clearfix">
+        <#--<ul class="clearfix">-->
+        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">236</span>全部商品</a></li>-->
+        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">15</span>促销商品</a></li>-->
+        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">500</span>收藏人数</a></li>-->
+        <#--</ul>-->
+            <a class="shop-info-btn fl fs-13 c-333 mui-text-center b-r-4"
+               href="${vars.root}/ec/shop/${goods.shopId}/sort.html"><i class="iconfont icon-fenleifull c-999"> </i>商品分类</a>
+            <a class="shop-info-btn fr fs-13 c-333 mui-text-center b-r-4"
+               href="${vars.root}/ec/shop/${goods.shopId}.html"><i class="iconfont icon-dianpu c-999"> </i>进入店铺</a>
+        </div>
+    </div>
+    <!--店铺信息结束-->
+    <div class="index-block bg-fff" id="intro">
+        <div class="index-block-tit clearfix">
+            <span class="title mui-text-center fs-14 fl on">图文详情</span>
+            <!--<span class="title mui-text-center fs-14 fl">商品参数</span>-->
+            <span class="title mui-text-center fs-14 fl">店铺推荐</span>
+        </div>
+        <div class="intro-content clr">
+            <div class="content mui-block" id="good-details">
+            ${goods.detail}
+            </div>
+            <!--
+            <div class="content">
+                <table cellpadding="0" cellspacing="1" width="100%" border="0" class="Ptable">
+                    <tbody>
+                    <tr>
+                        <th class="tdTitle" colspan="2">主体</th>
+                    </tr>
+                    <tr>
+                    </tr>
+                    <tr>
+                        <td class="tdTitle">系列</td>
+                        <td>FX系列</td>
+                    </tr>
+                    <tr>
+                        <td class="tdTitle">型号</td>
+                        <td>FX-PLUS</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            -->
+            <div class="content fs-15">
+            <@moShopHotGoods shopId="${goods.shopId}" limit="4"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="replace-footer"></div>
+</body>
+</html>

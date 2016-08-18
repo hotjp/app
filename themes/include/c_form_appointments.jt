@@ -1,0 +1,47 @@
+<#include "/temp/validate.ftl"/>
+<!-- 预约 -->
+<dl class="item_info item_price clearfix mui-input-row bg-fff">
+    <label>价格:</label>
+    <input class="mui-input" type="text" name="contactPrice" maxlength="20" readonly required value="面议"/>
+</dl>
+<div id="appt-form" class="appfrom item_service clearfix">
+    <form id="form-appointment">
+        <dl class="mui-input-row clearfix fs-13">
+            <dt>您的姓名：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" type="text" name="contact" maxlength="20" required
+                   value="${vars.member.nickName}"/>
+            </dd>
+        </dl>
+        <dl class="mui-input-row clearfix fs-13">
+            <dt>手机号码：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" type="tel" name="contactTel" maxlength="20" validator="^\s*\d{11}\s*$"
+                   required value="${vars.member.mobile}"/>
+            </dd>
+        </dl>
+        <dl class="mui-input-row clearfix fs-13" id="showCityPicker3Appointments">
+            <dt>上门地址：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" id="cityResult3Appointments" type="text" name="addressResult"
+                   maxlength="20" required value="" placeholder="选择上门地址"/>
+            </dd>
+        </dl>
+
+        <dl class="mui-input-row clearfix fs-13">
+            <dt>详细地址：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" type="text" name="address" maxlength="20" required value=""
+                   placeholder="建议您如实填写详细收货地址"/>
+            </dd>
+        </dl>
+        <dl class="user-textarea clearfix fs-13 bg-fff">
+            <dt>预约留言：</dt>
+            <dd>
+            <textarea class="user-ipt mui-input-clear fs-13" type="text" name="remark" maxlength="100" required value=""
+                   placeholder="输入预约留言"></textarea>
+            </dd>
+        </dl>
+    </form>
+</div>
+<script type="text/javascript" src="${jsEcRoot}/include/c_form_appointments.js"></script>

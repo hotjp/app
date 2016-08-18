@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>支付宝</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript">
+        setTimeout(function(){
+            toIndexPage();
+        },5000);
+    </script>
+</head>
+<body style="background: #f4f4f4; text-align: center;">
+<img style="margin: 20% auto 0;" src="../../../../resources/images/correct_img.png"/>
+
+<p><br/>支付成功<br/><br/></p>
+<a class="fs-16" href="#" onclick="toIndexPage()">5秒后自动返回，如未返回点击此处</a>
+
+</body>
+</html>

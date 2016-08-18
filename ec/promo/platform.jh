@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>${promo.name!"促销活动"}</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/promo/platform.js?v=${ver}"></script>
+</head>
+<body class="active-list" style="background-color:${promo.pageBackgroundColor} ;">
+<input type="hidden" id="startTime" name="startTime" value="${promo.startTime}">
+<input type="hidden" id="endTime" name="endTime" value="${promo.endTime}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+<#include "/ec/include/i_back.ftl"/>
+<#include "/ec/include/search.ftl"/>
+</header>
+<div class="tools-bar clearfix fs-13">
+    <div class="goods-sort fl">
+        <i class="iconfont">&#xe646;</i>
+
+        <p id="promoTime"><label id="pTitle"></label>：<span id="pDay"></span><label id="pDayTitle">天</label><span
+                id="pHour"></span>时<span
+                id="pMin"></span>分<span id="pSec"></span>秒</p>
+    </div>
+    <div class="change-view fr">
+        <i class="iconfont icon-liebiao"></i>
+    </div>
+</div>
+<div class="goods-list-content clearfix">
+    <!--工具条结束，内容开始-->
+    <div class="good-lists-list mui-scroll-wrapper" id="pullrefresh">
+        <div class="mui-scroll">
+        <#if isSeckill>
+            <#assign tag="02"/>
+        <#elseif isGroupBuy>
+            <#assign tag="03"/>
+        <#else>
+            <#assign tag="01"/>
+        </#if>
+            <ul class="mui-table-view clearfix">
+                <div class="active-list-banner">
+                    <img src="${buildUrl(promo.pageBannerUrl)}">
+                </div>
+            <#list goodsListData.rows as goods>
+                <li>
+                    <a class="clearfix" href="${vars.root}/ec/goods/${goods.goods.id}.html">
+                        <div>
+                            <p class=" product-img active${tag}"></p>
+                        </div>
+                        <img src="${buildUrl(goods.goods.iconUrl)}.400x400.jpg" onerror="errorImg(this);"/>
+
+                        <div class="img-introduce">
+                            <p>${goods.goods.name}</p>
+                        </div>
+                        <div class="goods-info">
+                            <span class="goods-tit fs-13">${goods.goods.name}</span>
+								<span class="sale-price fs-15 c-ff5b53">
+									￥${formatPositiveMoney(goods.minPrice)}	</span><br/>
+								<span class="old-price fs-11">
+									￥${formatPositiveMoney(goods.goods.minPrice)}</span>
+								<span class="goods-sold fs-11 fr">
+									已售<span class="sold">${goods.boughtQty}</span>件
+								</span>
+
+                            <p>立即抢购</p>
+                        </div>
+                    </a>
+                </li>
+            </#list>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

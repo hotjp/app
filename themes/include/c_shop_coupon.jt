@@ -1,0 +1,24 @@
+<#if shopCashCouponListModel.cashCouponList?size gt 0>
+<div class="coupon">
+    <ul class="clearfix">
+        <#list shopCashCouponListModel.cashCouponList as cc>
+            <li class="coupon-color1" data-type="coupon" data-batch="${cc.batchNo}" data-code="">
+                <a href="javascript:void(0)" data-cash-coupon="${cc.batchNo}">
+                    <p class="discount fl c-fff">
+                        <span class="price">${cc.amount}</span>
+                    </p>
+
+                    <p class="condition fr c-fff">
+								<span class="condition-tit fs-12">
+                                ${cc.freeShipping?string("包邮","优惠券")}
+                                </span>
+                        满${cc.orderMinAmount}用券
+                    </p>
+                </a>
+            </li>
+        </#list>
+    </ul>
+</div>
+<script type="text/javascript" src="${jsEcRoot}/include/c_shop_coupon.js?v=${ver}"></script>
+</#if>
+

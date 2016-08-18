@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我的优惠劵</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_coupon.js?v=${ver}"></script>
+</head>
+
+<body class="user-coupon">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <h1 class="mui-title c-fff">我的优惠劵</h1>
+    <#--<a class="mui-pull-right c-fff" href="javascript:;"><i class="iconfont icon-wode c-fff"></i></a>-->
+</header>
+
+<div class="coupon-content mui-slider mui-fullscreen">
+    <div class="order-control fs-13">
+        <ul class="mui-slider-indicator clearfix">
+            <li data-type="available" class="mui-indicator mui-active">可用</li>
+            <!--<li data-type="Invalid" class="mui-indicator">已失效</li>-->
+            <li data-type="used" class="mui-indicator">已使用</li>
+        </ul>
+    </div>
+    <!--可用-->
+    <div class="mui-slider-group">
+        <div class="order-content mui-slider-item mui-control-content mui-active">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="available">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        <!--已失效
+        <div class="order-content mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="Invalid">
+                    <ul class="mui-table-view">
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+        -->
+        <!--已使用-->
+        <div class="order-content mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="used">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+

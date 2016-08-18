@@ -1,0 +1,7 @@
+<#if MO_CLIENT == "wx">
+    <#include "/ec/include/c_img_upload_wx${model.templet}.ftl"/>
+<#elseif MO_CLIENT="ios"||MO_CLIENT="android">
+    <#include "/ec/include/c_img_upload_phone.ftl"/>
+<#else>
+    <#include "/ec/include/c_img_upload_mobile${model.templet}.ftl"/>
+</#if>

@@ -1,0 +1,39 @@
+<div class="servers clearfix">
+    <div class="mui-slider" >
+        <div class="mui-slider-group">
+            <!-- 区块1 -->
+        <#list model.catNodes as catNode>
+            <#if catNode_index==0 >
+            <div class="mui-slider-item">
+            <ul class="clearfix">
+                <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-zhengji"></i>${catNode.text}</a></li>
+            <#elseif (catNode_index+1)%5==0>
+                <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-zulin"></i>${catNode.text}</a></li>
+            </ul>
+            </div>
+            <#elseif (catNode_index)%5==0>
+            <div class="mui-slider-item">
+            <ul class="clearfix">
+                <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-zhengji"></i>${catNode.text}</a></li>
+            <#else>
+                <#if catNode_index=1>
+                    <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-fuwu"></i>${catNode.text}</a></li>
+                <#elseif catNode_index=2>
+                    <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-peijian"></i>${catNode.text}</a></li>
+                <#elseif catNode_index=3>
+                    <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${catNode.id}" id="${catNode.id}"><i class="mod-icon-ershouji iconfont icon-ershou"></i>${catNode.text}</a></li>
+                </#if>
+            </#if>
+        </#list>
+        <#if model.catNodes?size%5==0 >
+        <#else>
+        </ul>
+        </div>
+        </#if>
+        </div>
+        <div class="mui-slider-indicator">
+            <div class="mui-indicator mui-active"></div>
+            <div class="mui-indicator"></div>
+        </div>
+    </div>
+</div>

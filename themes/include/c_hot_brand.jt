@@ -1,0 +1,22 @@
+<div class="index-block" id="hot-brand">
+    <div class="index-block-tit clearfix">
+        <i class="mod-icon-left pinpai-bg fl"></i>
+        <span class="title blod fs-15 fl">热门品牌</span>
+    <#--<a class="more fr" href="#"><i class="iconfont icon-you"></i></a>-->
+    </div>
+    <!--内容开始-->
+    <div class="brand-content">
+        <ul class="brand-ads clearfix">
+            <li><@fixedSinglePicAd layout="/ec/include/c_hot_brand_img" widget="移动-首页热门品牌T1"/>
+            </li>
+            <li><@fixedSinglePicAd layout="/ec/include/c_hot_brand_img" widget="移动-首页热门品牌T2"/>
+            </li>
+        </ul>
+        <!--小图片广告-->
+        <ul class="brand-list clearfix">
+        <#list model.brandList as brand>
+            <li><a href="#"><img src="${rootImgTemp}/ec/tmpl1/brand_img.png"/></a></li>
+        </#list>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<#if (model.data)??>
+    <#list model.data as promo>
+        <@moPromoOne promoId="${promo.promoId}"/>
+    </#list>
+<script type="text/javascript" src="${jsEcRoot}/include/c_promo.js"></script>
+</#if>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户中心</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/user/user_center.js?v=${ver}"></script>
+</head>
+<body class="user-center">
+<!--<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="${vars.root}/ec/mbr/user_manage.html"><i
+            class="iconfont icon-shezhi c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <h1 class="mui-title"></h1>
+    <a class="mui-pull-right c-fff" href="${vars.root}/ec/mbr/user_msg.html"><i class="iconfont icon-msg c-fff fs-20"></i></a>
+</header>-->
+<!--底部-->
+<#include "/ec/include/footer.ftl"/>
+<div class="user-info">
+    <div class="user-info-content fix">
+        <a id="userManage" href="javascript:void(0)">
+            <div class="user-pic">
+                <img src="${ecImg}/user-img.png"/>
+            </div>
+            <span class="user-name el"></span>
+            <span class="mem_type fs_11 c_fff"><i class="iconfont icon-jinpai fs_12 c_ffe400"></i>&nbsp;金牌会员</span>
+        </a>
+        <a class="user-manager c-fff fs-12" href="${vars.root}/ec/mbr/user_manage.html">
+            帐户管理、收货地址<i class="iconfont icon-you fs-13"></i>
+        </a>
+    </div>
+</div>
+<div class="index-block bg-fff" id="my-order">
+    <div class="index-block-tit clearfix">
+        <span class="title fs_15 c-333 fl">&nbsp;&nbsp;我的订单</span>
+        <a class="more fr fs_12" href="${vars.root}/ec/mbr/user_order.html">查看全部订单<i class="iconfont fs_11">&#xe62c;</i></a>
+    </div>
+    <!--内容开始-->
+    <ul class="order-tools clearfix">
+        <li id="orderNew"><a href="${vars.root}/ec/mbr/user_order.html?status=ds-waitpay"><i class="iconfont">&#xe626;</i>待付款 <span class="mui-badge">1</span></a></li>
+        <li id="orderNotSent"><a href="${vars.root}/ec/mbr/user_order.html?status=ds-waitsend"><i class="iconfont">&#xe629;</i>待发货 <span class="mui-badge">1</span></a></li>
+        <li id="orderSent"><a href="${vars.root}/ec/mbr/user_order.html?status=ds-waitget"><i class="iconfont">&#xe627;</i>待收货 <span class="mui-badge">1</span></a></li>
+        <li id="orderUncommented"><a href="${vars.root}/ec/mbr/user_order.html?status=ds-waitassess"><i class="iconfont">&#xe62b;</i>待评价 <span class="mui-badge">1</span></a> </li>
+        <li><a href="${vars.root}/ec/mbr/refund/user_refund.html"><i class="iconfont">&#xe65c;</i>退款/售后 <span class="mui-badge">1</span> </a></li>
+    </ul>
+</div>
+<div class="index-block bg-fff" id="user-tools-list">
+    <ul class="clearfix">
+        <li><a href="${vars.root}/ec/mbr/user_bespeak_list.html"><i class="iconfont c_ff5814">&#xe63f;</i>我的议价</a></li>
+        <li><a href="${vars.root}/ec/mbr/user_ask_list.html"><i class="iconfont c_ff5814">&#xe60b;</i>我的求购</a></li>
+        <li><a href="${vars.root}/ec/mbr/user_collect.html"><i class="iconfont c_ff5814">&#xe65e;</i>关注商品</a></li>
+        <li><a href="${vars.root}/ec/mbr/user_points.html"><i class="iconfont c_ff5814">&#xe603;</i>关注店铺</a></li>
+        <li><a href="${vars.root}/ec/mbr/user_coupon.html"><i class="iconfont c_ffa414">&#xe649;</i>会员专属</a></li>
+        <li><a href="${vars.root}/ec/mbr/user_recharge.html"><i class="iconfont c_ffa414">&#xe646;</i>收货地址</a></li>
+        <li><a href="${vars.root}/ec/mbr/.html"><i class="iconfont c_ffa414">&#xe615;</i>我的商机</a></li>
+        <li><a href="${vars.root}/ec/mbr/.html"><i class="iconfont c_ffa414">&#xe625;</i>购物车</a></li>
+        <li><a href="${vars.root}/ec/mbr/.html"><i class="iconfont c_00a885">&#xe648;</i>我的积分</a></li>
+        <li><a href="${vars.root}/ec/mbr/.html"><i class="iconfont c_00a885">&#xe609;</i>我的足迹</a></li>
+        <li><a href="${vars.root}/ec/mbr/serv_order.html"><i class="iconfont c_00a885">&#xe64a;</i>我的咨询</a></li>
+        <!--
+        <li><a href="${vars.root}/ec/mbr/user_coupon_cash.html"><i class="iconfont icon-daijinquan c-fca72f"></i>代金券</a></li>
+        <li><a href="#"><i class="iconfont icon-bangzhu c-3b97f1"></i>帮助</a></li>
+        -->
+    </ul>
+
+</div>
+<div class="replace-footer"></div>
+</body>
+</html>

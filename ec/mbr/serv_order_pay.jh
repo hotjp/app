@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>付款详情</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/serv_order_pay.js?v=${ver}"></script>
+</head>
+<body class="goods-order">
+<input type="hidden" id="orderNoStr" name="orderNoStr" value="${orderNoStr}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">付款详情</h1>
+
+</header>
+<div class="goods-order-content">
+<#if !nopay>
+    <ul class="mui-table-view mui-table-view-radio">
+        <#list payTypes as payType>
+            <li class="mui-table-view-cell<#if payType_index == 0> mui-selected</#if>"
+                pay-type="${payType.id}">
+                <a class="mui-navigate-right fs-16">${payType.name}</a>
+            </li>
+        </#list>
+    </ul>
+</#if>
+</div>
+<div class="goods-order-payment">
+    <div class="goods-money">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <div class="mui-table-cell mui-col-xs-12 fs-16">需付款</div>
+                <div class="mui-table-cell mui-col-xs-2 mui-text-right fs-20" id="total-price">
+                    ￥${formatPositiveMoney(totalPayableAmount)}</div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="sub-form" style="width: 98%;margin: 0 auto;">
+<#if !nopay>
+    <input class="user-sub" id="sub-orders" type="button" value="立即支付"/>
+<#else>
+    <input class="user-sub" id="view-orders" type="button" value="订单无须支付，点击返回"/>
+</#if>
+</div>
+</body>
+</html>

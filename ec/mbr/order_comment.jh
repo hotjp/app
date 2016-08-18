@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单评价</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/order_comment.js?v=${ver}"></script>
+</head>
+<body class="assess-list">
+
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">发表评价</h1>
+</header>
+<div class="assess-list-content">
+    <div class="assess-lists-list ">
+        <ul class="mui-table-view clearfix">
+        <#list order.skus as skus>
+            <#if !skus.commented>
+                <li class="clearfix" data-type="comment" data-id="${skus.id}">
+                    <div class="assess-goods clearfix">
+                        <img src="${buildUrl(skus.iconUrl)}" onerror="errorImg(this);"/>
+                        <textarea class="fs-14" name="content" rows="" cols="" style="height:103px"
+                                  placeholder="请写下对商品的感受吧，对他人帮助很大哦"></textarea>
+                    </div>
+                    <div class="assess-photo clearfix">
+                        <@moImgUpload max="3" id="${skus_index}" templet="2" title="上传图片"/>
+                    </div>
+                    <div class="assess-star">
+                        <span class="title c-333 fs-14">描述相符</span>
+								<span class="stars">
+									<i class="iconfont icon-xing"></i>
+									<i class="iconfont icon-xing"></i>
+									<i class="iconfont icon-xing"></i>
+									<i class="iconfont icon-xing"></i>
+									<i class="iconfont icon-xing"></i>
+								</span>
+                        <input class="star_num" type="hidden" name="rank" value="5"/>
+                    </div>
+                </li>
+            </#if>
+        </#list>
+        </ul>
+    </div>
+</div>
+
+<div class="cart-tools-bar">
+    <div class="mui-checkbox mui-left fl" id="checkall">
+        <label class="c-fff fs-12">匿名评价<br/><span class="c-777">将不会显示您的用户名</span></label>
+        <input id="anonymous" name="anonymous" value="" type="checkbox">
+    </div>
+    <a class="balance fr fs-15" id="commentBtn" href="javascript:;">发表评价</a>
+
+</div>
+
+</body>
+
+</html>

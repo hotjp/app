@@ -1,0 +1,17 @@
+<div id="${catModel.id}">
+    <ul>
+    <#list (catModel.categories) as cat>
+        <#if (cat.disabled) >
+        <#else>
+            <#list cat.children as c_cat>
+                <#if cat.id==1>
+                    <li><a href="${vars.root}/ec/goods/goods_list.html?cat=${c_cat.id}" cat-id="${c_cat.id}" p-id="${cat.id}"><img src="../resources/img/ec/tmpl1/product_img.png"  onerror="errorImg(this);"/><h1>${c_cat.text}</h1></a></li>
+                <#else>
+                    <li hidden="true"><a href="${vars.root}/ec/goods/goods_list.html?cat=${c_cat.id}" cat-id="${c_cat.id}" p-id="${cat.id}"><img src="../resources/img/ec/tmpl1/product_img.png"  onerror="errorImg(this);"/><h1>${c_cat.text}</h1></a></li>
+                </#if>
+
+            </#list>
+        </#if>
+    </#list>
+    </ul>
+</div>

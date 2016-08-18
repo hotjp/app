@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>充值</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_recharge.js?v=${ver}"></script>
+</head>
+<body class="user-refund">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">充值</h1>
+<#include "/ec/include/i_user.ftl"/>
+</header>
+<br/>
+<br/>
+<br/>
+<a class="balance fr fs-15" href="javascript:void(0)" id="recharge">充值</a>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<script type="text/javascript" src="${resRoot}/js/module/kissy/kissy-form-uploader/kissy.js"></script>
+<script type="text/javascript" src="${resRoot}/js/comm/kissyUtil.js?v=${ver}"></script>
+<input type="hidden" name="imageUrls${model.id}" id="imageUrls${model.id}"/>
+<div class="mui-card fs-14" id="uploadForm">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell no-bg fs-14 c-777">
+            <i class="iconfont icon-tianjiazhaopian fs-23 fl"></i>
+            <input style="display: none" class="g-u upload_img fs-14" id="J_UploaderBtn" name="Filedata" type="image-uploader" value="点击上传"
+                   queueTarget="#J_UploaderQueue"
+                   action="${vars.root}/comm/upload/kfUploadPic.do" urlsInputName="imageUrls${model.id}"
+                   required maxSize="${model.maxSize}" max="${model.max}" allowExts="${model.allowExts}"
+                   restoreHook="#J_ImageUploaderRestore">
+            <span class="tips fr">${model.title}，还可上传<em id="J_UploadCount">${model.max}</em>张</span>
+        </li>
+    </ul>
+</div>
+<div class="card-title fs-14">
+    <ul id="J_UploaderQueue" class="grid"></ul>
+</div>
+
+<script type="text/javascript" src="${jsEcRoot}/include/c_img_upload_mobile1.js"></script>
+

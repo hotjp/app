@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <title>充值中心</title>
+        <#include "/temp/htmlHead.ftl"/>
+        <#--<script type="text/javascript" src="../resources/html/ec/js/user_credit.js"></script>-->
+        <script type="text/javascript" src="${jsEcRoot}/mbr/recharge_center.js?"></script>
+    </head>
+    <body class="user-cerdit user-recharge mui-fullscreen">
+        <header id="header" class="mui-bar mui-bar-nav trans">
+            <a class="mui-pull-left c-fff" href="user_center.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+            <h1 class="mui-title c-fff fs-17">充值中心</h1>
+        </header>
+        <div class="user-info fs-50 c-fff" style="line-height: 70%;padding-top: 20px;">
+            <p class="fs-12" style="line-height: 30px;">账户余额：</p>
+            ${amount}<span class="fs-15"> 元</span>
+            <p class="fs-12">账户余额等同于预付款，请放心使用！</p>
+        </div>
+        <style type="text/css">
+            .user-recharge{
+                position: relative;
+                padding-top: 44px;
+            }
+            .user-recharge .user-info{
+                position: static;
+            }
+        	.recharge-amount{
+                width: 100%;
+                height: 100%;
+        	}
+        	.recharge-amount .recharge-amount-list{
+        	    width: 100%;
+        	    background-color: #fff;
+        	    padding-bottom: 14px;
+        	    border-bottom: solid 1px #dbdbdb;
+        	}
+        	.recharge-amount ul li.recharge-btn{
+        	    display: block;
+        	    float: left;
+        	    color: #000;
+    	        width: 96px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                text-align: center;
+                border: solid 1px #dbdbdb;
+                margin: 10px 0 0px 8px;
+                border-radius: 5px;
+        	}
+        	.recharge-amount ul li.on{
+        	    background-color: #ffcf00;
+        	}
+        	.recharge-custom{
+        	    border-bottom: solid 1px #c7c7c7;
+        	    border-top: solid 1px #c7c7c7;
+                background-color: #e49e07;
+        	}
+        	.recharge-custom p,
+        	.recharge-custom input{
+        	    height: 34px;
+                line-height: 34px;
+        	}
+        	.recharge-custom p{
+        	    width: 90px;
+        	    background-color: rgba(0,0,0,0);
+        	    text-align: right;
+        	    color: #000;
+        	}
+        	.recharge-custom input{
+        	    width: 230px;
+        	    border: none;
+        	    margin: 0;
+        	    padding: 0;
+        	}
+        	.recharge-bottom{
+        	    position: absolute;
+        	    bottom: 0;
+        	    border-top: solid 1px #c7c7c7;
+        	    width: 100%;
+        	}
+        	.recharge-bottom p,
+        	.recharge-bottom span,
+        	.recharge-bottom a{
+        	    float: left;
+        	    height: 50px;
+        	    line-height: 50px;
+        	    background-color: #fff;
+        	    margin: 0;
+        	    padding: 0;
+        	    border: none;
+        	    font-size: 12px;
+        	}
+        	.recharge-bottom p{
+                width: 16%;
+                text-align: right;
+                color: #000;
+            }
+            .recharge-bottom span{
+                display: block;
+                width: 54%;
+                text-align: left;
+                color: #fb502c;
+                font-weight: bold;
+                font-size: 14px;
+            }
+            .recharge-bottom a{
+                width: 30%;
+                background-color: #ffcf00;
+                text-align: center;
+            }
+        </style>
+        <div class="recharge-amount">
+            <div class="recharge-amount-list">
+            	<ul class="clearfix">
+                    <#list rechargeList as recharge>
+                        <#if recharge_index == 0>
+                            <li class="recharge-btn on" id="${recharge.rechargeId}">${recharge.facePrice}</li>
+                        <#else>
+                            <li class="recharge-btn" id="${recharge.rechargeId}">${recharge.facePrice}</li>
+                        </#if>
+                    <#--<li class="recharge-btn on">20元</li>
+                    <li class="recharge-btn">30元</li>
+                    <li class="recharge-btn">50元</li>
+                    <li class="recharge-btn">100元</li>
+                    <li class="recharge-btn">200元</li>
+                    <li class="recharge-btn">300元</li>
+                    <li class="recharge-btn">500元</li>
+                    <li class="recharge-btn">800元</li>-->
+                    </#list>
+                </ul>
+            </div>
+            <div class="recharge-custom clearfix">
+                <p class="fl fs-15" style="color: white">其他金额：</p>
+                <input class="fr fs-15 js_recharge" type="number" id="otherFee" value="" />
+            </div>
+
+        </div>
+        <div class="recharge-bottom clearfix">
+            <p>应付：</p>
+            <span class="recharge-result" id="resultId">${rechargeList[0].facePrice}元</span>
+            <input type="hidden" id="rechargeId" value="${rechargeList[0].rechargeId}"/>
+            <#--<a href="#">立即充值</a>-->
+            <a class="balance fr fs-15" id="recharge">立即充值</a>
+        </div>
+        <script type="text/javascript">
+        	$(function(){
+        	    $("body").on("tap",".recharge-btn",function(){           //点击选中金额
+        	       var num = $(this).html();
+        	      if ($(this).hasClass("on")) {
+        	          $(this).removeClass("on");
+                      $("#rechargeId").val(null);
+        	      } else{
+        	      	  $(this).addClass("on").siblings().removeClass("on");
+                      $("#rechargeId").val(this.id);
+                      $("#otherFee").val(null);
+        	      };
+        	        $(".recharge-result").html(num+"元");
+
+        	    });
+                $("body").on("focus",".js_recharge",function(){
+                    $("body .recharge-btn").removeClass("on");
+                  /**
+                   20160506修改*/
+                   // $(".recharge-bottom").hide();
+                    $(".recharge-result").html("元");
+                    $("#rechargeId").val(null);
+                });
+                $("body").on("blur",".js_recharge",function(){
+                    var numNow = $("#otherFee").val();
+                    $(".recharge-result").html(numNow +"元");
+                    $(".recharge-bottom").show();
+                });
+                $(".js_recharge").bind('input propertychange',function(){
+                    var numNow = $(this).val();
+                    $(".recharge-result").html(numNow +"元");
+                })
+        	});
+        </script>
+    </body>
+
+</html>

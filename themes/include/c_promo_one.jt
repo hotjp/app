@@ -1,0 +1,59 @@
+<#if (model.promo)?? && model.goods?size gt 0>
+<div class="index-block bg-fff" id="flash-sale" data-type="promo" data-id="${model.promo.id}">
+    <input type="hidden" name="startTime" value="${model.promo.startTime}">
+    <input type="hidden" name="endTime" value="${model.promo.endTime}">
+    <input type="hidden" name="type" value="${model.promo.type.value}">
+    <input type="hidden" name="seckill" value="${model.isSeckill}">
+    <input type="hidden" name="promoName" value="${model.promo.name}">
+
+    <div class="index-block-tit clearfix">
+        <i class="mod-icon-left miaosha-bg fl"></i>
+        <span class="title blod fs-14 fl" data-type="promoType">
+        </span>
+
+        <div class="timer fs-12 fl">
+            <i class="hour">00</i>:&nbsp;
+            <i class="min">00</i>:&nbsp;
+            <i class="sec">00</i>
+        </div>
+        <a class="more fr" href="${vars.root}/ec/promo/${model.promo.id}.html">
+            <i class="iconfont icon-you"></i>
+            <i class="more-info fs-11 c-fff miaosha-bg2 b-r-4" data-type="promoName">${model.promo.name}</i>
+        </a>
+    </div>
+    <!--内容开始-->
+    <div class="active-content clearfix">
+        <div class="act-left fl">
+            <a href="${vars.root}/ec/goods/${model.goods[0].goods.id}.html">
+                <img data-lazyload="${buildUrl(model.goods[0].goods.iconUrl)}.200x200.jpg"/>
+
+                <div class="item-info">
+                    <span class="title fs-12">${model.goods[0].goods.name}</span>
+                    <span class="sale-price fs-12 c-ff5b53">￥${formatPositiveMoney(model.goods[0].minPrice)}</span>
+                    <span class="old-price fs-11">￥${formatPositiveMoney(model.goods[0].goods.minPrice)}</span>
+                </div>
+            </a>
+        </div>
+        <div class="act-right fr">
+            <ul>
+                <#list model.goods as goods>
+                    <#if (goods_index==1 || goods_index==2) && goods.minPrice??>
+                        <li>
+                            <a class="clearfix" href="${vars.root}/ec/goods/${goods.goods.id}.html">
+                                <img data-lazyload="${buildUrl(goods.goods.iconUrl)}.200x200.jpg"/>
+
+                                <div class="item-info">
+                                    <span class="title fs-12">${goods.goods.name}</span>
+                                    <span class="sale-price fs-12 c-ff5b53">￥${formatPositiveMoney(goods.minPrice)}</span><br/>
+                                    <span class="old-price fs-11">￥${formatPositiveMoney(goods.goods.minPrice)}</span>
+                                </div>
+                            </a>
+                        </li>
+                    </#if>
+                </#list>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</#if>

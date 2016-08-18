@@ -1,0 +1,3 @@
+<a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+        class="fs-10 c-fff"></span></a>
+<script type="text/javascript" src="${jsEcRoot}/include/i_back.js?v=${ver}"></script>

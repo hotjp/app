@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/*APP css*/
+
+.index #footer,.sort #footer,.goods_cart #footer,.user_center #footer{ display: none; }
+.goods-cart .cart-tools-bar{ bottom: 0; }
+.sort .sort-list{ padding-bottom: 0; }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>收货地址管理</title>
+<#include "/temp/htmlHead.ftl"/>
+<#include "/temp/validate.ftl"/>
+    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_address_add.js?v=${ver}"></script>
+</head>
+<body class="user-address-add">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <#include "/ec/include/i_back.ftl"/>
+    <h1 class="mui-title c-fff fs-17">增加收货地址</h1>
+
+</header>
+<div class="user-address-addform appfrom" style="height: 100%;margin-top: 0;">
+    <form id="save-address">
+        <input type="hidden" id="url" name="url" value="${url}">
+        <input type="hidden" id="provinceId" name="provinceId" value="${model.provinceId}"/>
+        <input type="hidden" id="cityId" name="cityId" value="${model.cityId}"/>
+        <input type="hidden" id="districtId" name="districtId" value="${model.districtId}"/>
+        <input type="hidden" id="provinceName" name="provinceName" value="${model.provinceName}"/>
+        <input type="hidden" id="cityName" name="cityName" value="${model.cityName}"/>
+        <input type="hidden" id="districtName" name="districtName" value="${model.districtName}"/>
+        <input type="hidden"  id="id" name="id" value="${model.id!'0'}"/>
+        <input type="hidden" id="status" name="status" value="${model.status}"/>
+        <dl class="mui-input-row">
+            <dt><i class="c-ff5b53">*</i>收货人</dt>
+            <dd><input class="user-ipt mui-input-clear" type="text" name="contactName" id="contactName" maxlength="30" value="${model.contactName}" placeholder="收货人姓名"/></dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt>邮政编码</dt>
+            <dd><input class="user-ipt mui-input-clear" type="tel" name="postCode" id="postCode" maxlength="6" value="${model.postCode}" placeholder="如不确认可输入000000"/></dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt><i class="c-ff5b53">*</i>所在地区</dt>
+            <dd id="showCityPicker3"><input class="user-ipt mui-input-clear" id="cityResult3" type="text" name="cityResult3" id="" value="" placeholder="省、市、区县"/>
+            </dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt><i class="c-ff5b53">*</i>详细地址</dt>
+            <dd><input class="user-ipt mui-input-clear" type="text" name="address" id="address"  maxlength="100" value="${model.address}" placeholder="精确到门牌号"/></dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt><i class="c-ff5b53">*</i>手机号码</dt>
+            <dd><input class="user-ipt mui-input-clear" type="tel" name="contactTel" id="contactTel"  maxlength="11" value="${model.contactTel}" placeholder="常用手机号码" /></dd>
+        </dl>
+        <dl class="mui-input-row">
+            <dt>备用手机</dt>
+            <dd><input class="user-ipt mui-input-clear" type="tel" name="contactTel2" id="contactTel2"  maxlength="11" value="${model.contactTel2}" placeholder="备用手机号码" /></dd>
+        </dl>
+        <div class="user-protocol">
+            <div class="mui-checkbox mui-left">
+                <input id="chk" name="checkDefault" value="0" type="checkbox" >
+                <label for="chk"class="c-777 fs-12">设为默认地址</label>
+
+            </div>
+        </div>
+        <div class="sub-form">
+            <input class="user-sub" type="submit" value="保存并使用"/>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    (function($, doc) {
+        $.init();
+        $.ready(function() {
+            //					//级联示例
+            listArea(function(result){
+                var cityPicker3 = new $.PopPicker({
+                    layer: 3
+                });
+                cityPicker3.setData(result);
+                var showCityPickerButton = doc.getElementById('showCityPicker3');
+                var cityResult3 = doc.getElementById('cityResult3');
+                showCityPickerButton.addEventListener('tap', function(event) {
+                    cityPicker3.show(function(items) {
+                        cityResult3.value = (items[0] || {}).text + " " + (items[1] || {}).text + " " + (items[2] || {}).text;
+                        doc.getElementById('provinceId').setAttribute("value",(items[0] || {}).value);
+                        doc.getElementById('cityId').setAttribute("value",(items[1] || {}).value);
+                        doc.getElementById('districtId').setAttribute("value",(items[2] || {}).value);
+                        doc.getElementById('provinceName').setAttribute("value",(items[0] || {}).text);
+                        doc.getElementById('cityName').setAttribute("value",(items[1] || {}).text);
+                        doc.getElementById('districtName').setAttribute("value",(items[2] || {}).text);
+                        //返回 false 可以阻止选择框的关闭
+                        //return false;
+                    });
+                }, false);
+            });
+
+        });
+    })(mui, document);
+</script>
+</body>
+</html>

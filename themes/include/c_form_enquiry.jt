@@ -1,0 +1,36 @@
+<#include "/temp/validate.ftl"/>
+<!-- 询价 -->
+<div id="enq-form" class="appfrom">
+    <form id="form-enquiry">
+        <dl class="mui-input-row fs-13">
+            <dt>您的姓名：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" type="text" name="contact" maxlength="20" required
+                   value="${vars.member.nickName}" placeholder="输入您的姓名"/>
+            </dd>
+        </dl>
+        <dl class="mui-input-row fs-13">
+            <dt>手机号码：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" type="tel" name="contactTel" maxlength="20" validator="^\s*\d{11}\s*$"
+                   required value="${vars.member.mobile}" placeholder="输入联系电话"/>
+            </dd>
+        </dl>
+        <dl class="mui-input-row fs-13" id="showCityPicker3Enquiry">
+            <dt> 购车地区：</dt>
+            <dd>
+            <input class="user-ipt mui-input-clear fs-13" id="cityResult3Enquiry" type="text" name="" maxlength="20" required
+                   value="" placeholder="选择购车地区"/>
+            </dd>
+        </dl>
+        <dl class="user-textarea fs-13">
+            <dt> 询价留言：</dt>
+            <dd>
+            <textarea class="user-ipt mui-input-clear fs-13" type="tel" name="remark" maxlength="100" required
+                   value="" placeholder="输入询价留言"></textarea>
+            </dd>
+        </dl>
+        <dl class="item_record"></dl>
+    </form>
+</div>
+<script type="text/javascript" src="${jsEcRoot}/include/c_form_enquiry.js"></script>

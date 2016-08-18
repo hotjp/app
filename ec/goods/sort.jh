@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>分类</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/goods/sort.js?v=${ver}"></script>
+</head>
+<body class="sort">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+<#include "/ec/include/search.ftl"/>
+    <#include "/ec/include/i_index.ftl"/>
+</header>
+<!--底部-->
+<#include "/ec/include/footer.ftl"/>
+<div class="sort-list">
+    <div class="sort-left fl">
+        <ul>
+        <#list catNodes as catNode>
+            <#if (catNode.id=1) >
+                <li class="on"><a href="#" id="${catNode.id}">${catNode.text}</a></li>
+            <#else>
+                <li><a href="#" id="${catNode.id}">${catNode.text}</a></li>
+            </#if>
+        </#list>
+        </ul>
+    </div>
+    <div class="sort-right clearfix fr">
+
+        <ul class="mui-table-view">
+
+        <#list catNodes as cat>
+            <#if (cat.disabled) >
+            <#else>
+                <li class="mui-table-view-cell" <#if cat.id gt 1> hidden="hidden"</#if>>
+                    <a href="${vars.root}/ec/goods/goods_list.html?cat=${cat.id}" cat-id="${cat.id}">
+                        <!--<img src="../resources/img/ec/tmpl1/product_img.png"  onerror="errorImg(this);"/>-->
+                        <h3 class="blod">&gt;查看分类全部商品</h3>
+                    </a>
+                </li>
+                <#list cat.children as c_cat>
+                    <li class="mui-table-view-cell" <#if cat.id gt 1> hidden="hidden"</#if>>
+                        <a href="${vars.root}/ec/goods/goods_list.html?cat=${c_cat.id}" cat-id="${c_cat.id}"
+                           p-id="${cat.id}">
+                            <!--<img src="../resources/img/ec/tmpl1/product_img.png"  onerror="errorImg(this);"/>-->
+                            <h3>${c_cat.text}</h3>
+                        </a>
+                    </li>
+                </#list>
+            </#if>
+        </#list>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

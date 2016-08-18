@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>订单详情</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/mbr/user_order_info.js?v=${ver}"></script>
+</head>
+<body class="goods-order">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff">订单详情</h1>
+</header>
+<div class="goods-order-content">
+    <input type="hidden" id="orderId" name="orderId" value="${order.id}">
+
+    <div class="order-number bg-fff fs-14" data-no="${order.no}">
+        订单号：${order.no}
+    </div>
+    <div class="order-number bg-fff fs-14">
+        <span class="fl c-777">${order.time}</span>
+        <span class="fr c-ff5b53">
+        <#if order.orderStatus.value==0>
+            新订单
+        <#elseif order.orderStatus.value==-30>
+            已退货
+        <#elseif order.orderStatus.value==-20>
+            退货申请中
+        <#elseif order.orderStatus.value==-10>
+            已取消
+        <#elseif order.orderStatus.value==10>
+            款到发货未支付
+        <#elseif order.orderStatus.value==20>
+            待发货
+        <#elseif order.orderStatus.value==30>
+            已发货
+        <#elseif order.orderStatus.value==40>
+            已签收
+        </#if>
+
+        </span>
+
+    </div>
+    <!--收货地址-->
+    <div class="order-address">
+        <i class="iconfont icon-biaozhu"></i>
+
+        <div class="address-info fs-14">
+            <a href="javascript:void(0)">
+                收货人:${order.contactName}
+                <span class="fr">${order.contactTel}</span>
+
+                <p class="c-333 fs-13">
+                    收货地址:${order.provinceName}${order.cityName}${order.districtName}${order.address}</p>
+            </a>
+        </div>
+    </div>
+    <!--店铺-->
+    <div class="shop-order">
+        <div class="shop-title fs-12">
+            <a href='${vars.root}/ec/shop/${order.shopId}.html'>
+                <i class="iconfont icon-dianpu c-9c4b0f"></i>
+            ${order.shopName}
+            </a>
+        </div>
+        <ul class="goods-list">
+        <#list order.skus as sku>
+            <li class="clearfix">
+                <a href='${vars.root}/ec/goods/${sku.goodsId}.html'>
+                    <img class="fl" src="${buildUrl(sku.iconUrl)}" onerror="errorImg(this);"/>
+                </a>
+
+                <div class="goods-info fl">
+                    <p class="c-333 fs-13">
+                    ${sku.skuName}
+                    </p>
+
+                    <p class="c-999 fs-11">
+                    ${sku.skuPropTextList}
+                    </p>
+                    <span class="fs-13 price">¥${formatPositiveMoney(sku.buyPrice)}</span>
+                    <span class="fs-13 fr">
+            <#if orderRefundable>
+                <a class="refund-btn"
+                   href="${vars.root}/ec/mbr/refund/user_refund_start.html?order=${order.no}&sku=${sku.id}">申请退款</a>
+            </#if>
+                        &nbsp;x${sku.buyQty}</span>
+                </div>
+
+            </li>
+        </#list>
+
+
+        </ul>
+    <#if order.receiveTime??>
+        <div class="shop-balance clearfix fs-13">
+            收货时间
+            <span class="fr">${order.receiveTime}</span>
+        </div>
+    </#if>
+        <div class="shop-balance clearfix fs-13">
+            <span class="fr">应支付金额: <i class="fs-13">￥${formatPositiveMoney(order.payableAmount)}</i></span>
+            <span>共${order.skus?size}件商品</span>
+        </div>
+    </div>
+</div>
+
+<div class="shop-order fs-12" style="padding: 5px">
+<#if order.goodsPromoAmount != 0>
+    商品合计(促销金额)：￥${formatPositiveMoney(order.goodsPromoAmount)}<br/>
+</#if>
+<#if order.deliveryFeeAmount != 0>
+    运费：￥${formatPositiveMoney(order.deliveryFeeAmount)}<br/>
+</#if>
+<#if order.shopCashCouponDiffAmount != 0>
+    优惠券抵扣金额：￥${formatPositiveMoney(order.shopCashCouponDiffAmount)}<br/>
+</#if>
+<#if order.shopBalanceDiffAmount != 0>
+    账户余额抵扣金额：￥${formatPositiveMoney(order.shopBalanceDiffAmount)}<br/>
+</#if>
+<#if order.shopCreditsDiffAmount != 0>
+    店铺信用额度抵扣金额：￥${formatPositiveMoney(order.shopCreditsDiffAmount)}<br/>
+</#if>
+<#if order.totalAmount != 0>
+    店铺合计金额：￥${formatPositiveMoney(order.totalAmount)}<br/>
+</#if>
+<#if order.platformCashCouponDiffAmount != 0>
+    平台优惠券抵扣金额：￥${formatPositiveMoney(order.platformCashCouponDiffAmount)}<br/>
+</#if>
+<#if order.platformPointCount != 0>
+    使用积分数量：${formatPositiveMoney(order.platformPointCount)}<br/>
+</#if>
+<#if order.platformPointDiffAmount != 0>
+    积分抵扣金额：￥${formatPositiveMoney(order.platformPointDiffAmount)}<br/>
+</#if>
+<#if order.platformBalanceDiffAmount != 0>
+    平台账户余额抵扣金额：￥${formatPositiveMoney(order.platformBalanceDiffAmount)}<br/>
+</#if>
+<#if order.platformCreditsDiffAmount != 0>
+    平台信用额度抵扣金额：￥${formatPositiveMoney(order.platformCreditsDiffAmount)}<br/>
+</#if>
+<#if order.deliveryTime??>
+    发货时间：${order.deliveryTime}<br/>
+    物流公司：${order.logiCompanyName}><br/>
+    物流单号：${order.logiSn}<br/>
+    物流联系方式：${order.logiContact}<br/>
+</#if>
+<#if order.receiveTime??>
+    收货时间：${order.receiveTime?string("yyyy-MM-dd HH:mm")}<br/>
+</#if>
+<#if order.payTime??>
+    支付金额：${formatPositiveMoney(order.paidAmount)}<br/>
+    支付状态：${order.payStatusName}<br/>
+    支付时间：${order.payTime?string("yyyy-MM-dd HH:mm")}<br/>
+</#if>
+</div>
+
+<div style="height: 45px;"></div>
+<div class="order-tools-bar">
+<#if order.orderStatus.value==0>
+    <#if !orderPaymentExpired>
+        <a class="red-border-btn fs-12 fr js-pay" href="javascript:void(0)">付款</a>
+    </#if>
+    <a class="gry-border-btn fs-12 fr js-cancel" href="javascript:void(0)">取消订单</a>
+<#elseif order.orderStatus.value==-30>
+<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+<#elseif order.orderStatus.value==-20>
+
+<#elseif order.orderStatus.value==-10>
+<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+<#elseif order.orderStatus.value==10>
+
+<#elseif order.orderStatus.value==20>
+<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">提醒发货</a>-->
+<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
+<#elseif order.orderStatus.value==30>
+    <a class="red-border-btn fs-12 fr js-rec" href="javascript:void(0)">确认收货</a>
+<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
+<#elseif order.orderStatus.value==40>
+    <#assign isCommented=true>
+    <#list order.skus as sku>
+        <#if sku.commented == false>
+            <#assign isCommented=false>
+        </#if>
+    </#list>
+    <#if  !isCommented>
+        <a class="red-border-btn fs-12 fr" data-btn="comment" href="javascript:void(0)">评价</a>
+    </#if>
+<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
+<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+</#if>
+</div>
+</body>
+</html>

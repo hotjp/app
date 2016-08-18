@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>商品评价</title>
+<#include "/temp/htmlHead.ftl"/>
+    <script type="text/javascript" src="${jsEcRoot}/goods/goods_comment.js?v=${ver}"></script>
+</head>
+<body class="goods-comment">
+<input type="hidden" id="goodsId" name="goodsId" value="${goodsId}">
+<header id="header" class="mui-bar mui-bar-nav trans">
+    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+            class="fs-10 c-fff"></span></a>
+
+    <h1 class="mui-title c-fff fs-17" >商品评价(<i>20</i>)</h1>
+    <a class="mui-pull-right c-fff" href="javascript:;"><i class="iconfont icon-shouye c-fff fs-20"></i></a>
+</header>
+<div class="goods-comment-content mui-slider mui-fullscreen">
+    <div class="comment-title">
+        <ul class="mui-slider-indicator clearfix">
+            <li data-type="all" class="mui-indicator fs-12 mui-active">全部<span class="fs-13"></span></li>
+            <li data-type="high" class="mui-indicator fs-12">好评<span class="fs-13"></span></li>
+            <li data-type="medium" class="mui-indicator fs-12">中评<span class="fs-13"></span></li>
+            <li data-type="low" class="mui-indicator fs-12">差评<span class="fs-13"></span></li>
+            <li data-type="img" class="mui-indicator fs-12">有图<span class="fs-13"></span></li>
+        </ul>
+    </div>
+
+    <div class="comment-content mui-slider-group">
+        <!--全部-->
+        <div class="mui-slider-item mui-control-content mui-active">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="all">
+                    <ul class="mui-table-view">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="high">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="medium">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="low">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-slider-item mui-control-content">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll" id="img">
+                    <ul class="mui-table-view">
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--评价结束-->
+
+</body>
+</html>
