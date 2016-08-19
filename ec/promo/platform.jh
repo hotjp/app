@@ -2,15 +2,15 @@
 <html>
 <head>
     <title>${promo.name!"促销活动"}</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/promo/platform.js?v=${ver}"></script>
 </head>
 <body class="active-list" style="background-color:${promo.pageBackgroundColor} ;">
 <input type="hidden" id="startTime" name="startTime" value="${promo.startTime}">
 <input type="hidden" id="endTime" name="endTime" value="${promo.endTime}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-<#include "/ec/include/i_back.ftl"/>
-<#include "/ec/include/search.ftl"/>
+<link rel="import" href="/themes/include/i_back.jt?__inline">
+<link rel="import" href="/themes/include/search.jt?__inline">
 </header>
 <div class="tools-bar clearfix fs-13">
     <div class="goods-sort fl">

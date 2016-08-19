@@ -1,4 +1,4 @@
-<#include "/temp/validate.ftl"/>
+<link rel="import" href="/themes/temp/validate.jt?__inline">
 <!-- 询价 -->
 <div id="enq-form" class="appfrom">
     <form id="form-enquiry">

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>我的积分</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/user_points.js?v=${ver}"></script>
 </head>
 <body class="user-cerdit">

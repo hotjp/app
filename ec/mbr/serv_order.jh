@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>服务订单</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/user_recharge.js?v=${ver}"></script>
     <script type="text/javascript">
         $(function () {
@@ -22,7 +22,7 @@
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">服务订单</h1>
-<#include "/ec/include/i_user.ftl"/>
+<link rel="import" href="/themes/include/i_user.jt?__inline">
 </header>
 <br/>
 <br/>

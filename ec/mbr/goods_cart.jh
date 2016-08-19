@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>购物车</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/goods_cart.js?v=${ver}"></script>
 </head>
 <body class="goods-cart">
@@ -10,10 +10,10 @@
     <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff fs-17">购物车(<span id="goods-cart-num">${cartSize}</span>)</h1>
-<#--<#include "/ec/include/i_index.ftl"/>-->
+<#--<link rel="import" href="/themes/include/i_index.jt?__inline">-->
 </header>
 <!--底部-->
-<#include "/ec/include/footer.ftl"/>
+<link rel="import" href="/themes/include/footer.jt?__inline">
 <!--购物车列表-->
 <div class="goods-cart-list">
     <!--店铺购物车-->

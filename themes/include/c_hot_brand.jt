@@ -7,9 +7,9 @@
     <!--内容开始-->
     <div class="brand-content">
         <ul class="brand-ads clearfix">
-            <li><@fixedSinglePicAd layout="/ec/include/c_hot_brand_img" widget="移动-首页热门品牌T1"/>
+            <li><@fixedSinglePicAd layout="/themes/include/c_hot_brand_img" widget="移动-首页热门品牌T1"/>
             </li>
-            <li><@fixedSinglePicAd layout="/ec/include/c_hot_brand_img" widget="移动-首页热门品牌T2"/>
+            <li><@fixedSinglePicAd layout="/themes/include/c_hot_brand_img" widget="移动-首页热门品牌T2"/>
             </li>
         </ul>
         <!--小图片广告-->

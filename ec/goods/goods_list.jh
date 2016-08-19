@@ -2,14 +2,14 @@
 <html>
 <head>
     <title>商品列表</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/goods/goods_list.js?v=${ver}"></script>
 </head>
 <body class="goods-list">
 <input type="hidden" id="brand" name="brand" value="${brand}">
 <input type="hidden" id="modelId" name="modelId" value="${modelId}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-<#include "/ec/include/i_back.ftl"/>
+<link rel="import" href="/themes/include/i_back.jt?__inline">
     <h1 class="mui-title">
         <input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索商品关键词"/>
     </h1>

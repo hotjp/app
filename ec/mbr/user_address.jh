@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>选择收货地址</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/user_address.js?v=${ver}"></script>
 </head>
 <body class="user-address">

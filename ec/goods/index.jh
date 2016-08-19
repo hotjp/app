@@ -2,27 +2,27 @@
 <html>
 <head>
     <title>${sysTitle}</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/goods/index.js?v=${ver}"></script>
 
 </head>
 <body class="index">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-<#include "/ec/include/search.ftl"/>
+<link rel="import" href="/themes/include/search.jt?__inline">
 </header>
 <!--底部-->
-<#include "/ec/include/footer.ftl"/>
-<@slider widget="移动-首页顶部轮播" layout="/ec/include/c_flexslider"/>
+<link rel="import" href="/themes/include/footer.jt?__inline">
+<@slider widget="移动-首页顶部轮播" layout="/themes/include/c_flexslider"/>
 <!--分类-->
-<@moCatNav widget="移动-首页模块导航" layout="/ec/include/c_cat_nav" />
+<@moCatNav widget="移动-首页模块导航" layout="/themes/include/c_cat_nav" />
 
 <!--广告-->
 <div class="ads">
-<@fixedSinglePicAd layout="/ec/include/c_hot_img" widget="移动-首页活动"/>
+<@fixedSinglePicAd layout="/themes/include/c_hot_img" widget="移动-首页活动"/>
 </div>
 <!--秒杀-->
-<@moPromo layout="/ec/include/c_promo" widget="移动-首页促销"/>
+<@moPromo layout="/themes/include/c_promo" widget="移动-首页促销"/>
 
 <!--热门市场-->
 <@moHotGoods  limit="10"/>
@@ -30,7 +30,7 @@
 <!--广告-->
 <div class="index-block">
     <div class="ads">
-    <@fixedSinglePicAd layout="/ec/include/c_hot_img" widget="移动-首页热门"/>
+    <@fixedSinglePicAd layout="/themes/include/c_hot_img" widget="移动-首页热门"/>
     </div>
 </div>
 

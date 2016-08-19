@@ -1,4 +1,4 @@
-<#include "/temp/validate.ftl"/>
+<link rel="import" href="/themes/temp/validate.jt?__inline">
 <!-- 预约 -->
 <dl class="item_info item_price clearfix mui-input-row bg-fff">
     <label>价格:</label>

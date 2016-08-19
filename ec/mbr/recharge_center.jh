@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
         <title>充值中心</title>
-        <#include "/temp/htmlHead.ftl"/>
+        <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
         <#--<script type="text/javascript" src="../resources/html/ec/js/user_credit.js"></script>-->
         <script type="text/javascript" src="${jsEcRoot}/mbr/recharge_center.js?"></script>
     </head>

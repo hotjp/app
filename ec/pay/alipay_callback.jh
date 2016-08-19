@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>支付宝</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript">
         setTimeout(function(){
             toIndexPage();

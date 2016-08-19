@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>商品列表</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/shop/shop_list.js?v=${ver}"></script>
 </head>
 <body class="shop-list">
 <header id="header" class="mui-bar mui-bar-nav trans">
     <#--<a class="mui-pull-left c-fff" href="sort.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>-->
-    <#include "/ec/include/i_back.ftl"/>
+    <link rel="import" href="/themes/include/i_back.jt?__inline">
     <h1 class="mui-title"><input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索店铺关键词" /></h1>
-    <#include "/ec/include/i_index.ftl"/>
+    <link rel="import" href="/themes/include/i_index.jt?__inline">
     <#--<a class="mui-pull-right c-fff" href="user_msg.html"><i class="iconfont icon-msg c-fff fs-20"></i></a>-->
 </header>
 <div class="tools-bar clearfix fs-13">

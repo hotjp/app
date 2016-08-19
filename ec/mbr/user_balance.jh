@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>我的钱包</title>
-		<#include "/temp/htmlHead.ftl"/>
+		<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
         <script type="text/javascript" src="${jsEcRoot}/mbr/user_balance.js?v=${ver}"></script>
 	</head>
 	<body class="user-cerdit">

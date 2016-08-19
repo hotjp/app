@@ -2,13 +2,13 @@
 <html>
 <head>
     <title>收货地址管理</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script  type="text/javascript" src="${jsEcRoot}/mbr/user_address_edit.js?v=${ver}"></script>
 </head>
 <body class="user-address edit">
 <input type="hidden" id="url" name="url" value="${url}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <#include "/ec/include/i_back.ftl"/>
+    <link rel="import" href="/themes/include/i_back.jt?__inline">
     <h1 class="mui-title c-fff fs-17">管理收货地址</h1>
 </header>
 <div class="user-address-content">

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>用户中心</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/user_manage.js?v=${ver}"></script>
 </head>
 <body class="user-manage">

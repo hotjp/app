@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>确认订单</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/goods_order.js?v=${ver}"></script>
 </head>
 <body class="goods-order">

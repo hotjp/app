@@ -1,5 +1,5 @@
 <#if MO_CLIENT == "wx">
-    <#include "/temp/wxHead.ftl"/>
+    <link rel="import" href="/themes/temp/wxHead.jt?__inline">
 <#else>
 
 </#if>

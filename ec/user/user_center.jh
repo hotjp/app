@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>用户中心</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/user/user_center.js?v=${ver}"></script>
 </head>
 <body class="user-center">
@@ -13,7 +13,7 @@
     <a class="mui-pull-right c-fff" href="${vars.root}/ec/mbr/user_msg.html"><i class="iconfont icon-msg c-fff fs-20"></i></a>
 </header>-->
 <!--底部-->
-<#include "/ec/include/footer.ftl"/>
+<link rel="import" href="/themes/include/footer.jt?__inline">
 <div class="user-info">
     <div class="user-info-content fix">
         <a id="userManage" href="javascript:void(0)">

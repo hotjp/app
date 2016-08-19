@@ -2,18 +2,18 @@
 <html>
 <head>
     <title>分类</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/goods/sort.js?v=${ver}"></script>
 </head>
 <body class="sort">
 <header id="header" class="mui-bar mui-bar-nav trans">
     <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
-<#include "/ec/include/search.ftl"/>
-    <#include "/ec/include/i_index.ftl"/>
+<link rel="import" href="/themes/include/search.jt?__inline">
+    <link rel="import" href="/themes/include/i_index.jt?__inline">
 </header>
 <!--底部-->
-<#include "/ec/include/footer.ftl"/>
+<link rel="import" href="/themes/include/footer.jt?__inline">
 <div class="sort-list">
     <div class="sort-left fl">
         <ul>

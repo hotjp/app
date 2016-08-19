@@ -3,15 +3,15 @@
 
 <head>
     <title>我的预约</title>
-<#include "/temp/htmlHead.ftl"/>
+<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
     <script type="text/javascript" src="${jsEcRoot}/mbr/user_bespeak_list.js?v=${ver}"></script>
 </head>
 
 <body class="bespeak-list">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <#include "/ec/include/i_back.ftl"/>
+    <link rel="import" href="/themes/include/i_back.jt?__inline">
     <h1 class="mui-title c-fff">我的预约</h1>
-    <#--<#include "/ec/include/i_user.ftl"/>-->
+    <#--<link rel="import" href="/themes/include/i_user.jt?__inline">-->
 </header>
 <div class="goods-list-content">
     <!--工具条结束，内容开始-->

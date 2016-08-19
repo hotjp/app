@@ -58,4 +58,4 @@
     };
 </script>
 
-<#include "/temp/platformHead.ftl"/>
+<link rel="import" href="/themes/temp/platformHead.jt?__inline">

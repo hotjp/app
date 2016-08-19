@@ -1,7 +1,7 @@
 <#if MO_CLIENT == "wx">
-    <#include "/ec/include/c_img_upload_wx${model.templet}.ftl"/>
+    <link rel="import" href="/themes/include/c_img_upload_wx${model.templet}.jt?__inline">
 <#elseif MO_CLIENT="ios"||MO_CLIENT="android">
-    <#include "/ec/include/c_img_upload_phone.ftl"/>
+    <link rel="import" href="/themes/include/c_img_upload_phone.jt?__inline">
 <#else>
-    <#include "/ec/include/c_img_upload_mobile${model.templet}.ftl"/>
+    <link rel="import" href="/themes/include/c_img_upload_mobile${model.templet}.jt?__inline">
 </#if>
