@@ -1,3 +1,6 @@
+fis.set('project.fileType.text', 'jt, jh');
+
+
 var root = "";
 
 
@@ -17,14 +20,6 @@ fis.match('*.less', {
   rExt: '.css'
 });
 
-// fis.media('rext').match('*.ftl', {
-
-//   rExt: '.jh'
-// });
-// fis.media('rext').match('{temp/*.ftl,include/*.ftl}', {
-
-//   rExt: '.jt'
-// });
 
 fis.match('*.jh', {
   rExt: '.html'
@@ -39,21 +34,18 @@ fis.match('README.md', {
     release: false
 });
 
-fis.match("themes/**/*", {
-	release: "../$0"
-});
-
-fis.match('include/**/*,temp/**/*', {
-    isMod: true
-});
 
 // 打包配置
 // fis3 release dist -d URL   即可打包
 
+
 fis.media('dist').match('*', {
   release: root + '$0'
 });
-
+fis.media('dist').match('::packager', {
+  spriter: fis.plugin('csssprites'),
+  postpackager: fis.plugin('loader')
+});
 // fis.media('dist').match('::packgager', {
 //   postpackager: fis.plugin('loader', {
 //     allInOne: true
@@ -63,11 +55,8 @@ fis.media('dist').match('*', {
 fis.media('dist').match('*.{js,css,less,png,jh,jt}', {
   useHash: true
 });
-fis.media('dist').match('{module/**,/index.html,goods/index.jh}', {
+fis.media('dist').match('{module/**,/index.html}', {
   useHash: false
-});
-fis.media('dist').match('README.md', {
-    release: false
 });
 // js压缩
 fis.media('dist').match('*.js', {
