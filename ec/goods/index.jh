@@ -2,14 +2,15 @@
 <html>
 <head>
     <title>${sysTitle}</title>
-<#include "/temp/htmlHead.ftl"/>
-    <script type="text/javascript" src="${jsEcRoot}/goods/index.js?v=${ver}"></script>
+    <link rel="import" href="../../themes/temp/htmlHead.jt?__inline"/>
+
+    <script type="text/javascript" src="/resources/js/tmpl1/ec/goods/index.js"></script>
 
 </head>
 <body class="index">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-<#include "/ec/include/search.ftl"/>
+	<link rel="import" href="/themes/include/search.jt?__inline"/>
 </header>
 <!--底部-->
 <#include "/ec/include/footer.ftl"/>
