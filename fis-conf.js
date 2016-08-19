@@ -41,10 +41,6 @@ fis.match('README.md', {
     release: false
 });
 
-fis.match("themes/**/*", {
-	release: "../$0"
-});
-
 fis.match('include/**/*,temp/**/*', {
     isMod: true
 });
