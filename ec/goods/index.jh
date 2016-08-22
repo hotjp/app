@@ -13,7 +13,7 @@
 	<link rel="import" href="/themes/include/search.jt?__inline"/>
 </header>
 <!--底部-->
-<#include "/ec/include/footer.ftl"/>
+<link rel="import" href="/themes/include/footer.jt?__inline"/>
 <@slider widget="移动-首页顶部轮播" layout="/ec/include/c_flexslider"/>
 <!--分类-->
 <@moCatNav widget="移动-首页模块导航" layout="/ec/include/c_cat_nav" />
