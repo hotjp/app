@@ -41,9 +41,7 @@ fis.match('README.md', {
     release: false
 });
 
-fis.match('include/**/*,temp/**/*', {
-    isMod: true
-});
+
 
 // 打包配置
 // fis3 release dist -d URL   即可打包

@@ -1,0 +1,184 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'fis3' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.4
+4 verbose install initial load of C:\Users\Administrator\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\Administrator\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'fis3', null ]
+7 verbose cache add spec fis3
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'fis3',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'fis3',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed fis3@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for fis3
+11 info addNameTag [ 'fis3', 'latest' ]
+12 silly mapToRegistry name fis3
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'fis3',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'fis3',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/fis3
+17 verbose addNameTag registry:https://registry.npmjs.org/fis3 not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/fis3
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 08:51:29
+21 verbose request id 4fa882abc9b7c300
+22 verbose etag "A0XV18VY1JOH71X7VCB196UOV"
+23 http request GET https://registry.npmjs.org/fis3
+24 http 304 https://registry.npmjs.org/fis3
+25 verbose headers { date: 'Mon, 22 Aug 2016 00:51:26 GMT',
+25 verbose headers   via: '1.1 varnish',
+25 verbose headers   'cache-control': 'max-age=300',
+25 verbose headers   etag: '"A0XV18VY1JOH71X7VCB196UOV"',
+25 verbose headers   age: '40',
+25 verbose headers   connection: 'keep-alive',
+25 verbose headers   'x-served-by': 'cache-itm7427-ITM',
+25 verbose headers   'x-cache': 'HIT',
+25 verbose headers   'x-cache-hits': '1',
+25 verbose headers   'x-timer': 'S1471827086.738510,VS0,VE0',
+25 verbose headers   vary: 'Accept-Encoding' }
+26 silly get cb [ 304,
+26 silly get   { date: 'Mon, 22 Aug 2016 00:51:26 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     'cache-control': 'max-age=300',
+26 silly get     etag: '"A0XV18VY1JOH71X7VCB196UOV"',
+26 silly get     age: '40',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-itm7427-ITM',
+26 silly get     'x-cache': 'HIT',
+26 silly get     'x-cache-hits': '1',
+26 silly get     'x-timer': 'S1471827086.738510,VS0,VE0',
+26 silly get     vary: 'Accept-Encoding' } ]
+27 verbose etag https://registry.npmjs.org/fis3 from cache
+28 verbose get saving fis3 to C:\Users\Administrator\AppData\Roaming\npm-cache\registry.npmjs.org\fis3\.cache.json
+29 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+30 silly addNameTag next cb for fis3 with tag latest
+31 silly addNamed fis3@3.4.22
+32 verbose addNamed "3.4.22" is a plain semver version for fis3
+33 silly cache afterAdd fis3@3.4.22
+34 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\fis3\3.4.22\package\package.json not in flight; writing
+35 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+36 verbose afterAdd C:\Users\Administrator\AppData\Roaming\npm-cache\fis3\3.4.22\package\package.json written
+37 silly install resolved [ { name: 'fis3',
+37 silly install resolved     version: '3.4.22',
+37 silly install resolved     description: 'fis 3.0',
+37 silly install resolved     main: 'index.js',
+37 silly install resolved     bin: { fis3: 'bin/fis.js' },
+37 silly install resolved     dependencies:
+37 silly install resolved      { colors: '0.6.2',
+37 silly install resolved        commander: '1.3.2',
+37 silly install resolved        glob: '5.0.3',
+37 silly install resolved        'iconv-lite': '0.2.10',
+37 silly install resolved        liftoff: '2.2.1',
+37 silly install resolved        lodash: '4.12.0',
+37 silly install resolved        minimatch: '2.0.4',
+37 silly install resolved        minimist: '1.1.1',
+37 silly install resolved        tar: '2.2.1',
+37 silly install resolved        'fis-command-install': '0.2.17',
+37 silly install resolved        'fis-lolcat': '1.0.1',
+37 silly install resolved        'fis-optimizer-clean-css': '0.0.9',
+37 silly install resolved        'fis-optimizer-png-compressor': '0.1.6',
+37 silly install resolved        'fis-optimizer-uglify-js': '0.2.2',
+37 silly install resolved        'fis-spriter-csssprites': '0.3.11',
+37 silly install resolved        'fis3-command-init': '1.0.14',
+37 silly install resolved        'fis3-command-inspect': '1.0.3',
+37 silly install resolved        'fis3-command-release': '1.3.11',
+37 silly install resolved        'fis3-command-server': '0.0.9',
+37 silly install resolved        'fis3-server-node': '0.1.1',
+37 silly install resolved        'fis3-deploy-http-push': '1.1.1',
+37 silly install resolved        'fis3-deploy-encoding': '1.0.0',
+37 silly install resolved        'fis3-deploy-local-deliver': '1.0.0',
+37 silly install resolved        'fis3-hook-components': '1.0.4',
+37 silly install resolved        'fis3-packager-map': '1.1.3',
+37 silly install resolved        'fis3-errors': '*' },
+37 silly install resolved     devDependencies:
+37 silly install resolved      { chai: '^2.2.0',
+37 silly install resolved        jsdoc: '^3.3.2',
+37 silly install resolved        minami: 'git://github.com/2betop/minami.git',
+37 silly install resolved        mocha: '^2.2.1',
+37 silly install resolved        'mocha-junit-reporter': '^1.4.0',
+37 silly install resolved        'npm-watch': '0.0.0',
+37 silly install resolved        istanbul: '~0.2.14',
+37 silly install resolved        coveralls: '2.10.0',
+37 silly install resolved        'fis3-postpackager-loader': '1.2.7',
+37 silly install resolved        'fis3-hook-cmd': '0.0.1' },
+37 silly install resolved     watch: { jsdoc: 'lib/*.js' },
+37 silly install resolved     scripts:
+37 silly install resolved      { test: 'mocha test',
+37 silly install resolved        'test-cov': 'istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test',
+37 silly install resolved        jsdoc: 'jsdoc --readme ./doc/docs/api/dev-plugin.md ./lib -r -t ./node_modules/minami -c .jsdoc.json -d ./doc/api',
+37 silly install resolved        watch: 'npm-watch',
+37 silly install resolved        'test-travis': 'istanbul cover node_modules/mocha/bin/_mocha test/*.js' },
+37 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/fex-team/fis3.git' },
+37 silly install resolved     keywords: [ 'fis' ],
+37 silly install resolved     author: { name: 'fis' },
+37 silly install resolved     license: 'BSD',
+37 silly install resolved     bugs: { url: 'https://github.com/fex-team/fis3/issues' },
+37 silly install resolved     homepage: 'https://github.com/fex-team/fis3',
+37 silly install resolved     gitHead: 'fd5a8c5bcc0d6efa1e0d29865c2e2ad0c150fbb1',
+37 silly install resolved     _id: 'fis3@3.4.22',
+37 silly install resolved     _shasum: 'db7cbf3cead771bfb294b8efeb98fe453e2c2ab4',
+37 silly install resolved     _from: 'fis3@latest',
+37 silly install resolved     _npmVersion: '3.8.6',
+37 silly install resolved     _nodeVersion: '6.1.0',
+37 silly install resolved     _npmUser: { name: '2betop', email: '2betop.cn@gmail.com' },
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: 'db7cbf3cead771bfb294b8efeb98fe453e2c2ab4',
+37 silly install resolved        tarball: 'https://registry.npmjs.org/fis3/-/fis3-3.4.22.tgz' },
+37 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+37 silly install resolved     _npmOperationalInternal:
+37 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+37 silly install resolved        tmp: 'tmp/fis3-3.4.22.tgz_1470278646847_0.9997027679346502' },
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/fis3/-/fis3-3.4.22.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install fis3@3.4.22 into C:\Users\Administrator\AppData\Roaming\npm
+39 info installOne fis3@3.4.22
+40 verbose installOne of fis3 to C:\Users\Administrator\AppData\Roaming\npm not in flight; installing
+41 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+42 verbose lock using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\fis3-731ed6298a2f6209.lock for C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+43 silly install write writing fis3 3.4.22 to C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+44 verbose unbuild node_modules\fis3
+45 silly gentlyRm C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3 is being purged from base C:\Users\Administrator\AppData\Roaming\npm
+46 verbose gentlyRm don't care about contents; nuking C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+47 silly vacuum-fs purging C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+48 verbose unlock done using C:\Users\Administrator\AppData\Roaming\npm-cache\_locks\fis3-731ed6298a2f6209.lock for C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+49 verbose stack Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3\node_modules\fis3-server-node'
+49 verbose stack     at Error (native)
+50 verbose cwd E:\newApp
+51 error Windows_NT 6.1.7601
+52 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "fis3"
+53 error node v4.4.4
+54 error npm  v2.15.1
+55 error path C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3\node_modules\fis3-server-node
+56 error code EBUSY
+57 error errno -4082
+58 error syscall rmdir
+59 error EBUSY: resource busy or locked, rmdir 'C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3\node_modules\fis3-server-node'
+60 error If you need help, you may report this error at:
+60 error     <https://github.com/npm/npm/issues>
+61 verbose exit [ -4082, true ]
+62 verbose unbuild node_modules\fis3
+63 silly gentlyRm C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3 is being purged from base C:\Users\Administrator\AppData\Roaming\npm
+64 verbose gentlyRm don't care about contents; nuking C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+65 silly vacuum-fs purging C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3
+66 error error rolling back Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3\node_modules\fis3-server-node'
+66 error error rolling back     at Error (native)
+66 error error rolling back  { [Error: EBUSY: resource busy or locked, rmdir 'C:\Users\Administrator\AppData\Roaming\npm\node_modules\fis3\node_modules\fis3-server-node']
+66 error error rolling back   errno: -4082,
+66 error error rolling back   code: 'EBUSY',
+66 error error rolling back   syscall: 'rmdir',
+66 error error rolling back   path: 'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\fis3\\node_modules\\fis3-server-node' }

@@ -12,18 +12,18 @@
 
 <#assign formatPositiveMoney= "com.jerehsoft.mobile.ec.web.freemarker.fn.MoFormatPositiveMoneyMethod"?new()>
 
-<link href="${resRoot}/css/mui/mui.min.css" rel="stylesheet"/>
-<link href="${resRoot}/css/mui/iconfont.css" rel="stylesheet"/>
+<link href="/resources/css/mui/mui.min.css" rel="stylesheet"/>
+<link href="/resources/css/mui/iconfont.css" rel="stylesheet"/>
 
-<link href="${resRoot}/css/mui/mui.picker.css" rel="stylesheet"/>
-<link href="${resRoot}/css/mui/mui.poppicker.css" rel="stylesheet"/>
+<link href="/resources/css/mui/mui.picker.css" rel="stylesheet"/>
+<link href="/resources/css/mui/mui.poppicker.css" rel="stylesheet"/>
 
-<link href="${resRoot}/css/mobile.css?v=${ver}" rel="stylesheet"/>
-<link href="${resRoot}/css/ec/ec.css?v=${ver}" rel="stylesheet"/>
-<link href="${resRoot}/css/ec/${themeCss}.css?v=${ver}" rel="stylesheet"/>
+<link href="/resources/css/mobile.css?v=${ver}" rel="stylesheet"/>
+<link href="/resources/css/ec/ec.less?v=${ver}" rel="stylesheet"/>
+<link href="/resources/css/ec/${themeCss}.css?v=${ver}" rel="stylesheet"/>
 
 <#if MO_CLIENT == "android"||MO_CLIENT=="ios">
-<link href="${resRoot}/css/ec/app.css?v=${ver}" rel="stylesheet"/>
+<link href="/resources/css/ec/app.css?v=${ver}" rel="stylesheet"/>
 </#if>
 
 <#if MO_CLIENT == "ios"||MO_CLIENT == "android">
