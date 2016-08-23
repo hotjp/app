@@ -19,14 +19,7 @@ fis.match('*.less', {
   rExt: '.css'
 });
 
-// fis.media('rext').match('*.ftl', {
 
-//   rExt: '.jh'
-// });
-// fis.media('rext').match('{temp/*.ftl,include/*.ftl}', {
-
-//   rExt: '.jt'
-// });
 
 fis.match('*.jh', {
   rExt: '.html'
@@ -37,7 +30,7 @@ fis.match('*', {
 	useHash: false
 });
 
-fis.match('README.md', {
+fis.match('{README.md,.DS_Store}', {
     release: false
 });
 
@@ -62,7 +55,7 @@ fis.media('dist').match('*.{js,css,less,png,jh,jt}', {
 fis.media('dist').match('{module/**,/index.html,goods/index.jh}', {
   useHash: false
 });
-fis.media('dist').match('README.md', {
+fis.media('dist').match('README.md,.DS_Store', {
     release: false
 });
 // js压缩
