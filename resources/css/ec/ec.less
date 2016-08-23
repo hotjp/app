@@ -40,41 +40,140 @@ textarea {
 .fw-normal {
     font-weight: normal!important;
 }
-/*公共颜色*/
+/*-----公共颜色-----*/
 
 /* 头部默认 */
 @bgc_hd: #0187ce;
 
-
-/* 背景 */
 @c_gry_1: #f5f5f5;
-@bgc_gry_1: #f5f5f5;
 
-@c_gry_3: #333;
-@bgc_gry_3: #333;
-
-@c_gry_4: #999;
-@bgc_gry_4: #999;
-
-@c_gry_5: #f4f4f4;
-@bgc_gry_5: #f4f4f4;
-
-/* border-color */
 @c_gry_2: #f9f9f9;
-@bgc_gry_2: #f9f9f9;
 
+/* 活动页 .active-list  .good-sort p   
+筛选.sort-form-ipt
+span.form-block-tit
+.form-block.items
+ul.middle-block a
+.balance
+编辑栏 .cart-delet:hover
+ 我的收藏 .good-info a
+点铺收藏 .shop-info p
+ a.gry-border-btn
+我的积分 .cerdit-content-block p.el
+.checkout
+店铺列表 .shop-name */
+@c_gry_3: #333;
+
+/* 首页模块 a.more
+.old-price
+底部  .mui-tab-item
+活动页  .goods-sold
+商品列表视图切换.change-view
+.user-center  i.iconfont
+店铺收藏 span .cancel-collect
+店铺首页 .shop-index-collect 
+发表评价 li a.imageUploader-button  */
+@c_gry_4: #999;
+@c_gry_5: #f4f4f4;
 @c_gry_6: #eaeaea;
-@bgc_gry_6: #eaeaea;
-
-
 @c_change:#fbd034;
-@bgc_change:#fbd034;
-
+/* 警告色 */
 @c_warn:#ff5b53;
-@bgc_warn:#ff5b53;
 
+/* 弹出层 
+.mui-radio input[type='radio']:checked:before, .mui-checkbox input[type='checkbox']:checked:before 
+确认订单 i.iconfont
+发表评价 i.icon-xing */
 @c_ylw:#f2c212;
-@bgc_ylw:#f2c212;
+
+/* --------背景色 -----------*/
+
+/* 筛选 
+.sort-form-ipt
+ul.middle-block a
+.goods-sort-content dd span */
+@bgc_gry_1: @c_gry_1;
+
+/* .timer i
+详情页 .footer-nav
+上传 .pic-mask */
+@bgc_gry_3: @c_gry_3;
+/* 分类 .sort-left  li */
+@bgc_gry_2: @c_gry_2;
+
+ /* a.gry-border-btn */
+@bgc_gry_4: @c_gry_4;
+
+/* .goods-list li:active
+商品列表视图切换 active
+筛选 .form-block-btn:active
+.cart-list-shop-tit:active 
+店铺商品列表 li:active
+消息页内容 li:active
+.goods-view .collcet:active
+ .comment-show-more:active
+商品评价 li:active
+.comment-show-more:active 
+账户管理 .user-info-list li;active
+我的收藏 li:active
+店铺首页 .shop-nav li:active
+收货地址 li:active
+优惠券 li:active
+确认订单.order-address:active  .shop-balance:active
+我的积分 li:active */
+@bgc_gry_5: @c_gry_5;
+
+/* 首页服务按钮,#goods-img    .mui-indicator.mui-active
+商品列表视图切换  .change-view:active
+切换  .change-view:active i */
+@bgc_change:@c_change;
+
+/* 警告背景色 */
+@bgc_warn:@c_warn;
+
+/* balance背景 .goods-sort-content dd span.on*/
+@bgc_ylw:@c_ylw;
+
+
+
+/* ---------border-color ---------*/
+
+/* .sort-form-ipt */
+@bdc_gry_1: @c_gry_1;
+/*基本边框*/
+@bdc_gry_2: @c_gry_2;
+ /* a.gry-border-btn */
+@bdc_gry_4:@c_gry_4;
+/*店铺焦点图border*/
+@bdc_gry_5: @c_gry_5;
+/* 消息页内容  li
+商品评价 .comment-title
+确认订单,退款售后  .shop-title  .shop-balance
+ ul.goods-list li
+ .shop-title 
+我的积分  .cerdit-control ,.cerdit-content li
+发表评价 .assess-star */
+@bdc_gry_6: @c_gry_6;
+
+/* 警告边框色 */
+@bdc_warn:@c_warn;
+
+/* .goods-view  .title.on
+我的收藏 li.mui-active
+店铺首页 .shop-nav li.on
+优惠券 .order-control li.mui-active 
+我的积分 .cerdit-control  li.mui-active */
+@bdc_ylw:@c_ylw;
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -367,7 +466,7 @@ input[type=search] {
         width: 40%;
         height: 9.176rem;
         padding: 0.3rem 1rem;
-        border-right: solid 1px @c_gry_2;
+        border-right: solid 1px @bdc_gry_2;
         overflow: hidden;
         background: #fff;
         a img {
@@ -430,7 +529,7 @@ input[type=search] {
 .act-right ul {
     background: #fff;
     li {
-        border-top: solid 1px @c_gry_2;
+        border-top: solid 1px @bdc_gry_2;
         height: 4.588rem;
         a {
             display: block;
@@ -470,7 +569,7 @@ input[type=search] {
         li {
             float: left;
             width: 50%;
-            border-right: solid 1px @c_gry_2;
+            border-right: solid 1px @bdc_gry_2;
         }
         li:last-child {
             border: 0 none;
@@ -494,12 +593,12 @@ input[type=search] {
         background: #fff;
     }
     .act_bottom {
-        border-top: solid 1px @c_gry_2;
+        border-top: solid 1px @bdc_gry_2;
         ul li {
             float: left;
             width: 25%;
-            border-bottom: solid 1px @c_gry_2;
-            border-right: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
+            border-right: solid 1px @bdc_gry_2;
             a {
                 display: block;
                 padding: 0.05rem;
@@ -530,8 +629,8 @@ input[type=search] {
     ul.brand-ads li {
         float: left;
         width: 50%;
-        border-right: solid 1px @c_gry_2;
-        border-bottom: solid 1px @c_gry_2;
+        border-right: solid 1px @bdc_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         img {
             display: block;
         }
@@ -539,8 +638,8 @@ input[type=search] {
     ul.brand-list li {
         float: left;
         width: 25%;
-        border-right: solid 1px @c_gry_2;
-        border-bottom: solid 1px @c_gry_2;
+        border-right: solid 1px @bdc_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         img {
             display: block;
         }
@@ -614,14 +713,14 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
         .sort-left {
             width: 28%;
             height: 100%;
-            background: @c_gry_2;;
+            background: @bgc_gry_2;;
             overflow-y: auto;
             ul li {
                 height: 45px;
                 border: solid 1px #dfdfdf;
                 border-left: none;
                 border-top: none;
-                background: @c_gry_2;;
+                background: @bgc_gry_2;;
                 a {
                     display: block;
                     line-height: 45px;
@@ -717,7 +816,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
             width: 100%;
             min-width: 320px;
             height: 36px;
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             z-index: 5;
         }
         .tools-cover {
@@ -749,7 +848,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
             z-index: 2;
             li {
                 text-indent: 1em;
-                border-bottom: solid 1px @c_gry_2;
+                border-bottom: solid 1px @bdc_gry_2;
                 i {
                     display: inline-block;
                     float: right;
@@ -835,7 +934,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
         height: 36px;
         line-height: 36px;
         background: #fff;
-        border-bottom: solid 1px @c_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         z-index: 5;
         overflow: hidden;
         .goods-sort {
@@ -926,7 +1025,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
     width: 37px;
     height: 36px;
     color: @c_gry_4;
-    border-left: solid 1px @c_gry_2;
+    border-left: solid 1px @bdc_gry_2;
     text-align: center;
 }
 
@@ -1053,7 +1152,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
     .sort-form-content {
         padding: 0.5rem;
         .form-block {
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             .form-block-tit {
                 display: inline-block;
             }
@@ -1067,12 +1166,12 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
                 vertical-align: middle;
                 margin-bottom: 0;
                 padding: 0;
-                background: @c_gry_1;
-                border-color: @c_gry_1;
+                background: @bgc_gry_1;
+                border-color: @bdc_gry_1;
             }
             .sort-form-ipt:focus {
                 background: #e5e5e5;
-                border-color: @c_warn;
+                border-color: @bdc_warn;
             }
             span.form-block-tit {
                 color: @c_gry_3;
@@ -1085,7 +1184,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
             color: @c_warn;
             height: 1.5625rem;
             line-height: 1.5625rem;
-            border: solid 1px @c_warn;
+            border: solid 1px @bdc_warn;
             border-radius: 0.47rem;
         }
         .reset-form:active {
@@ -1135,7 +1234,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
                     display: block;
                     color: @c_gry_3;
                     padding: 0 0.441rem;
-                    background: @c_gry_1;
+                    background: @bgc_gry_1;
                     vertical-align: middle;
                     text-align: center;
                     font-size: 0.8125rem;
@@ -1193,6 +1292,33 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
         display: block;
         padding: 0 0.80rem;
     }
+    ul.order-tools {
+        li {
+            float: left;
+            width: 20%;
+            position: relative;
+            span.mui-badge {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                background: @bgc_warn;
+                color: #fff;
+            }
+            a {
+                position: relative;
+                padding: 0.882rem 0 0.647rem 0;
+                font-size: 0.8125rem;
+                text-align: center;
+            }
+            i.iconfont {
+                display: block;
+                font-size: 25px;
+                line-height: 25px;
+                text-align: center;
+                color: @c_gry_4;
+            }
+        }
+    }
 }
 
 .user-info {
@@ -1238,42 +1364,15 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
     }
 }
 
-.user-center ul.order-tools {
-    li {
-        float: left;
-        width: 20%;
-        position: relative;
-        span.mui-badge {
-            position: absolute;
-            right: 8px;
-            top: 8px;
-            background: @bgc_warn;
-            color: #fff;
-        }
-        a {
-            position: relative;
-            padding: 0.882rem 0 0.647rem 0;
-            font-size: 0.8125rem;
-            text-align: center;
-        }
-        i.iconfont {
-            display: block;
-            font-size: 25px;
-            line-height: 25px;
-            text-align: center;
-            color: @c_gry_4;
-        }
-    }
-}
 
 .user-center #user-tools-list {
     ul {
-        border-top: solid 1px @c_gry_2;
+        border-top: solid 1px @bdc_gry_2;
         li {
             float: left;
             width: 25%;
-            border-right: solid 1px @c_gry_2;
-            border-bottom: solid 1px @c_gry_2;
+            border-right: solid 1px @bdc_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             a {
                 display: block;
                 padding: 0.882rem 0;
@@ -1372,14 +1471,14 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
 .cart-list-shop {
     background: #fff;
     margin-bottom: 0.294rem;
-    border-top: solid 1px @c_gry_2;
-    border-bottom: solid 1px @c_gry_2;
+    border-top: solid 1px @bdc_gry_2;
+    border-bottom: solid 1px @bdc_gry_2;
 }
 
 .cart-list-shop-tit {
     height: 2.352rem;
     line-height: 2.352rem;
-    border-bottom: solid 1px @c_gry_2;
+    border-bottom: solid 1px @bdc_gry_2;
 }
 
 .cart-list-shop-content {
@@ -1389,7 +1488,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
         padding-top: 0.411rem!important;
         width: 100%;
         height: 5.882rem;
-        border-bottom: solid 1px @c_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         -webkit-transform-style: preserve-3d;
         transform-style: preserve-3d;
         overflow: hidden;
@@ -1582,7 +1681,7 @@ footer.bottom-nav .mui-bar .mui-tab-item.mui-active {
     background: #fff;
     li {
         padding: 0.705rem 0.352rem;
-        border-bottom: solid 1px @c_gry_6;
+        border-bottom: solid 1px @bdc_gry_6;
         display: -webkit-box;
         -webkit-transform: transition3d(0, 0, 0);
         -webkit-backface-visibility: hidden;
@@ -1671,7 +1770,7 @@ footer.bottom-nav .footer-nav a {
 
 #goods-img {
     background: #fff;
-    border-bottom: solid 1px @c_gry_2;
+    border-bottom: solid 1px @bdc_gry_2;
     .mui-indicator {
         background: rgba(0, 0, 0, 0.4);
     }
@@ -1691,7 +1790,7 @@ footer.bottom-nav .footer-nav a {
     }
     .goods-view-content {
         .goods-info {
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             background: #fff;
             padding: 0.764rem;
             .title {
@@ -1706,7 +1805,7 @@ footer.bottom-nav .footer-nav a {
                 line-height: 1rem;
                 text-align: center;
                 color: #d0d0d0;
-                border-left: solid 1px @c_gry_2;
+                border-left: solid 1px @bdc_gry_2;
                 i.iconfont {
                     display: block;
                 }
@@ -1740,7 +1839,7 @@ footer.bottom-nav .footer-nav a {
 #comment .comment-content {
     li {
         padding: 0.764rem;
-        border-bottom: solid 1px @c_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         .comment-user {
             .comment-user-img {
                 width: 1.47rem;
@@ -1772,7 +1871,7 @@ footer.bottom-nav .footer-nav a {
     ul li {
         float: left;
         text-align: center;
-        border-right: solid 1px @c_gry_2;
+        border-right: solid 1px @bdc_gry_2;
         width: 33%;
         a {
             display: block;
@@ -1798,7 +1897,7 @@ footer.bottom-nav .footer-nav a {
             width: 33%;
         }
         .title.on {
-            border-bottom: solid 3px @c_ylw;
+            border-bottom: solid 3px @bdc_ylw;
         }
     }
     .intro-content .content {
@@ -1892,7 +1991,7 @@ footer.bottom-nav .footer-nav a {
     padding-top: 44px;
     .comment-title {
         position: relative;
-        border-bottom: solid 1px @c_gry_6;
+        border-bottom: solid 1px @bdc_gry_6;
         width: 100%;
         min-width: 320px;
         height: 44px;
@@ -1927,7 +2026,7 @@ footer.bottom-nav .footer-nav a {
         ul {
             li {
                 padding: 0.764rem;
-                border-bottom: solid 1px @c_gry_2;
+                border-bottom: solid 1px @bdc_gry_2;
                 .comment-user {
                     .comment-user-img {
                         width: 1.47rem;
@@ -1974,13 +2073,13 @@ footer.bottom-nav .footer-nav a {
         }
         .user-info-list {
             background: #fff;
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             li {
                 position: relative;
                 height: 42px;
                 line-height: 22px;
                 padding: 10px;
-                border-top: solid 1px @c_gry_2;
+                border-top: solid 1px @bdc_gry_2;
                 a {
                     display: block;
                     .pull-right {
@@ -2009,7 +2108,7 @@ footer.bottom-nav .footer-nav a {
         .user-info-list.tools-list {
             margin-top: 0.294rem;
             li:first-child {
-                border-top: solid 1px @c_gry_2;
+                border-top: solid 1px @bdc_gry_2;
                 height: 42px;
                 line-height: 22px;
             }
@@ -2040,7 +2139,7 @@ footer.bottom-nav .footer-nav a {
             background: none!important;
         }
         ul li.mui-active {
-            border-bottom: solid 3px @c_ylw;
+            border-bottom: solid 3px @bdc_ylw;
         }
     }
     .user-collect-content {
@@ -2303,13 +2402,13 @@ footer.bottom-nav .footer-nav a {
         padding: 0.764rem;
         padding-bottom: 0;
         margin-bottom: 0.5rem;
-        border-bottom: solid 1px @c_gry_2;
+        border-bottom: solid 1px @bdc_gry_2;
         dd {
             span {
                 display: inline-block;
                 padding: 0.1rem 1rem;
                 margin: 0.75rem 0.6rem 0 0;
-                background: @c_gry_1;
+                background: @bgc_gry_1;
                 font-size: 0.8125rem;
                 border-radius: 0.5rem;
             }
@@ -2471,7 +2570,7 @@ input.user-ipt {
             min-width: 320px;
             height: 46px;
             background: rgba(255, 255, 255, 0.9);
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             z-index: 9;
             li {
                 float: left;
@@ -2479,7 +2578,7 @@ input.user-ipt {
                 font-size: 0.8125rem;
                 line-height: 1.7em;
                 text-align: center;
-                border-left: solid 1px @c_gry_2;
+                border-left: solid 1px @bdc_gry_2;
                 span {
                     display: block;
                     font-size: 1rem;
@@ -2492,7 +2591,7 @@ input.user-ipt {
                 border: none;
             }
             li.on {
-                border-bottom: solid 2px @c_ylw;
+                border-bottom: solid 2px @bdc_ylw;
             }
         }
     }
@@ -2528,8 +2627,8 @@ input.user-ipt {
     .coupon,
     .big-goods {
         background: #fff;
-        border-top: solid 1px @bgc_gry_5;
-        border-bottom: solid 1px @bgc_gry_5;
+        border-top: solid 1px @bdc_gry_5;
+        border-bottom: solid 1px @bdc_gry_5;
         padding: 0.441rem;
         margin-top: 0.5rem;
     }
@@ -2905,7 +3004,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
                 background: none!important;
             }
             li.mui-active {
-                border-bottom: solid 3px @c_ylw;
+                border-bottom: solid 3px @bdc_ylw;
             }
         }
     }
@@ -3083,7 +3182,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
         background: #fff;
         margin-top: 0.294rem;
         .shop-title {
-            border-bottom: solid 1px @c_gry_6;
+            border-bottom: solid 1px @bdc_gry_6;
             height: 2.235rem;
             line-height: 2.235rem;
         }
@@ -3094,7 +3193,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
         .shop-balance {
             height: 2.529rem;
             line-height: 2.529rem;
-            border-bottom: solid 1px @c_gry_6;
+            border-bottom: solid 1px @bdc_gry_6;
             input {
                 display: inline;
                 width: auto;
@@ -3116,7 +3215,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
             a.red-border-btn {
                 min-width: 72px;
                 color: @c_warn;
-                border: solid 1px @c_warn;
+                border: solid 1px @bdc_warn;
                 text-align: center;
             }
             a.red-border-btn:active {
@@ -3127,7 +3226,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
             }
             a.gry-border-btn {
                 color: @c_gry_3;
-                border: solid 1px @c_gry_4;
+                border: solid 1px @bdc_gry_4;
             }
             a.gry-border-btn:active {
                 color: #fff;
@@ -3138,7 +3237,7 @@ li.shop-order ul.goods-list li .goods-price{  width: 5rem;  height: 4.558rem;  }
             background: @bgc_gry_5;
         }
         ul.goods-list li {
-            border-bottom: solid 1px @c_gry_6;
+            border-bottom: solid 1px @bdc_gry_6;
             padding: 0.588rem;
             img {
                 width: 73px;
@@ -3247,7 +3346,7 @@ i.promo-icon {
         background: #fff;
         margin-bottom: 0.5rem;
         .shop-title {
-            border-bottom: solid 1px @c_gry_6;
+            border-bottom: solid 1px @bdc_gry_6;
             height: 2.235rem;
             line-height: 2.235rem;
         }
@@ -3309,7 +3408,7 @@ i.promo-icon {
 a.red-border-btn {
     min-width: 72px;
     color: @c_warn;
-    border: solid 1px @c_warn;
+    border: solid 1px @bdc_warn;
     text-align: center;
 }
 
@@ -3322,7 +3421,7 @@ a.red-border-btn:active {
 
 a.gry-border-btn {
     color: @c_gry_3;
-    border: solid 1px @c_gry_4;
+    border: solid 1px @bdc_gry_4;
 }
 
 a.gry-border-btn:active {
@@ -3374,7 +3473,7 @@ a.gry-border-btn:active {
                 border-radius: 0!important;
             }
             li.mui-active {
-                border-bottom: solid 3px @c_ylw;
+                border-bottom: solid 3px @bdc_ylw;
             }
             li:active {
                 background: @bgc_gry_5;
@@ -3395,7 +3494,7 @@ a.gry-border-btn:active {
                     padding: 0.882rem;
                     height: 3.529rem;
                     line-height: 130%;
-                    border-bottom: solid 1px @c_gry_6;
+                    border-bottom: solid 1px @bdc_gry_6;
                     span {
                         position: absolute;
                         top: 0;
@@ -3731,7 +3830,7 @@ a.gry-border-btn:active {
     }
     .assess-photo {}
     .assess-star {
-        border-top: solid 1px @c_gry_6;
+        border-top: solid 1px @bdc_gry_6;
         line-height: 40px;
         .title {
             display: block;
@@ -4468,7 +4567,7 @@ a.gry-border-btn:active {
             width: 100%;
             min-width: 320px;
             height: 30px;
-            border-bottom: solid 1px @c_gry_2;
+            border-bottom: solid 1px @bdc_gry_2;
             z-index: 5;
         }
         .tools-cover {
