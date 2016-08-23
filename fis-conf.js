@@ -19,14 +19,7 @@ fis.match('*.less', {
   rExt: '.css'
 });
 
-// fis.media('rext').match('*.ftl', {
 
-//   rExt: '.jh'
-// });
-// fis.media('rext').match('{temp/*.ftl,include/*.ftl}', {
-
-//   rExt: '.jt'
-// });
 
 fis.match('*.jh', {
   rExt: '.html'
