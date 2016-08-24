@@ -4,7 +4,6 @@
     <title>收货地址管理</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
 <link rel="import" href="/themes/temp/validate.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_address_add.js?v=${ver}"></script>
 </head>
 <body class="user-address-add">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -89,6 +88,12 @@
 
         });
     })(mui, document);
+</script>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_address_add.js');
+
+    })
 </script>
 </body>
 </html>

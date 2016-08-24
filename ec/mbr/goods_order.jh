@@ -3,7 +3,6 @@
 <head>
     <title>确认订单</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/goods_order.js?v=${ver}"></script>
 </head>
 <body class="goods-order">
 <input type="hidden" id="key" name="key" value="${key}">
@@ -207,6 +206,11 @@
 
     </div>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/goods_order.js');
 
+    })
+</script>
 </body>
 </html>

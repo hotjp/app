@@ -4,7 +4,6 @@
 <head>
     <title>我的预约</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_bespeak_list.js?v=${ver}"></script>
 </head>
 
 <body class="bespeak-list">
@@ -24,7 +23,12 @@
         </div>
     </div>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_bespeak_list.js');
 
+    })
+</script>
 </body>
 
 </html>

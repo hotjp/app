@@ -3,7 +3,6 @@
 <head>
     <title>订单详情</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_order_info.js?v=${ver}"></script>
 </head>
 <body class="goods-order">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -191,5 +190,11 @@
 <#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
 </#if>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_order_info.js');
+
+    })
+</script>
 </body>
 </html>

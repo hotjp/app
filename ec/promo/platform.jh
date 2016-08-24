@@ -3,7 +3,6 @@
 <head>
     <title>${promo.name!"促销活动"}</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/promo/platform.js?v=${ver}"></script>
 </head>
 <body class="active-list" style="background-color:${promo.pageBackgroundColor} ;">
 <input type="hidden" id="startTime" name="startTime" value="${promo.startTime}">
@@ -70,6 +69,11 @@
         </div>
     </div>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/promo/platform.js');
 
+    })
+</script>
 </body>
 </html>

@@ -12,4 +12,10 @@
 <body style="background: #f4f4f4; text-align: center;">
 
 </body>
+<script>
+	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+		__inline('/resources/js/tmpl1/ec/goods/index.js');
+
+	})
+</script>
 </html>

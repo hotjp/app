@@ -3,7 +3,6 @@
 <head>
     <title>付款详情</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/order_pay.js?v=${ver}"></script>
 </head>
 <body class="goods-order">
 <input type="hidden" id="orderNoStr" name="orderNoStr" value="${orderNoStr}">
@@ -48,5 +47,11 @@
     <input class="user-sub" id="view-orders" type="button" value="订单无须支付，查看订单？"/>
 </#if>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/order_pay.js');
+
+    })
+</script>
 </body>
 </html>

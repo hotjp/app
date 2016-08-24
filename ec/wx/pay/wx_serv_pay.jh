@@ -3,9 +3,15 @@
 <head>
     <title>微信支付</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsWxRoot}/pay/wx_serv_pay.js?v=${ver}"></script>
 </head>
 <body>
 <input type="hidden" id="payId" name="payId" value="${payId}">
+
+<script>
+	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+		__inline('/resources/js/tmpl1/wx/pay/wx_serv_pay.js');
+
+	})
+</script>
 </body>
 </html>

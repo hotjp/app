@@ -3,7 +3,6 @@
 <head>
     <title>${shop.name}</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/shop/shop_index.js?v=${ver}"></script>
 </head>
 <body class="shop-index">
 <input type="hidden" id="shopId" name="shopId" value="${shop.id}">
@@ -120,6 +119,11 @@
 </nav>
 </footer>
 -->
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/shop/shop_index.js');
 
+    })
+</script>
 </body>
 </html>

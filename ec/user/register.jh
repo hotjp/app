@@ -4,7 +4,6 @@
     <title>注册用户</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
 <link rel="import" href="/themes/temp/validate.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/user/register.js?v=${ver}"></script>
 </head>
 <body class="user-reg-log">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -106,5 +105,11 @@
     </div>
     <a class="checkout" href="javascript:void(0)">我已阅读并同意</a>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/user/register.js');
+
+    })
+</script>
 </body>
 </html>

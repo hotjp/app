@@ -3,7 +3,6 @@
 <head>
     <title>商品评价</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/goods/goods_comment.js?v=${ver}"></script>
 </head>
 <body class="goods-comment">
 <input type="hidden" id="goodsId" name="goodsId" value="${goodsId}">
@@ -84,6 +83,11 @@
     </div>
 </div>
 <!--评价结束-->
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/goods/goods_comment.js');
 
+    })
+</script>
 </body>
 </html>

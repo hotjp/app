@@ -3,7 +3,6 @@
 <head>
     <title>我的消息</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_msg.js?v=${ver}"></script>
 </head>
 <body class="user-msg">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -101,5 +100,11 @@
     </div>
     <a class="cart-delet fr fs-15" href="javascript:void(0)">删除</a>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_msg.js');
+
+    })
+</script>
 </body>
 </html>

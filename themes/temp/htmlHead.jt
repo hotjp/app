@@ -44,6 +44,8 @@
 <script type="text/javascript" src="${resRoot}/js/comm/global.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/muiInit.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/storage.js?v=${ver}"></script>
+<script src="resources/js/require.js"></script>
+<script src="resources/js/config.js"></script>
 
 <script type="text/javascript">
     var vars = {

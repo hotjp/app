@@ -3,7 +3,6 @@
 <head>
     <title>订单评价</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/order_comment.js?v=${ver}"></script>
 </head>
 <body class="assess-list">
 
@@ -53,7 +52,12 @@
     <a class="balance fr fs-15" id="commentBtn" href="javascript:;">发表评价</a>
 
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/order_comment.js');
 
+    })
+</script>
 </body>
 
 </html>

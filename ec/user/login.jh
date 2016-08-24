@@ -3,7 +3,6 @@
 <head>
     <title>用户登录</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/user/login.js?v=${ver}"></script>
 </head>
 <body class="user-reg-log appfrom">
 <input type="hidden" id="url" name="url" value="${url}">
@@ -43,5 +42,11 @@
 
     </form>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/user/login.js');
+
+    })
+</script>
 </body>
 </html>

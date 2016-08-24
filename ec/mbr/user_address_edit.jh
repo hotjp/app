@@ -3,7 +3,6 @@
 <head>
     <title>收货地址管理</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_address_edit.js?v=${ver}"></script>
 </head>
 <body class="user-address edit">
 <input type="hidden" id="url" name="url" value="${url}">
@@ -44,5 +43,11 @@
 <a class="user-address-add-btn c-fff" href="${vars.root}/ec/mbr/user_address_add.html?url=${url}">
     <span class="fs-20">+</span>添加新地址
 </a>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_address_edit.js');
+
+    })
+</script>
 </body>
 </html>

@@ -3,9 +3,6 @@
 <head>
     <title>商品详情</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${resRoot}/js/mui/mui.zoom.js"></script>
-    <script type="text/javascript" src="${resRoot}/js/mui/mui.previewimage.js"></script>
-    <script type="text/javascript" src="${jsEcRoot}/goods/goods_view.js?v=${ver}"></script>
 </head>
 <body class="goods-view">
 
@@ -225,5 +222,11 @@
 </div>
 
 <div class="replace-footer"></div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view",,"mustache","mui.zoom","mui.previewimage"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/goods/goods_view.js');
+
+    })
+</script>
 </body>
 </html>

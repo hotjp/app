@@ -4,7 +4,6 @@
     <title>信息修改</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
 <link rel="import" href="/themes/temp/validate.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_change_info.js?v=${ver}"></script>
 </head>
 <body class="user-msg">
 <input type="hidden" id="type" name="type" value="${type}">
@@ -38,5 +37,12 @@
 
 </div>
 <span class="fs-14 c-777" style="margin: 0 2%;"></span>
+
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_change_info.js');
+
+    })
+</script>
 </body>
 </html>

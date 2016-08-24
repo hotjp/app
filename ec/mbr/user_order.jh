@@ -3,7 +3,6 @@
 <head>
     <title>我的订单</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_order.js?v=${ver}"></script>
 </head>
 <body class="user-order">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -91,5 +90,11 @@
     <a class="balance fr fs-15 js-pays" href="javascript:void(0)">合并订单</a>
 
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_order.js');
+
+    })
+</script>
 </body>
 </html>

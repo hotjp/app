@@ -178,6 +178,13 @@
                 })
         	});
         </script>
+
+        <script>
+            require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+                __inline('/resources/js/tmpl1/ec/mbr/recharge_center.js');
+
+            })
+        </script>
     </body>
 
 </html>

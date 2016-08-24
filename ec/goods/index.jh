@@ -4,8 +4,6 @@
     <title>${sysTitle}</title>
     <link rel="import" href="../../themes/temp/htmlHead.jt?__inline"/>
 
-    <script type="text/javascript" src="/resources/js/tmpl1/ec/goods/index.js"></script>
-
 </head>
 <body class="index">
 
@@ -39,5 +37,11 @@
 <@moHotBrand limit="8"/>
 
 <div class="replace-footer"></div>
+<script>
+	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+		__inline('/resources/js/tmpl1/ec/goods/index.js');
+
+	})
+</script>
 </body>
 </html>

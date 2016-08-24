@@ -3,7 +3,6 @@
 <head>
     <title>我的代金券</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/mbr/user_coupon_cash.js?v=${ver}"></script>
 </head>
 <body class="user-coupon">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -54,5 +53,11 @@
         </li>
     </ul>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_coupon_cash.js');
+
+    })
+</script>
 </body>
 </html>

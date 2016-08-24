@@ -3,7 +3,6 @@
 <head>
     <title>用户中心</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_manage.js?v=${ver}"></script>
 </head>
 <body class="user-manage">
 <input type="hidden" id="oldProvinceId" name="oldProvinceId" value="${_MBR_.provinceId}">
@@ -69,5 +68,11 @@
         <input class="user-sub" type="button" value="退出登录"/>
     </div>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_manage.js');
+
+    })
+</script>
 </body>
 </html>

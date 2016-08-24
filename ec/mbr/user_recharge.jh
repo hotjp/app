@@ -3,7 +3,6 @@
 <head>
     <title>充值</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_recharge.js?v=${ver}"></script>
 </head>
 <body class="user-refund">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -18,5 +17,11 @@
 <br/>
 <a class="balance fr fs-15" href="javascript:void(0)" id="recharge">充值</a>
 
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_recharge.js');
+
+    })
+</script>
 </body>
 </html>

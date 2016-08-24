@@ -3,7 +3,6 @@
 <head>
     <title>店铺首页</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script  type="text/javascript" src="${jsEcRoot}/shop/sort.js?v=${ver}"></script>
 </head>
 <body class="shop-sort">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -39,5 +38,11 @@
         </div>
     </#list>
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/shop/sort.js');
+
+    })
+</script>
 </body>
 </html>

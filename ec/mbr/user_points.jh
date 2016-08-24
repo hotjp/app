@@ -3,7 +3,6 @@
 <head>
     <title>我的积分</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_points.js?v=${ver}"></script>
 </head>
 <body class="user-cerdit">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -63,6 +62,13 @@ ${totalPoint.points}<span class="fs-15"> 积分</span>
     </div>
 
 </div>
+
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_points.js');
+
+    })
+</script>
 </body>
 
 </html>

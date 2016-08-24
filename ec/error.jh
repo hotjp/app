@@ -19,5 +19,11 @@ ${exceptionMessage}
 </#if>
 <br/><br/></p>
 <a class="fs-16" href="javascript:;" onclick="toIndexPage();">点击返回</a>
+
+<script>
+	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+
+	})
+</script>
 </body>
 </html>

@@ -3,7 +3,6 @@
 <head>
     <title>退货/退款</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_refund_start.js?v=${ver}"></script>
 </head>
 <body class="user-msg">
 <input type="hidden" id="paidAmount" name="paidAmount" value="${order.paidAmount}">
@@ -103,6 +102,11 @@
 </div>
 
 <!--/弹出菜单-->
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_refund_start.js');
 
+    })
+</script>
 </body>
 </html>

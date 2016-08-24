@@ -3,7 +3,6 @@
 <head>
     <title>商品列表</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/shop/list.js?v=${ver}"></script>
 </head>
 <body class="goods-list">
 <input type="hidden" id="shopId" name="shopId" value="${shop.id}">
@@ -54,6 +53,11 @@
     </div>
     <!--工具条结束，内容开始-->
 </div>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/shop/list.js');
 
+    })
+</script>
 </body>
 </html>

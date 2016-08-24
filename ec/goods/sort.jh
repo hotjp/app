@@ -3,7 +3,6 @@
 <head>
     <title>分类</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/goods/sort.js?v=${ver}"></script>
 </head>
 <body class="sort">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -53,6 +52,11 @@
         </ul>
     </div>
 </div>
+    <script>
+        require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+            __inline('/resources/js/tmpl1/ec/goods/sort.js');
 
+        })
+    </script>
 </body>
 </html>

@@ -13,6 +13,10 @@
 
 <p><br/>支付成功<br/><br/></p>
 <a class="fs-16" href="#" onclick="toIndexPage()">5秒后自动返回，如未返回点击此处</a>
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
 
+    })
+</script>
 </body>
 </html>

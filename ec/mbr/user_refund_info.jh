@@ -4,7 +4,6 @@
 <head>
     <title>退款/退货</title>
 <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/mbr/user_refund_info.js?v=${ver}"></script>
 </head>
 <body class="user-refund-info">
 <header id="header" class="mui-bar mui-bar-nav trans">
@@ -251,5 +250,11 @@
 </div>-->
 
 <!--/弹出菜单-->
+<script>
+    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+        __inline('/resources/js/tmpl1/ec/mbr/user_refund_info.js');
+
+    })
+</script>
 </body>
 </html>
