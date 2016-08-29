@@ -8,9 +8,9 @@
 	</head>
 	<body class="user-cerdit">
 		<header id="header" class="mui-bar mui-bar-nav trans">
-			<a class="mui-pull-left c-fff" href="#"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+			<a class="mui-pull-left c-fff" data-href="#"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
 			<h1 class="mui-title c-fff fs-17">我的钱包</h1>
-            <#--<a class="mui-pull-right c-fff" href="javascript:void(0);"><i class="iconfont icon-wode c-fff"></i></a>-->
+            <#--<a class="mui-pull-right c-fff" data-href="javascript:void(0);"><i class="iconfont icon-wode c-fff"></i></a>-->
 		</header>
 		<style type="text/css">
             .user-info .to-recharge{
@@ -28,7 +28,7 @@
 			<p class="fs-12" style="line-height: 30px;">账户余额：</p>
 		${totalBalance.balanceAmount}<span class="fs-15"> 元</span>
 			<p class="fs-12">账户余额等同于预付款，请放心使用！</p>
-			<a href="${vars.root}/ec/mbr/recharge_center.html?amount=${totalBalance.balanceAmount}" class="to-recharge fs-14">去充值</a>
+			<a data-href="${vars.root}/ec/mbr/recharge_center.html?amount=${totalBalance.balanceAmount}" class="to-recharge fs-14">去充值</a>
 		</div>
 		<div class="cerdit-slider mui-slider mui-fullscreen">
             <div class="cerdit-control mui-slider-indicator fs-14">
@@ -46,6 +46,13 @@
                             <ul class="mui-table-view">
 
                             </ul>
+                            <div class="pageTmpl">
+                                <li class='fs-13'>
+                                    <p class='el fs-13'>operationRemark ||""</p>
+                                    <p class='fs-11'>time </p>
+                                    <span class='plus fs-23'> balance </span>
+                                </li>
+                            </div>
 
                         </div>
                     </div>
@@ -56,7 +63,13 @@
                             <ul class="mui-table-view">
 
                             </ul>
-
+                            <div class="pageTmpl">
+                                <li class='fs-13'>
+                                    <p class='el fs-13'>operationRemark ||""</p>
+                                    <p class='fs-11'>time </p>
+                                    <span class='plus fs-23'> balance </span>
+                                </li>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,7 +80,13 @@
                             <ul class="mui-table-view">
 
                             </ul>
-
+                            <div class="pageTmpl">
+                                <li class='fs-13'>
+                                    <p class='el fs-13'>operationRemark ||""</p>
+                                    <p class='fs-11'>time </p>
+                                    <span class='plus fs-23'> balance </span>
+                                </li>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +97,7 @@
 	</body>
 
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_balance.js');
 
     })

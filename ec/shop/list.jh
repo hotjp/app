@@ -9,20 +9,20 @@
 <input type="hidden" id="cat" name="cat" value="${cat}">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title">
         <input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索商品关键词"/>
     </h1>
     <!--
-    <a class="mui-pull-right c-fff" href="#"><i class="iconfont icon-msg c-fff"></i></a>
+    <a class="mui-pull-right c-fff" data-href="#"><i class="iconfont icon-msg c-fff"></i></a>
     -->
 </header>
 <div class="tools-bar clearfix fs-13">
     <div class="tools-bar-content">
         <div class="goods-sort fl pos-relative">
-            <a class="goods-sort-btn" href="javascript:void(0)"><span>综合排序</span><i
+            <a class="goods-sort-btn" data-href="javascript:void(0)"><span>综合排序</span><i
                     class="iconfont icon-jiantou"></i></a>
 
             <div class="goods-sort-list" style="display: none;">
@@ -49,12 +49,29 @@
             <ul class='mui-table-view'>
 
             </ul>
+            <div class="pageTmpl">
+                <li>
+                    <a class='clearfix' data-href="../goods/goods_view.html">
+                        <img src='' onerror='errorImg(this);'/>
+                        <div class='goods-info'>
+                            <span class='goods-tit fs-13'>
+                                <span class='act-style1'><i class='act-left-icon'>simplePromoLabel</i></span>
+                                name
+                            </span>
+                            <span class='sale-price fs-15 c-ff5b53'>
+                                formatCurrency(minPrice, buyType)
+                            </span>
+                            <span class='old-price fs-11'>formatCurrency(goodsList[i].minPrice)</span>
+                        </div>
+                    </a>
+                </li>
+            </div>
         </div>
     </div>
     <!--工具条结束，内容开始-->
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/shop/list.js');
 
     })

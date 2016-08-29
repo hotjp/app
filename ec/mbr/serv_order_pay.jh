@@ -7,7 +7,7 @@
 <body class="goods-order">
 <input type="hidden" id="orderNoStr" name="orderNoStr" value="${orderNoStr}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">付款详情</h1>
@@ -44,7 +44,7 @@
 </#if>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/serv_order_pay.js');
 
     })

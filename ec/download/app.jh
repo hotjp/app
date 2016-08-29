@@ -23,9 +23,8 @@
 <input type="hidden" id="systemPath" name="systemPath" value="${systemPath}">
 
 <div class="down-btns">
-    <a class="anzuo" id="android" href="${systemPath}/download/${sysName}/${sysName}<%=t%>.apk">Android版下载</a>
-    <a class="ios" id="iphone"
-       href="itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/qilu89lgl/jerei/master/${sysName}/${sysName}<%=t%>.plist">IPhone版下载</a>
+    <a class="anzuo" id="android" data-href="${systemPath}/download/${sysName}/${sysName}<%=t%>.apk">Android版下载</a>
+    <a class="ios" id="iphone" data-href="itms-services:///?action=download-manifest&url=https://raw.githubusercontent.com/qilu89lgl/jerei/master/${sysName}/${sysName}<%=t%>.plist">IPhone版下载</a>
 </div>
 <div class="_cover">
     <div class="_img tip_android"><img src="${systemPath}/resources/images/ec/tip_android.png"></div>

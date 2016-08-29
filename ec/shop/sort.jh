@@ -6,12 +6,12 @@
 </head>
 <body class="shop-sort">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff fs-17">店铺分类</h1>
 </header>
 <div class="shop-sort-content">
     <div class="index-block bg-fff">
-        <a class="block-href" href="${vars.root}/ec/shop/${shopId}/list.html">
+        <a class="block-href" data-href="${vars.root}/ec/shop/${shopId}/list.html">
             <div class="index-block-tit clearfix">
                 <span class="title fs-15 fl">全部商品</span>
                 <i class="iconfont icon-you-after more fr c-999 fs-11"></i>
@@ -22,7 +22,7 @@
     <!--分类数据的双层循环显示-->
     <#list cats as cat>
         <div class="index-block bg-fff">
-            <a class="block-href" href="${vars.root}/ec/shop/${shopId}/list.html?cat=${cat.id}">
+            <a class="block-href" data-href="${vars.root}/ec/shop/${shopId}/list.html?cat=${cat.id}">
                 <div class="index-block-tit clearfix">
                     <span class="title fs-14 fl">${cat.text}</span>
                     <i class="iconfont icon-you-after more fr c-999 fs-11">查看全部 </i>
@@ -31,7 +31,7 @@
             <#if (cat.children)?? && cat.children?size gt 0>
                 <ul class="shop-sort-list clearfix">
                     <#list cat.children as myCat>
-                        <li><a href="${vars.root}/ec/shop/${shopId}/list.html?cat=${myCat.id}" >${myCat.text}</a></li>
+                        <li><a data-href="${vars.root}/ec/shop/${shopId}/list.html?cat=${myCat.id}" >${myCat.text}</a></li>
                     </#list>
                 </ul>
             </#if>
@@ -39,7 +39,7 @@
     </#list>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/shop/sort.js');
 
     })

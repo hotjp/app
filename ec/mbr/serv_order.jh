@@ -17,7 +17,7 @@
 </head>
 <body class="user-refund">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">服务订单</h1>
@@ -26,10 +26,10 @@
 <br/>
 <br/>
 <br/>
-<a class="balance fr fs-15" href="javascript:void(0)" id="recharge">付款</a>
+<a class="balance fr fs-15" data-href="javascript:void(0)" id="recharge">付款</a>
 
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_recharge.js');
 
     })

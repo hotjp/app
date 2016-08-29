@@ -7,11 +7,11 @@
 <body class="user-address">
 <input type="hidden" id="url" name="url" value="${url}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff fs-17">选择收货地址</h1>
 
-    <div class="mui-pull-right c-fff"><a
-            href="<#if addressList?size gt 0>${vars.root}/ec/mbr/user_address_edit.html?url=${url}<#else>javascript:void(0)</#if>">编辑</a>
+    <div class="mui-pull-right c-fff">
+        <a data-href="<#if addressList?size gt 0>${vars.root}/ec/mbr/user_address_edit.html?url=${url}<#else>javascript:void(0)</#if>">编辑</a>
     </div>
 </header>
 <div class="user-address-content">
@@ -37,12 +37,12 @@
     </ul>
 </div>
 <!--底部工具条-->
-<a class="user-address-add-btn c-fff" href="${vars.root}/ec/mbr/user_address_add.html?url=${url}">
+<a class="user-address-add-btn c-fff" data-href="${vars.root}/ec/mbr/user_address_add.html?url=${url}">
     <span class="fs-20">+</span>添加新地址
 </a>
 
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_address.js');
 
     })

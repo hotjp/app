@@ -40,11 +40,11 @@
 </div>
 <!--底部工具条-->
 <p class="address-tips">左右滑动需修改的地址试试？</p>
-<a class="user-address-add-btn c-fff" href="${vars.root}/ec/mbr/user_address_add.html?url=${url}">
+<a class="user-address-add-btn c-fff" data-href="${vars.root}/ec/mbr/user_address_add.html?url=${url}">
     <span class="fs-20">+</span>添加新地址
 </a>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_address_edit.js');
 
     })

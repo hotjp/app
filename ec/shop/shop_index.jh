@@ -7,17 +7,18 @@
 <body class="shop-index">
 <input type="hidden" id="shopId" name="shopId" value="${shop.id}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff fs-20"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff fs-20"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title">
         <form action="${vars.root}/ec/shop/${shop.id}/list.html"><input type="search" name="kw" id="" value=""
                                                                         placeholder="搜索店内商品"/></form>
     </h1>
-    <a class="mui-pull-right c-fff" href="${vars.root}/ec/shop/${shop.id}/sort.html" id="shopCat"><i
-            class="iconfont icon-fenleifull c-fff fs-20"></i></a>
-    <#--<a class="return-home" href="${vars.root}/ec/goods/index.html"><i class="iconfont icon-shouye c-fff"></i></a>-->
-    <a class="return-home" id="btn_index" href="javascript:void(0);"><i class="iconfont icon-shouye c-fff"></i></a>
+    <a class="mui-pull-right c-fff" data-href="${vars.root}/ec/shop/${shop.id}/sort.html" id="shopCat">
+        <i class="iconfont icon-fenleifull c-fff fs-20"></i>
+    </a>
+    <#--<a class="return-home" data-href="${vars.root}/ec/goods/index.html"><i class="iconfont icon-shouye c-fff"></i></a>-->
+    <a class="return-home" id="btn_index" data-href="javascript:void(0);"><i class="iconfont icon-shouye c-fff"></i></a>
 </header>
 
 <div class="shop-index-content">
@@ -50,13 +51,13 @@
                 <div class="mui-slider-group">
                     <!-- 第一张 -->
                     <div class="mui-slider-item">
-                        <a href="#">
+                        <a data-href="#">
                             <img src="${buildUrl(shop.bannerUrl)}" onerror="errorImg(this,4);"/>
                         </a>
                     </div>
                     <!-- 第二张
                     <div class="mui-slider-item">
-                        <a href="#">
+                        <a data-href="#">
                             <img src="../resources/img/ec/shop_index_img.png" onerror="errorImg(this);">
                         </a>
                     </div>-->
@@ -79,7 +80,7 @@
         <div class="big-goods">
             <ul>
                 <li>
-                    <a class="clearfix" href="${vars.root}/ec/goods/${goodsData.id}.html" id="bigGoodsPic">
+                    <a class="clearfix" data-href="${vars.root}/ec/goods/${goodsData.id}.html" id="bigGoodsPic">
                         <img src="${buildUrl(goodsData.iconUrl)}" onerror="errorImg(this);"/>
 
                         <div class="goods-info">
@@ -110,17 +111,17 @@
 <!--底部
 <footer class="bottom-nav">
     <nav class="mui-bar mui-bar-tab">
-    <a class="mui-col-xs-6 mui-block fl mui-text-center" href="${vars.root}/ec/shop/${shop.id}/shop_sort.html">
+    <a class="mui-col-xs-6 mui-block fl mui-text-center" data-href="${vars.root}/ec/shop/${shop.id}/shop_sort.html">
         <span class="c-333 fs-13">商品分类</span>
     </a>
-    <a class="mui-col-xs-6 mui-block fl mui-text-center" href="sort.html">
+    <a class="mui-col-xs-6 mui-block fl mui-text-center" data-href="sort.html">
         <span class="c-333 fs-13">店铺详情</span>
     </a>
 </nav>
 </footer>
 -->
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view",'common'],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/shop/shop_index.js');
 
     })

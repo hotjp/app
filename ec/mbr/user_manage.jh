@@ -9,36 +9,36 @@
 <input type="hidden" id="oldCityId" name="oldCityId" value="${_MBR_.cityId}">
 <input type="hidden" id="oldDistrictId" name="oldDistrictId" value="${_MBR_.districtId}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i></a>
 
     <h1 class="mui-title c-fff fs-17">账户管理</h1>
-    <a class="mui-pull-right c-fff" href="javascript:;"><i
+    <a class="mui-pull-right c-fff" data-href="javascript:;"><i
             class="iconfont icon-wode c-fff"></i></a>
 </header>
 <div class="user-manage-content">
     <ul class="user-info-list">
         <li>
-            <a class="fs-14" href="#">头像<img class="pull-right c-999" src="${ecImg}/user-img.png"></a>
+            <a class="fs-14" data-href="#">头像<img class="pull-right c-999" src="${ecImg}/user-img.png"></a>
         </li>
     <#if _MBR_ == null>
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
                     class="pull-right c-999"><i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
     <#else>
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_change_info.html?type=1">用户名<span
                     class="pull-right c-999">${_MBR_.nickName}<i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
     </#if>
         <!--<li>
-            <a class=" fs-14" href="#">性别<span class="pull-right c-999">男<i class="iconfont icon-you fs-14"></i></span></a>
+            <a class=" fs-14" data-href="#">性别<span class="pull-right c-999">男<i class="iconfont icon-you fs-14"></i></span></a>
         </li>-->
 
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=2">手机号<span
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_change_info.html?type=2">手机号<span
                     class="pull-right c-999">${_MBR_.mobile}<i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
@@ -48,7 +48,7 @@
         </li>
 
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_info.html?type=3">邮箱<span
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_change_info.html?type=3">邮箱<span
                     class="pull-right c-999">${_MBR_.email}<i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
@@ -56,11 +56,11 @@
     </ul>
     <ul class="user-info-list tools-list">
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_address_edit.html">我的收货地址<span class="pull-right c-999"><i
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_address_edit.html">我的收货地址<span class="pull-right c-999"><i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
         <li>
-            <a class="fs-14" href="${vars.root}/ec/mbr/user_change_pwd.html">账户安全<span class="pull-right c-999">可修改密码<i
+            <a class="fs-14" data-href="${vars.root}/ec/mbr/user_change_pwd.html">账户安全<span class="pull-right c-999">可修改密码<i
                     class="iconfont icon-you fs-14"></i></span></a>
         </li>
     </ul>
@@ -69,7 +69,7 @@
     </div>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_manage.js');
 
     })

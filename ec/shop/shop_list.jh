@@ -4,21 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>商品列表</title>
-<link rel="import" href="/themes/temp/htmlHead.jt?__inline">
-    <script type="text/javascript" src="${jsEcRoot}/shop/shop_list.js?v=${ver}"></script>
+    <link rel="import" href="/themes/temp/htmlHead.jt?__inline">
 </head>
 <body class="shop-list">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <#--<a class="mui-pull-left c-fff" href="sort.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>-->
+    <#--<a class="mui-pull-left c-fff" data-href="sort.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>-->
     <link rel="import" href="/themes/include/i_back.jt?__inline">
     <h1 class="mui-title"><input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索店铺关键词" /></h1>
     <link rel="import" href="/themes/include/i_index.jt?__inline">
-    <#--<a class="mui-pull-right c-fff" href="user_msg.html"><i class="iconfont icon-msg c-fff fs-20"></i></a>-->
+    <#--<a class="mui-pull-right c-fff" data-href="user_msg.html"><i class="iconfont icon-msg c-fff fs-20"></i></a>-->
 </header>
 <div class="tools-bar clearfix fs-13">
     <div class="tools-bar-content">
         <div class="goods-sort fl pos-relative">
-            <a class="goods-sort-btn" href="javascript:void(0)"><span>综合排序</span><i class="iconfont icon-jiantou"></i></a>
+            <a class="goods-sort-btn" data-href="javascript:void(0)"><span>综合排序</span><i class="iconfont icon-jiantou"></i></a>
             <div class="goods-sort-list" style="display: none;">
                 <ul>
                     <li class="on" sort="rk:d" ><span>综合排序</span><i class="iconfont icon-duihao"></i></li>
@@ -38,7 +37,7 @@
             <ul class="mui-table-view clearfix">
                 <!--店铺列表循环开始-->
                 <#--<li>
-                    <a class="clearfix" href="#" >
+                    <a class="clearfix" data-href="#" >
                         <img src="../resources/img/ec/tmpl1/product_img.png"/>
                         <span class="shop-name fl fs-13 mui-ellipsis mui-col-xs-6">强力龙挖机配件专营店</span>
                         <p class="shop-num fr fs-11 mui-ellipsis mui-col-xs-4">共<span class="c-ff5b53">1238</span>件商品</p>
@@ -46,10 +45,10 @@
                         <p class="fr fs-11 mui-ellipsis mui-col-xs-5">好评率：<span>100.00</span>%</p>
                     </a>
                     <div class="img-product clearfix">
-                        <a href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
-                        <a href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
-                        <a href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
-                        <a href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
+                        <a data-href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
+                        <a data-href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
+                        <a data-href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
+                        <a data-href="#"><img src="../resources/img/ec/tmpl1/product_img.png"/></a>
                     </div>
                     <div class="major fs-13 mui-ellipsis">主营：<span>正品挖掘机配件、装载机配件、轮胎、油品、零部件</span></div>
                 </li>-->
@@ -59,6 +58,11 @@
         </div>
     </div>
 </div>
+<script>
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view",'common'],function($,mui,mustache){
+        __inline('/resources/js/tmpl1/ec/shop/shop_list.js');
 
+    })
+</script>
 </body>
 </html>

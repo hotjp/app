@@ -7,7 +7,7 @@
 </head>
 <body class="user-refund-info">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="${vars.root}/ec/user/user_center.html"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="${vars.root}/ec/user/user_center.html"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">退款/退货</h1>
@@ -204,7 +204,7 @@
                                 当前状态：<span class="c-ff5b53">${refundName}</span>
                             </li>
                             <li class="mui-table-view-cell">
-                                <a href="#topPopover">
+                                <a data-href="#topPopover">
                                     退款金额：<span class="c-ff5b53">${formatPositiveMoney(refund.paidAmount)}</span>
                                 </a>
                             </li>
@@ -231,17 +231,17 @@
         <div class="mui-scroll">
             <ul class="mui-table-view">
                 <li class="mui-table-view-cell">
-                    <a href="#">物流公司1</a>
+                    <a data-href="#">物流公司1</a>
                 </li>
-                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                <li class="mui-table-view-cell"><a data-href="#">物流公司1</a>
                 </li>
-                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                <li class="mui-table-view-cell"><a data-href="#">物流公司1</a>
                 </li>
-                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                <li class="mui-table-view-cell"><a data-href="#">物流公司1</a>
                 </li>
-                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                <li class="mui-table-view-cell"><a data-href="#">物流公司1</a>
                 </li>
-                <li class="mui-table-view-cell"><a href="#">物流公司1</a>
+                <li class="mui-table-view-cell"><a data-href="#">物流公司1</a>
                 </li>
             </ul>
         </div>
@@ -251,7 +251,7 @@
 
 <!--/弹出菜单-->
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_refund_info.js');
 
     })

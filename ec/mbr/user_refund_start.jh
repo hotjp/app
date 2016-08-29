@@ -8,7 +8,7 @@
 <input type="hidden" id="paidAmount" name="paidAmount" value="${order.paidAmount}">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff fs-17">退款／退货</h1>
@@ -91,7 +91,7 @@
             <ul class="mui-table-view">
             <#list reasons as reason>
                 <li class="mui-table-view-cell js-reason" js-id="${reason.id}">
-                    <a href="javascript:void(0)">${reason.name}</a>
+                    <a data-href="javascript:void(0)">${reason.name}</a>
                 </li>
             </#list>
                 </li>
@@ -103,7 +103,7 @@
 
 <!--/弹出菜单-->
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_refund_start.js');
 
     })

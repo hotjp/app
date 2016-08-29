@@ -90,7 +90,7 @@
     })(mui, document);
 </script>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_address_add.js');
 
     })

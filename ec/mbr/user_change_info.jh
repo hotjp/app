@@ -8,12 +8,12 @@
 <body class="user-msg">
 <input type="hidden" id="type" name="type" value="${type}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff fs-17">信息修改</h1>
 
-    <a class="mui-pull-right c-fff" href="javascript:void(0)">完成</a>
+    <a class="mui-pull-right c-fff" data-href="javascript:void(0)">完成</a>
 </header>
 <div class="user-msg-content">
     <form action="" method="post" id="form-userInfo">
@@ -39,7 +39,7 @@
 <span class="fs-14 c-777" style="margin: 0 2%;"></span>
 
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_change_info.js');
 
     })

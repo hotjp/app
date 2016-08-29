@@ -7,11 +7,10 @@
 <body class="goods-comment">
 <input type="hidden" id="goodsId" name="goodsId" value="${goodsId}">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
-            class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff fs-17" >商品评价(<i>20</i>)</h1>
-    <a class="mui-pull-right c-fff" href="javascript:;"><i class="iconfont icon-shouye c-fff fs-20"></i></a>
+    <a class="mui-pull-right c-fff" data-href="javascript:;"><i class="iconfont icon-shouye c-fff fs-20"></i></a>
 </header>
 <div class="goods-comment-content mui-slider mui-fullscreen">
     <div class="comment-title">
@@ -32,6 +31,20 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <div class='comment-user'>
+                                <img class='comment-user-img' src='' onerror='errorImg(this);'/>
+                                <span class='comment-user-name fs-13 c-333'>mbrNickName</span>
+                                <div class='comment-stars' data-starnum= "xingCount" ></div>
+                                <div class='comment-text fs-13 c-777'>content || ""</div>
+                                <div class='comment-img'><img src='' onerror='errorImg(this);'/></div>
+                                <div class='comment-moreinfo fs-11 c-999'>  
+                                    <span>date</span><span>颜色分类: skuPropTextList
+                                </div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,7 +55,20 @@
                     <ul class="mui-table-view">
 
                     </ul>
-
+                    <div class="pageTmpl">
+                        <li>
+                            <div class='comment-user'>
+                                <img class='comment-user-img' src='' onerror='errorImg(this);'/>
+                                <span class='comment-user-name fs-13 c-333'>mbrNickName</span>
+                                <div class='comment-stars' data-starnum= "xingCount" ></div>
+                                <div class='comment-text fs-13 c-777'>content || ""</div>
+                                <div class='comment-img'><img src='' onerror='errorImg(this);'/></div>
+                                <div class='comment-moreinfo fs-11 c-999'>  
+                                    <span>date</span><span>颜色分类: skuPropTextList
+                                </div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,6 +79,20 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <div class='comment-user'>
+                                <img class='comment-user-img' src='' onerror='errorImg(this);'/>
+                                <span class='comment-user-name fs-13 c-333'>mbrNickName</span>
+                                <div class='comment-stars' data-starnum= "xingCount" ></div>
+                                <div class='comment-text fs-13 c-777'>content || ""</div>
+                                <div class='comment-img'><img src='' onerror='errorImg(this);'/></div>
+                                <div class='comment-moreinfo fs-11 c-999'>  
+                                    <span>date</span><span>颜色分类: skuPropTextList
+                                </div>
+                            </div>
+                        </li>
+                    </div>
 
                 </div>
             </div>
@@ -64,6 +104,20 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <div class='comment-user'>
+                                <img class='comment-user-img' src='' onerror='errorImg(this);'/>
+                                <span class='comment-user-name fs-13 c-333'>mbrNickName</span>
+                                <div class='comment-stars' data-starnum= "xingCount" ></div>
+                                <div class='comment-text fs-13 c-777'>content || ""</div>
+                                <div class='comment-img'><img src='' onerror='errorImg(this);'/></div>
+                                <div class='comment-moreinfo fs-11 c-999'>  
+                                    <span>date</span><span>颜色分类: skuPropTextList
+                                </div>
+                            </div>
+                        </li>
+                    </div>
 
                 </div>
             </div>
@@ -75,6 +129,20 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <div class='comment-user'>
+                                <img class='comment-user-img' src='' onerror='errorImg(this);'/>
+                                <span class='comment-user-name fs-13 c-333'>mbrNickName</span>
+                                <div class='comment-stars' data-starnum= "xingCount" ></div>
+                                <div class='comment-text fs-13 c-777'>content || ""</div>
+                                <div class='comment-img'><img src='' onerror='errorImg(this);'/></div>
+                                <div class='comment-moreinfo fs-11 c-999'>  
+                                    <span>date</span><span>颜色分类: skuPropTextList
+                                </div>
+                            </div>
+                        </li>
+                    </div>
 
                 </div>
             </div>
@@ -84,7 +152,7 @@
 </div>
 <!--评价结束-->
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/goods/goods_comment.js');
 
     })

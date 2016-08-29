@@ -19,12 +19,52 @@
             <ul class="mui-table-view clearfix">
 
             </ul>
+            <div class="pageTmpl">
+                <li class='shop-order mui-table-view-cell'>
+                    <div class='shop-title fs-12'>
+                        <a data-href='../shop/shop_index.html'>
+                            <i class='iconfont icon-dianpu c-9c4b0f'></i>&nbsp;shopName
+                            <span class='mui-pull-right c-ff5b53'></span>
+                        </a>
+                    </div>
+                    <ul class='goods-list'>
+                        <li class='clearfix'>
+                            <a class='fl' data-href='../goods/goods_view.html'>
+                                <img src='' onerror='errorImg(this);'>
+                            </a>
+                            <div class='goods-info fl'>
+                                <p class='c-333 fs-13'>skuName || ""</p>
+                                <p class='c-999 fs-11'>skuPropTextList || ""</p>
+                            </div>
+                            <div class='goods-price fr'>
+                                <p class='fs-13 c-333 mui-text-right'>面议</p>
+                                <p class='fs-13 c-333 mui-text-right'></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class='shop-balance clearfix'>
+                        <p class='c-333 fs-12'>
+                            预约时间：<span class='c-ff5b53'>\createTime || " \</span>
+                        </p>
+                         <p class='c-333 fs-12 e1'>
+                            预约内容：<span class='c-ff5b53'>mbrRemark || " </span>
+                        </p>
+                        <p class='c-333 fs-12'>
+                            回复时间：<span class='c-ff5b53'>sellerReplyTime || " </span>
+                        </p>
+                        <p class='c-333 fs-12'>
+                            商家回复： <span class='c-ff5b53'>sellerRemark || "</span>
+                        </p>
+                    </div>
+                </li>
+
+            </div>
 
         </div>
     </div>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_bespeak_list.js');
 
     })

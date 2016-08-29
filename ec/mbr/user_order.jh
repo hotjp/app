@@ -6,9 +6,9 @@
 </head>
 <body class="user-order">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff">我的订单</h1>
-    <#--<a class="mui-pull-right c-fff" href="${vars.root}/ec/user/user_center.html"><i class="iconfont icon-wode c-fff"></i></a>-->
+    <#--<a class="mui-pull-right c-fff" data-href="${vars.root}/ec/user/user_center.html"><i class="iconfont icon-wode c-fff"></i></a>-->
 </header>
 
 <div class="goods-order-content mui-slider mui-fullscreen">
@@ -30,7 +30,34 @@
                     <ul class="mui-table-view">
 
                     </ul>
-
+                    <div class="pageTmpl">
+                        <li class="shop-order mui-table-view-cell" id='' data-no=''>
+                            <div class='shop-title fs-12'>
+                                <i class='iconfont icon-dianpu fs-18 c-9c4b0f'></i>&nbsp;
+                                <a data-href='../shop/shop_index.html'>shopName </a>
+                                <span class='mui-pull-right c-ff5b53 js-status'>orderStatusName</span>
+                            </div>
+                            <ul class='goods-list'>
+                                <li class='clearfix'>
+                                    <a data-href='../mbr/id.html'>
+                                        <img class='fl' src='' onerror='errorImg(this);'/>
+                                        <div class='goods-info fl'>
+                                            <p class='c-333 fs-13'>skuName</p>
+                                            <p class='c-999 fs-11'>skuPropTextList </p>
+                                        </div>
+                                        <div class='goods-price fr'>
+                                            <p class='fs-13 c-333 mui-text-right'>￥ formatCurrency(skus[j].buyPrice)</p>
+                                            <p class='fs-13 c-333 mui-text-right'>buyQty</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class='shop-balance clearfix'>
+                                <p class='c-333 fs-12'>共<span class='goods-num'>length</span>件商品 合计<span class='price fs-16'>￥ formatCurrency(orders[i].payableAmount)</span>（含运费<span class='freight'>￥ formatCurrency(orders[i].deliveryFeeAmount)</span>）</p>
+                                <div class='js-status-btn'>orderParam</div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
 
             </div>
@@ -41,9 +68,39 @@
                 <div class="mui-scroll" id="ds-waitpay" data-status="0">
                     <ul class="mui-table-view">
                         <!--待付款-->
-
-
                     </ul>
+                    <div class="pageTmpl">
+                        <li class="shop-order mui-table-view-cell" id='' data-no=''>
+                            <div class='shop-title fs-12'>
+                                <div class='mui-input-row mui-checkbox mui-left'>
+                                    <label>
+                                        <i class='iconfont icon-dianpu c-9c4b0f'></i>&nbsp;<a data-href='../shop/shop_index.html'>shopName</a>
+                                        <span class='mui-pull-right c-ff5b53 js-status'>新订单</span>
+                                    </label>
+                                    <input name='checkbox' value='' type='checkbox' data-no='orders[i].no'>
+                                </div>
+                            </div>
+                            <ul class='goods-list'>
+                                <li class='clearfix'>
+                                    <a data-href='../mbr/id.html'>
+                                        <img class='fl' src='' onerror='errorImg(this);'/>
+                                        <div class='goods-info fl'>
+                                            <p class='c-333 fs-13'>skuName</p>
+                                            <p class='c-999 fs-11'>skuPropTextList </p>
+                                        </div>
+                                        <div class='goods-price fr'>
+                                            <p class='fs-13 c-333 mui-text-right'>￥ formatCurrency(skus[j].buyPrice)</p>
+                                            <p class='fs-13 c-333 mui-text-right'>buyQty</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class='shop-balance clearfix'>
+                                <p class='c-333 fs-12'>共<span class='goods-num'>length</span>件商品 合计<span class='price fs-16'>￥ formatCurrency(orders[i].payableAmount)</span>（含运费<span class='freight'>￥ formatCurrency(orders[i].deliveryFeeAmount)</span>）</p>
+                                <div class='js-status-btn'>orderParam</div>
+                            </div>
+                        </li>
+                    </div>
 
                 </div>
 
@@ -56,6 +113,34 @@
                     <ul class="mui-table-view">
                         <!--待发货-->
                     </ul>
+                    <div class="pageTmpl">
+                        <li class="shop-order mui-table-view-cell" id='' data-no=''>
+                            <div class='shop-title fs-12'>
+                                <i class='iconfont icon-dianpu fs-18 c-9c4b0f'></i>&nbsp;
+                                <a data-href='../shop/shop_index.html'>shopName </a>
+                                <span class='mui-pull-right c-ff5b53 js-status'>orderStatusName</span>
+                            </div>
+                            <ul class='goods-list'>
+                                <li class='clearfix'>
+                                    <a data-href='../mbr/id.html'>
+                                        <img class='fl' src='' onerror='errorImg(this);'/>
+                                        <div class='goods-info fl'>
+                                            <p class='c-333 fs-13'>skuName</p>
+                                            <p class='c-999 fs-11'>skuPropTextList </p>
+                                        </div>
+                                        <div class='goods-price fr'>
+                                            <p class='fs-13 c-333 mui-text-right'>￥ formatCurrency(skus[j].buyPrice)</p>
+                                            <p class='fs-13 c-333 mui-text-right'>buyQty</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class='shop-balance clearfix'>
+                                <p class='c-333 fs-12'>共<span class='goods-num'>length</span>件商品 合计<span class='price fs-16'>￥ formatCurrency(orders[i].payableAmount)</span>（含运费<span class='freight'>￥ formatCurrency(orders[i].deliveryFeeAmount)</span>）</p>
+                                <div class='js-status-btn'>orderParam</div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,8 +149,36 @@
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll"  id="ds-waitget" data-status="30">
                     <ul class="mui-table-view">
-                        <!--待付款-->
+                        <!--待收货-->
                     </ul>
+                    <div class="pageTmpl">
+                        <li class="shop-order mui-table-view-cell" id='' data-no=''>
+                            <div class='shop-title fs-12'>
+                                <i class='iconfont icon-dianpu fs-18 c-9c4b0f'></i>&nbsp;
+                                <a data-href='../shop/shop_index.html'>shopName </a>
+                                <span class='mui-pull-right c-ff5b53 js-status'>orderStatusName</span>
+                            </div>
+                            <ul class='goods-list'>
+                                <li class='clearfix'>
+                                    <a data-href='../mbr/id.html'>
+                                        <img class='fl' src='' onerror='errorImg(this);'/>
+                                        <div class='goods-info fl'>
+                                            <p class='c-333 fs-13'>skuName</p>
+                                            <p class='c-999 fs-11'>skuPropTextList </p>
+                                        </div>
+                                        <div class='goods-price fr'>
+                                            <p class='fs-13 c-333 mui-text-right'>￥ formatCurrency(skus[j].buyPrice)</p>
+                                            <p class='fs-13 c-333 mui-text-right'>buyQty</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class='shop-balance clearfix'>
+                                <p class='c-333 fs-12'>共<span class='goods-num'>length</span>件商品 合计<span class='price fs-16'>￥ formatCurrency(orders[i].payableAmount)</span>（含运费<span class='freight'>￥ formatCurrency(orders[i].deliveryFeeAmount)</span>）</p>
+                                <div class='js-status-btn'>orderParam</div>
+                            </div>
+                        </li>
+                    </div>
                 </div>
             </div>
 
@@ -75,8 +188,36 @@
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll"   id="ds-waitassess" data-status="40">
                     <ul class="mui-table-view">
-                        <!--待付款-->
+                        <!--待评价-->
                     </ul>
+                    <div class="pageTmpl">
+                        <li class="shop-order mui-table-view-cell" id='' data-no=''>
+                            <div class='shop-title fs-12'>
+                                <i class='iconfont icon-dianpu fs-18 c-9c4b0f'></i>&nbsp;
+                                <a data-href='../shop/shop_index.html'>shopName </a>
+                                <span class='mui-pull-right c-ff5b53 js-status'>orderStatusName</span>
+                            </div>
+                            <ul class='goods-list'>
+                                <li class='clearfix'>
+                                    <a data-href='../mbr/id.html'>
+                                        <img class='fl' src='' onerror='errorImg(this);'/>
+                                        <div class='goods-info fl'>
+                                            <p class='c-333 fs-13'>skuName</p>
+                                            <p class='c-999 fs-11'>skuPropTextList </p>
+                                        </div>
+                                        <div class='goods-price fr'>
+                                            <p class='fs-13 c-333 mui-text-right'>￥ formatCurrency(skus[j].buyPrice)</p>
+                                            <p class='fs-13 c-333 mui-text-right'>buyQty</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class='shop-balance clearfix'>
+                                <p class='c-333 fs-12'>共<span class='goods-num'>length</span>件商品 合计<span class='price fs-16'>￥ formatCurrency(orders[i].payableAmount)</span>（含运费<span class='freight'>￥ formatCurrency(orders[i].deliveryFeeAmount)</span>）</p>
+                                <div class='js-status-btn'>orderParam</div>
+                            </div>
+                        </li>
+                    </div>
 
                 </div>
 
@@ -87,11 +228,11 @@
     </div>
 </div>
 <div class="cart-tools-bar merge">
-    <a class="balance fr fs-15 js-pays" href="javascript:void(0)">合并订单</a>
+    <a class="balance fr fs-15 js-pays" data-href="javascript:void(0)">合并订单</a>
 
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_order.js');
 
     })

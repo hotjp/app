@@ -6,7 +6,7 @@
 </head>
 <body class="user-refund">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">退款/售后</h1>
@@ -18,10 +18,36 @@
         <ul class="mui-table-view clearfix">
 
         </ul>
+        <div class="pageTmpl">
+            <li class="shop-order">
+                <div class="shop-title fs-12">
+                    <i class='iconfont icon-dianpu fs-18 c-9c4b0f'></i>&nbsp;
+                    <a data-href='../shop/shop_index.html'>shopName</a>
+                    <span class="mui-pull-right c-ff5b53">.refundStatusName</span>
+                </div>
+                <ul class="goods-list">
+                    <li class="clearfix">
+                        <a data-href="../mbr/refund/id.html">
+                            <img class="fl" src=" '' :skuIconUrl" onerror="errorImg(this);"/>
+                            <div class="goods-info fl">
+                                <p class="c-333 fs-13">skuName</p>
+                                <p class="c-999 fs-11">skuPropTextList</p>
+                            </div>
+                            <div class="goods-price fr"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="shop-balance clearfix">
+                    <p class="c-333 fs-12">
+                       <span>&nbsp;&nbsp;退款金额:</span><span class="price fs-16">￥ formatCurrency(refundsList[i].amount)</span>
+                    </p>
+                </div>
+            </li>
+        </div>
     </div>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_refund.js');
 
     })

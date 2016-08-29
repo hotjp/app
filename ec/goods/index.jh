@@ -12,16 +12,77 @@
 </header>
 <!--底部-->
 <link rel="import" href="/themes/include/footer.jt?__inline"/>
-<@slider widget="移动-首页顶部轮播" layout="/ec/include/c_flexslider"/>
-<!--分类-->
-<@moCatNav widget="移动-首页模块导航" layout="/ec/include/c_cat_nav" />
+<!-- 移动-首页顶部轮播 -->
+<div class="mui-slider" id="banner">
+    <div class="mui-slider-group">
+        <div class="mui-slider-item">
+            <a data-href="/ec/goods/goods_view.html" title="${slide.remark}">
+                <img src="" onerror="errorImg(this,3);"/>
+            </a>
+        </div>
+        <div class="mui-slider-item">
+            <a data-href="/ec/goods/goods_view.html" title="${slide.remark}">
+                <img src="" onerror="errorImg(this,3);"/>
+            </a>
+        </div>
+        <div class="mui-slider-item">
+            <a data-href="/ec/goods/goods_view.html" title="${slide.remark}">
+                <img src="" onerror="errorImg(this,3);"/>
+            </a>
+        </div>
+        <div class="mui-slider-item">
+            <a data-href="/ec/goods/goods_view.html" title="${slide.remark}">
+                <img src="" onerror="errorImg(this,3);"/>
+            </a>
+        </div>
+    </div>
+    <div class="mui-slider-indicator">
 
+        <div class="mui-indicator mui-active"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+        <div class="mui-indicator"></div>
+
+    </div>
+</div>
+<!--分类-->
+<!-- 移动-首页模块导航 -->
+<div class="servers clearfix">
+    <div class="mui-slider">
+        <div class="mui-slider-group">
+            <div class="mui-slider-item">
+		          <ul class="clearfix">
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>配件商城</a></li>
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>整机商城</a></li>
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>模型超市</a></li>
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>配件商城</a></li>
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>整机商城</a></li>
+		          	<li><a data-href="/ec/goods/goods_list.html"><i class="mui-block jdb-icon"></i>模型超市</a></li>
+		          </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="mui-slider-indicator">
+
+        <div class="mui-indicator mui-active"></div>
+
+
+    </div>
+</div>
 <!--广告-->
 <div class="ads">
-<@fixedSinglePicAd layout="/ec/include/c_hot_img" widget="移动-首页活动"/>
+<a id="" data-href="http://www.baidu.com" title="${model.data.title}">
+    <img src=""  onerror="errorImg(this,2);"/>
+</a>
 </div>
 <!--秒杀-->
-<@moPromo layout="/ec/include/c_promo" widget="移动-首页促销"/>
+<!-- 移动-首页促销 -->
+
+<#list model.data as promo>
+    <@moPromoOne promoId="${promo.promoId}"/>
+</#list>
+<script type="text/javascript" src="${jsEcRoot}/include/c_promo.js"></script>
 
 <!--热门市场-->
 <@moHotGoods  limit="10"/>
@@ -29,7 +90,10 @@
 <!--广告-->
 <div class="index-block">
     <div class="ads">
-    <@fixedSinglePicAd layout="/ec/include/c_hot_img" widget="移动-首页热门"/>
+
+    <a id="${model.id}" data-href="http://www.sohu.com" title="${model.data.title}">
+        <img src=""  onerror="errorImg(this,2);"/>
+    </a>
     </div>
 </div>
 
@@ -38,7 +102,7 @@
 
 <div class="replace-footer"></div>
 <script>
-	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+	require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
 		__inline('/resources/js/tmpl1/ec/goods/index.js');
 
 	})

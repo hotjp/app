@@ -12,12 +12,12 @@
     <h1 class="mui-title">
         <input type="search" name="" id="search-goods-input" value="${kw}" placeholder="搜索商品关键词"/>
     </h1>
-    <a class="mui-pull-right c-fff" href="javascript:void(0)"><i class="iconfont c-fff fs-20">&#xe626;</i></a>
+    <a class="mui-pull-right c-fff" data-href="javascript:void(0)"><i class="iconfont c-fff fs-20">&#xe626;</i></a>
 </header>
 <div class="tools-bar clearfix fs-11">
     <div class="tools-bar-content">
         <div class="goods-sort fl pos-relative">
-            <a class="goods-sort-btn" href="javascript:void(0)"><span>综合排序</span><i
+            <a class="goods-sort-btn" data-href="javascript:void(0)"><span>综合排序</span><i
                     class="iconfont icon-jiantou"></i></a>
 
             <div class="goods-sort-list" style="display: none;">
@@ -57,14 +57,14 @@
                     <div class="clr"></div>
                     <ul class="middle-block clearfix" id=${gp.id}>
                         <#list gp.values as gpv>
-                            <li gpv-id=${gpv.id}><a href="#">${gpv.value}</a></li>
+                            <li gpv-id=${gpv.id}><a data-href="#">${gpv.value}</a></li>
                         </#list>
                     </ul>
                 </#list>
                 </div>
 
-                <a class="reset-form fs-13 mui-text-center" href="#">重置</a>
-                <a class="send-form fs-15 mui-text-center" href="#">确认</a>
+                <a class="reset-form fs-13 mui-text-center" data-href="#">重置</a>
+                <a class="send-form fs-15 mui-text-center" data-href="#">确认</a>
             </div>
         </form>
     </div>
@@ -77,12 +77,27 @@
             <ul class='mui-table-view'>
 
             </ul>
+            <div class="pageTmpl">
+                <li>
+                    <a class='clearfix' data-href="goods_view.html">
+                        <img src='' onerror='errorImg(this);'/>
+                        <div class='goods-info'>
+                            <span class='goods-tit fs-12'> 
+                                <span class='act-style1'><i class='act-left-icon'>simplePromoLabel</i></span>
+                                <font color='red'>"【自营】":""</font>name 
+                            </span>
+                            <span class='sale-price fs-15 c-ff5b53'>formatCurrency(minPrice, buyType)</span>
+                        <span class='old-price fs-11'>formatCurrency(minPrice)</span>
+                        </div>
+                    </a>
+                </li>
+            </div>
         </div>
     </div>
     <!--工具条结束，内容开始-->
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view",,"mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view",'common'],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/goods/goods_list.js');
 
     })

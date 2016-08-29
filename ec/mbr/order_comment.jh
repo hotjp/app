@@ -7,7 +7,7 @@
 <body class="assess-list">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">发表评价</h1>
@@ -49,11 +49,11 @@
         <label class="c-fff fs-12">匿名评价<br/><span class="c-777">将不会显示您的用户名</span></label>
         <input id="anonymous" name="anonymous" value="" type="checkbox">
     </div>
-    <a class="balance fr fs-15" id="commentBtn" href="javascript:;">发表评价</a>
+    <a class="balance fr fs-15" id="commentBtn" data-href="javascript:;">发表评价</a>
 
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/order_comment.js');
 
     })

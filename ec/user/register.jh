@@ -7,7 +7,7 @@
 </head>
 <body class="user-reg-log">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title"></h1>
 </header>
 <div class="user-top">
@@ -42,7 +42,7 @@
         <div class="user-protocol">
             <div class="mui-checkbox mui-left">
                 <input class="qlm_chk" name="checkbox" value="" type="checkbox" id="ifAgree">
-                <span class="c-777 fs-12">同意<a class="user_protocol c-333 blod" href="javascript:void(0);">用户注册协议</a></span>
+                <span class="c-777 fs-12">同意<a class="user_protocol c-333 blod" data-href="javascript:void(0);">用户注册协议</a></span>
 
             </div>
         </div>
@@ -62,7 +62,7 @@
             <p>千里马商城提醒您：在使用千里马商城平台各项服务前，请您务必仔细阅读并透彻理解本声明。您可以选择不使用千里马商城平台服务，但如果您使用千里马商城平台服务的，您的使用行为将被视为对本声明全部内容的认可。“千里马商城平台”指由千里马机械供应链股份有限公司（简称“千里马”）运营的网络交易平台，域名为 sevalo.com以及千里马商城启用的其他域名。</p>
             <p>鉴于千里马商城提供的服务一部分属于电子公告牌（BBS）服务，千里马商城平台上关于千里马商城平台会员或其发布的相关商品（包括但不限于店铺名称、公司名称、 联系人及联络信息，产品的描述和说明，相关图片、视讯等）的信息均由论坛会员自行提供，会员依法应对其提供的任何信息承担全部责任。<br></p>
             <p>任何单位或个人认为千里马商城平台网页内容（包括但不限于千里马商城平台会员发布的商品信息）可能涉嫌侵犯其合法权益，应该及时向千里马商城提出书面权利通知，并提供身份证明、权属证明、具体链接（URL）及详细侵权情况证明。千里马商城在收到上述法律文件后，将会依法尽快移除相关涉嫌侵权的内容。<br></p>
-            <p>千里马商城平台转载作品（包括论坛内容）出于传递更多信息之目的，并不意味千里马商城（包括千里马商城关联企业）赞同其观点或证实其内容的真实性。千里马商城网尊重合法版权，反对侵权盗版。若本网有部分文字、摄影作品等侵害了您的权益，在此深表歉意，请您立即将侵权链接及侵权信息邮件至我们的版权投诉邮箱：<a href="mailto:service@sevalo.com">service@sevalo.com</a>，我们会尽快与您联系并解决。
+            <p>千里马商城平台转载作品（包括论坛内容）出于传递更多信息之目的，并不意味千里马商城（包括千里马商城关联企业）赞同其观点或证实其内容的真实性。千里马商城网尊重合法版权，反对侵权盗版。若本网有部分文字、摄影作品等侵害了您的权益，在此深表歉意，请您立即将侵权链接及侵权信息邮件至我们的版权投诉邮箱：<a data-href="mailto:service@sevalo.com">service@sevalo.com</a>，我们会尽快与您联系并解决。
             </p><h3>知识产权声明</h3>
             <p>千里马商城拥有千里马商城平台网站内所有信息内容（除千里马商城平台会员发布的商品信息外，包括但不限于文字、图片、软件、音频、视频）的版权。<br></p>
             <p>任何被授权的浏览、复制、打印和传播属于千里马商城平台网站内信息内容都不得用于商业目的且所有信息内容及其任何部分的使用都必须包括此版权声明；<br></p>
@@ -103,10 +103,10 @@
             <p>如果您不是具备完全民事权利能力和完全民事行为能力的自然人，您无权使用千里马商城平台服务，因此千里马商城希望您不要向我们提供任何个人信息。</p>
         </div>
     </div>
-    <a class="checkout" href="javascript:void(0)">我已阅读并同意</a>
+    <a class="checkout" data-href="javascript:void(0)">我已阅读并同意</a>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/user/register.js');
 
     })

@@ -6,11 +6,11 @@
 </head>
 <body class="user-collect">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff fs-17">我的收藏</h1>
-    <#--<a class="mui-pull-right c-fff" href="javascript:;"><i class="iconfont icon-wode c-fff"></i></a>-->
+    <#--<a class="mui-pull-right c-fff" data-href="javascript:;"><i class="iconfont icon-wode c-fff"></i></a>-->
 </header>
 <div class="user-collect-content mui-slider mui-fullscreen">
     <div class="collect-control mui-slider-indicator">
@@ -27,6 +27,24 @@
                         <h3 class="fs-11"></h3>
                         <ul class="js-goods">
                         </ul>
+                        <div class="pageTmpl">
+                            <a data-href ='../goods/goods_view.html'>
+                                <img class='fl' src='' onerror='errorImg(this);'/>
+                            </a>
+                            <div class='goods-infos fl'>
+                                <a class='fs-13' data-href='../goods/goods_view.html'>name</a>
+                                <p class='price fs-15 blod'>formatCurrency(data[i].minPrice,data[i].buyType)</p>
+                                <div class='info-bottom fs-11'>
+                                    <a data-href='../shop/goods_view.html'>
+                                        <i class='iconfont icon-dianpu c-9c4b0f'></i>shopName
+                                    </a>
+                                    <div class='cancel-collect fs-10'>
+                                        <i class='iconfont icon-xing mui-block fs-20'></i>取消收藏
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>
@@ -40,6 +58,18 @@
                         <ul class="js-shop">
 
                         </ul>
+                        <div class="pageTmpl">
+                            <a data-href='../shop/shop_index.html'>
+                                <img class='fl' src=''  onerror='errorImg(this);'/>
+                            </a>
+                            <div class='shop-infos fl'>
+                                <a data-href='../shop/shop_index.html'><p class='fs-13'>&nbsp;name</p></a>
+                            </div>
+                            <div class='cancel-collect fs-10'>
+                                <i class='iconfont icon-xing mui-block fs-20'></i>取消收藏
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -48,7 +78,7 @@
     </div>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_collect.js');
 
     })

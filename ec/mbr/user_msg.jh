@@ -6,7 +6,7 @@
 </head>
 <body class="user-msg">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff fs-17">消息</h1>
     <div class="mui-pull-right c-fff">编辑</div>
 </header>
@@ -16,7 +16,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -29,7 +29,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -42,7 +42,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -55,7 +55,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -68,7 +68,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -81,7 +81,7 @@
             <div class="mui-checkbox mui-left">
                 <input name="checkbox" value="Item 1" type="checkbox" >
             </div>
-            <a class="clearfix" href="#">
+            <a class="clearfix" data-href="#">
                 <img src="${rootImg}/ec/msg-img.png"/>
                 <div class="msg-nr">
                     <span class="fl fs-15">物流通知</span>
@@ -98,10 +98,10 @@
         <label class="c-fff fs-12">全选/取消</label>
         <input name="checkbox" value="Item 1" type="checkbox" >
     </div>
-    <a class="cart-delet fr fs-15" href="javascript:void(0)">删除</a>
+    <a class="cart-delet fr fs-15" data-href="javascript:void(0)">删除</a>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_msg.js');
 
     })

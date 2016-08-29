@@ -6,7 +6,7 @@
 </head>
 <body class="goods-cart">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff fs-17">购物车(<span id="goods-cart-num">${cartSize}</span>)</h1>
 <#--<link rel="import" href="/themes/include/i_index.jt?__inline">-->
@@ -20,7 +20,7 @@
     <div class="cart-list-shop" data-shop="${shop.id}">
         <div class="cart-list-shop-tit clearfix">
             <div class="mui-checkbox mui-left fl">
-                <a data-type="shopTitle" class="c-333 fs-13" href="${vars.root}/ec/shop/${shop.id}.html"><i
+                <a data-type="shopTitle" class="c-333 fs-13" data-href="${vars.root}/ec/shop/${shop.id}.html"><i
                         class="iconfont icon-dianpu c-9c4b0f fs-20"></i>${shop.name}</a>
                 <input class="checkall-shop" name="checkbox" value="Item 1" type="checkbox">
             </div>
@@ -38,12 +38,12 @@
                                 <input name="checkbox" value="Item 1" type="checkbox" <#if item.stockQty == 0> disabled="disabled"</#if>>
                             </div>
                             <!--<img src="../resources/img/ec/tmpl1/product_img.png"/>-->
-                            <a data-type="goodsPic" href="${vars.root}/ec/goods/${item.goodsId}.html">
+                            <a data-type="goodsPic" data-href="${vars.root}/ec/goods/${item.goodsId}.html">
                                 <img src="${buildUrl(item.iconUrl)}" onerror="errorImg(this);"/>
                             </a>
 
                             <div class="cart-goods-info">
-                                <a href="${vars.root}/ec/goods/${item.goodsId}.html">
+                                <a data-href="${vars.root}/ec/goods/${item.goodsId}.html">
                                         <span class="title fs-13 c-333">
                                         ${item.skuName}
                                         </span>
@@ -86,7 +86,7 @@
         <label class="c-fff fs-12">全选/取消</label>
         <input name="checkbox" value="Item 1" type="checkbox">
     </div>
-    <a class="balance fr fs-15" href="javascript:void(0)">结算</a>
+    <a class="balance fr fs-15" data-href="javascript:void(0)">结算</a>
 
     <div class="balance-info fr">
         <span class="c-fff fs-12">共计:</span>
@@ -100,10 +100,10 @@
         <label class="c-fff fs-12">全选/取消</label>
         <input name="checkbox" value="Item 1" type="checkbox">
     </div>
-    <a class="cart-delet fr fs-15" href="javascript:void(0)">删除</a>
+    <a class="cart-delet fr fs-15" data-href="javascript:void(0)">删除</a>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/goods_cart.js');
 
     })

@@ -9,9 +9,9 @@
 
 <body class="user-coupon">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
     <h1 class="mui-title c-fff">我的优惠劵</h1>
-    <#--<a class="mui-pull-right c-fff" href="javascript:;"><i class="iconfont icon-wode c-fff"></i></a>-->
+    <#--<a class="mui-pull-right c-fff" data-href="javascript:;"><i class="iconfont icon-wode c-fff"></i></a>-->
 </header>
 
 <div class="coupon-content mui-slider mui-fullscreen">
@@ -30,6 +30,25 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <a data-href='../shop/shop_index.html'>
+                                <div class='coupon-info fs-13'>shopName
+                                    <p class='fs-11'>使用期限：formatDate(o.validTo);
+                                </div>
+                                <div class='coupon-type coupon-color1 fs-12 c-fff'>
+                                    <div class='coupon-price fl'>
+                                        <span class='fs-8'></span>
+                                        <span class='font-contral font-1'>amount </span>
+                                    </div>
+                                    <div class='coupon-title fl fs-8'>
+                                        <p class='fs-14 c-fff'>优惠券</p>满orderMinAmount 用券
+                                    </div>
+                                    <div class='coupon-cover'></div>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
 
                 </div>
 
@@ -56,6 +75,25 @@
                     <ul class="mui-table-view">
 
                     </ul>
+                    <div class="pageTmpl">
+                        <li>
+                            <a data-href='../shop/shop_index.html'>
+                                <div class='coupon-info fs-13'>shopName
+                                    <p class='fs-11'>使用期限：formatDate(o.validTo);
+                                </div>
+                                <div class='coupon-type coupon-color1 fs-12 c-fff'>
+                                    <div class='coupon-price fl'>
+                                        <span class='fs-8'></span>
+                                        <span class='font-contral font-1'>amount </span>
+                                    </div>
+                                    <div class='coupon-title fl fs-8'>
+                                        <p class='fs-14 c-fff'>优惠券</p>满orderMinAmount 用券
+                                    </div>
+                                    <div class='coupon-cover'></div>
+                                </div>
+                            </a>
+                        </li>
+                    </div>
 
                 </div>
 
@@ -66,7 +104,7 @@
 </div>
 
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_coupon.js');
 
     })

@@ -10,7 +10,7 @@
     </head>
     <body class="user-cerdit user-recharge mui-fullscreen">
         <header id="header" class="mui-bar mui-bar-nav trans">
-            <a class="mui-pull-left c-fff" href="user_center.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
+            <a class="mui-pull-left c-fff" data-href="user_center.html"><i class="iconfont icon-left c-fff"></i><span class="fs-10 c-fff"></span></a>
             <h1 class="mui-title c-fff fs-17">充值中心</h1>
         </header>
         <div class="user-info fs-50 c-fff" style="line-height: 70%;padding-top: 20px;">
@@ -141,7 +141,7 @@
             <p>应付：</p>
             <span class="recharge-result" id="resultId">${rechargeList[0].facePrice}元</span>
             <input type="hidden" id="rechargeId" value="${rechargeList[0].rechargeId}"/>
-            <#--<a href="#">立即充值</a>-->
+            <#--<a data-href="#">立即充值</a>-->
             <a class="balance fr fs-15" id="recharge">立即充值</a>
         </div>
         <script type="text/javascript">
@@ -180,7 +180,7 @@
         </script>
 
         <script>
-            require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+            require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
                 __inline('/resources/js/tmpl1/ec/mbr/recharge_center.js');
 
             })

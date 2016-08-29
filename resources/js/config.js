@@ -15,7 +15,8 @@ require.config({
 		"mui.pullToRefresh"	:["mui/mui.pullToRefresh"],
 		"mui.view"			:["mui/mui.view"],
 		"mui.zoom"			:["mui/mui.zoom"],
-		"mustache"			:["mustache"]
+		"mustache"			:["mustache"],
+		"common"				:["common"]
 	},
 	shim:{
 		"jquery.vaidate"	:["jquery"],
@@ -29,7 +30,8 @@ require.config({
 		"mui.previewimage"	:["mui"],
 		"mui.pullToRefresh"	:["mui"],
 		"mui.view"			:["mui"],
-		"mui.zoom"			:["mui"]
+		"mui.zoom"			:["mui"],
+		"common"				:["jquery","mui","mustache"]
 	}
 });
 console.log("config is done")

@@ -11,39 +11,39 @@
 <input type="hidden" id="isSeckill" name="isSeckill" value="${isSeckill}">
 
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff fs-17">商品详情</h1>
-    <a class="mui-pull-right c-fff" href="${vars.root}/ec/mbr/goods_cart.html"><i
+    <a class="mui-pull-right c-fff" data-href="${vars.root}/ec/mbr/goods_cart.html"><i
             class="iconfont icon-cart c-fff fs-20"></i></a>
 </header>
 <!--底部-->
 <footer class="bottom-nav">
     <nav class="footer-nav">
         <a class="footer-s-btn mui-col-xs-2 c-fff  mui-text-center" id="btn_index"
-           href="${vars.root}/ec/goods/index.html">
+           data-href="${vars.root}/ec/goods/index.html">
             <span class="iconfont icon-shouye fs-20 mui-block"></span>
             <span class="mui-text-center fs-11">首页</span>
         </a>
-        <a class="footer-s-btn mui-col-xs-2 c-fff  mui-text-center" href="${vars.root}/ec/shop/${goods.shopId}.html">
+        <a class="footer-s-btn mui-col-xs-2 c-fff  mui-text-center" data-href="${vars.root}/ec/shop/${goods.shopId}.html">
             <span class="iconfont icon-dianpu fs-20 mui-block"></span>
             <span class="mui-text-center fs-11">店铺</span>
         </a>
 
     <#if goods.buyType.value==2>
-        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
-        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="appointNow" href="javascript:;">立即预约</a>
+        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" data-href="javascript:;">加入收藏</a>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="appointNow" data-href="javascript:;">立即预约</a>
     <#elseif goods.buyType.value==3>
-        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
-        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="enquiryNow" href="javascript:;">立即询价</a>
+        <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" data-href="javascript:;">加入收藏</a>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="enquiryNow" data-href="javascript:;">立即询价</a>
     <#else>
         <#if !isGroupBuy && !isSeckill>
-            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCartF" href="javascript:;">加入购物车</a>
+            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCartF" data-href="javascript:;">加入购物车</a>
         <#else>
-            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+            <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" data-href="javascript:;">加入收藏</a>
         </#if>
-        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="buyNowF" href="javascript:;">立即购买</a>
+        <a class="footer-m-btn mui-col-xs-4 buynow c-fff fs-14" id="buyNowF" data-href="javascript:;">立即购买</a>
     </#if>
 
 
@@ -54,7 +54,7 @@
         <div class="mui-slider-group">
         <#list goods.pics as pic>
             <div class="mui-slider-item">
-                <a href="#">
+                <a data-href="#">
                     <img src="${buildUrl(pic)}" onerror="errorImg(this);">
                 </a>
             </div>
@@ -110,10 +110,18 @@
 <#else>
     <ul class="mui-table-view active-now c-777" id="promoList">
     </ul>
+    <div class="pageTmpl">
+        <li class='mui-table-view-cell act-style1'>
+            <a class='mui-navigate-right fs-13' data-href='../promo/platform.html'>
+                <i class='act-left-icon'> getPromoName(type, seckill)</i>
+                <span> name </span>
+            </a>
+        </li>
+    </div>
     <!--商品信息结束-->
     <div class="index-block bg-fff">
         <div class="index-block-tit clearfix">
-            <a class="show-goods-sort c-333 clearfix mui-block" href="javascript:void(0)">
+            <a class="show-goods-sort c-333 clearfix mui-block" data-href="javascript:void(0)">
                 <span class="title fs-14 fl">选择商品属性</span>
                 <i class="iconfont icon-you more fr"></i>
             </a>
@@ -150,11 +158,11 @@
         </div>
         <div class="goods-sort-footer">
             <#if !isGroupBuy && !isSeckill>
-                <a class="addcart fs-14" id="addCartT" href="#">加入购物车</a>
+                <a class="addcart fs-14" id="addCartT" data-href="#">加入购物车</a>
             <#else>
-                <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" href="javascript:;">加入收藏</a>
+                <a class="footer-m-btn mui-col-xs-4 addcart c-fff fs-14" id="addCollect" data-href="javascript:;">加入收藏</a>
             </#if>
-            <a class="buynow fs-14" id="buyNowT" href="goods_cart.html">立即购买</a>
+            <a class="buynow fs-14" id="buyNowT" data-href="goods_cart.html">立即购买</a>
         </div>
     </div>
     <div class="goods-sort-cover"></div>
@@ -166,20 +174,20 @@
 
     <div class="index-block bg-fff" id="shop">
         <div class="index-block-tit clearfix">
-            <a href="${vars.root}/ec/shop/${goods.shopId}.html"><span class="title fs-14 fl"><i
+            <a data-href="${vars.root}/ec/shop/${goods.shopId}.html"><span class="title fs-14 fl"><i
                     class="iconfont icon-dianpu c-9c4b0f fs-20"> </i>${goods.shopName}</span></a>
             <i class="more fr fs-12 c-fd433a"></i>
         </div>
         <div class="shop-info clearfix">
         <#--<ul class="clearfix">-->
-        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">236</span>全部商品</a></li>-->
-        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">15</span>促销商品</a></li>-->
-        <#--<li><a class="fs-11 c-777" href="#"><span class="mui-block fs-17 c-333">500</span>收藏人数</a></li>-->
+        <#--<li><a class="fs-11 c-777" data-href="#"><span class="mui-block fs-17 c-333">236</span>全部商品</a></li>-->
+        <#--<li><a class="fs-11 c-777" data-href="#"><span class="mui-block fs-17 c-333">15</span>促销商品</a></li>-->
+        <#--<li><a class="fs-11 c-777" data-href="#"><span class="mui-block fs-17 c-333">500</span>收藏人数</a></li>-->
         <#--</ul>-->
             <a class="shop-info-btn fl fs-13 c-333 mui-text-center b-r-4"
-               href="${vars.root}/ec/shop/${goods.shopId}/sort.html"><i class="iconfont icon-fenleifull c-999"> </i>商品分类</a>
+               data-href="${vars.root}/ec/shop/${goods.shopId}/sort.html"><i class="iconfont icon-fenleifull c-999"> </i>商品分类</a>
             <a class="shop-info-btn fr fs-13 c-333 mui-text-center b-r-4"
-               href="${vars.root}/ec/shop/${goods.shopId}.html"><i class="iconfont icon-dianpu c-999"> </i>进入店铺</a>
+               data-href="${vars.root}/ec/shop/${goods.shopId}.html"><i class="iconfont icon-dianpu c-999"> </i>进入店铺</a>
         </div>
     </div>
     <!--店铺信息结束-->
@@ -223,7 +231,7 @@
 
 <div class="replace-footer"></div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view",,"mustache","mui.zoom","mui.previewimage"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view",,"mui.zoom","mui.previewimage","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/goods/goods_view.js');
 
     })

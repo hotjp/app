@@ -40,7 +40,7 @@
                 </div>
             <#list goodsListData.rows as goods>
                 <li>
-                    <a class="clearfix" href="${vars.root}/ec/goods/${goods.goods.id}.html">
+                    <a class="clearfix" data-href="${vars.root}/ec/goods/${goods.goods.id}.html">
                         <div>
                             <p class=" product-img active${tag}"></p>
                         </div>
@@ -70,7 +70,7 @@
     </div>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/promo/platform.js');
 
     })

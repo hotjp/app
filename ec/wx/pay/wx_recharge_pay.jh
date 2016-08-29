@@ -7,7 +7,7 @@
 <body>
 <input type="hidden" id="payId" name="payId" value="${payId}">
 <script>
-	require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+	require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
 		__inline('/resources/js/tmpl1/wx/pay/wx_recharge_pay.js');
 
 	})

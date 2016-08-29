@@ -6,7 +6,7 @@
 </head>
 <body class="goods-order">
 <header id="header" class="mui-bar mui-bar-nav trans">
-    <a class="mui-pull-left c-fff" href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
+    <a class="mui-pull-left c-fff" data-href="javascript:;"><i class="iconfont icon-left c-fff"></i><span
             class="fs-10 c-fff"></span></a>
 
     <h1 class="mui-title c-fff">订单详情</h1>
@@ -46,7 +46,7 @@
         <i class="iconfont icon-biaozhu"></i>
 
         <div class="address-info fs-14">
-            <a href="javascript:void(0)">
+            <a data-href="javascript:void(0)">
                 收货人:${order.contactName}
                 <span class="fr">${order.contactTel}</span>
 
@@ -58,7 +58,7 @@
     <!--店铺-->
     <div class="shop-order">
         <div class="shop-title fs-12">
-            <a href='${vars.root}/ec/shop/${order.shopId}.html'>
+            <a data-href='${vars.root}/ec/shop/${order.shopId}.html'>
                 <i class="iconfont icon-dianpu c-9c4b0f"></i>
             ${order.shopName}
             </a>
@@ -66,7 +66,7 @@
         <ul class="goods-list">
         <#list order.skus as sku>
             <li class="clearfix">
-                <a href='${vars.root}/ec/goods/${sku.goodsId}.html'>
+                <a data-href='${vars.root}/ec/goods/${sku.goodsId}.html'>
                     <img class="fl" src="${buildUrl(sku.iconUrl)}" onerror="errorImg(this);"/>
                 </a>
 
@@ -81,8 +81,7 @@
                     <span class="fs-13 price">¥${formatPositiveMoney(sku.buyPrice)}</span>
                     <span class="fs-13 fr">
             <#if orderRefundable>
-                <a class="refund-btn"
-                   href="${vars.root}/ec/mbr/refund/user_refund_start.html?order=${order.no}&sku=${sku.id}">申请退款</a>
+                <a class="refund-btn" data-href="${vars.root}/ec/mbr/refund/user_refund_start.html?order=${order.no}&sku=${sku.id}">申请退款</a>
             </#if>
                         &nbsp;x${sku.buyQty}</span>
                 </div>
@@ -159,23 +158,23 @@
 <div class="order-tools-bar">
 <#if order.orderStatus.value==0>
     <#if !orderPaymentExpired>
-        <a class="red-border-btn fs-12 fr js-pay" href="javascript:void(0)">付款</a>
+        <a class="red-border-btn fs-12 fr js-pay" data-href="javascript:void(0)">付款</a>
     </#if>
-    <a class="gry-border-btn fs-12 fr js-cancel" href="javascript:void(0)">取消订单</a>
+    <a class="gry-border-btn fs-12 fr js-cancel" data-href="javascript:void(0)">取消订单</a>
 <#elseif order.orderStatus.value==-30>
-<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+<#--<a class="gry-border-btn fs-12 fr js-del" data-href="javascript:void(0)">删除订单</a>-->
 <#elseif order.orderStatus.value==-20>
 
 <#elseif order.orderStatus.value==-10>
-<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+<#--<a class="gry-border-btn fs-12 fr js-del" data-href="javascript:void(0)">删除订单</a>-->
 <#elseif order.orderStatus.value==10>
 
 <#elseif order.orderStatus.value==20>
-<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">提醒发货</a>-->
-<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
+<#--<a class="gry-border-btn fs-12 fr" data-href="javascript:void(0)">提醒发货</a>-->
+<#--<a class="gry-border-btn fs-12 fr" data-href="javascript:void(0)">查看物流</a>-->
 <#elseif order.orderStatus.value==30>
-    <a class="red-border-btn fs-12 fr js-rec" href="javascript:void(0)">确认收货</a>
-<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
+    <a class="red-border-btn fs-12 fr js-rec" data-href="javascript:void(0)">确认收货</a>
+<#--<a class="gry-border-btn fs-12 fr" data-href="javascript:void(0)">查看物流</a>-->
 <#elseif order.orderStatus.value==40>
     <#assign isCommented=true>
     <#list order.skus as sku>
@@ -184,14 +183,14 @@
         </#if>
     </#list>
     <#if  !isCommented>
-        <a class="red-border-btn fs-12 fr" data-btn="comment" href="javascript:void(0)">评价</a>
+        <a class="red-border-btn fs-12 fr" data-btn="comment" data-href="javascript:void(0)">评价</a>
     </#if>
-<#--<a class="gry-border-btn fs-12 fr" href="javascript:void(0)">查看物流</a>-->
-<#--<a class="gry-border-btn fs-12 fr js-del" href="javascript:void(0)">删除订单</a>-->
+<#--<a class="gry-border-btn fs-12 fr" data-href="javascript:void(0)">查看物流</a>-->
+<#--<a class="gry-border-btn fs-12 fr js-del" data-href="javascript:void(0)">删除订单</a>-->
 </#if>
 </div>
 <script>
-    require(["jquery","mui","jquery.autoresize","mui.view","mustache"],function($,mui){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
         __inline('/resources/js/tmpl1/ec/mbr/user_order_info.js');
 
     })
