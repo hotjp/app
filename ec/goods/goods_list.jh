@@ -97,7 +97,8 @@
     <!--工具条结束，内容开始-->
 </div>
 <script>
-    require(["jquery","mui","mustache","jquery.autoresize","mui.view",'common'],function($,mui,mustache){
+    require(["jquery","mui","mustache","jquery.autoresize","mui.view","mui.lazyload","mui.lazyload.img"],function($,mui,mustache){
+        __inline('/resources/js/comm/common.js');
         __inline('/resources/js/tmpl1/ec/goods/goods_list.js');
 
     })
