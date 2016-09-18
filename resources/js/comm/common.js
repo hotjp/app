@@ -487,7 +487,7 @@ function getPromoName(type, seckill) {
 }
 
 //mui图片lazyload
-mui(document.body).imageLazyload({
+mui("img").imageLazyload({
     placeholder: vars.theme.ecImg + "/error_img.gif"
 });
 

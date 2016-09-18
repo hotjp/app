@@ -1,5 +1,2 @@
-<#if MO_CLIENT == "wx">
-    <link rel="import" href="/themes/temp/wxHead.jt?__inline">
-<#else>
 
-</#if>
+    <link rel="import" href="/themes/temp/wxHead.jt?__inline">

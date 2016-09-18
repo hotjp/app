@@ -6,6 +6,7 @@ require.config({
 		"jquery.vaidate"	:["jquery/jquery.validate.min"],
 		"jquery.autoresize"	:["jquery/autoresize.min"],
 		"mui.lazyload"		:["mui/mui.lazyload"],
+		"mui.lazyload.img"	:["mui/mui.lazyload.img"],
 		"mui.dtpicker"		:["mui/mui.dtpicker"],
 		"mui.imageViewer"	:["mui/mui.imageViewer"],
 		"mui.listpicker"	:["mui/mui.listpicker"],
@@ -16,12 +17,13 @@ require.config({
 		"mui.view"			:["mui/mui.view"],
 		"mui.zoom"			:["mui/mui.zoom"],
 		"mustache"			:["mustache"],
-		"common"				:["common"]
+		"common"			:["common"]
 	},
 	shim:{
 		"jquery.vaidate"	:["jquery"],
 		"jquery.autoresize"	:["jquery"],
 		"mui.lazyload"		:["mui"],
+		"mui.lazyload.img"	:["mui","mui.lazyload"],
 		"mui.dtpicker"		:["mui"],
 		"mui.imageViewer"	:["mui"],
 		"mui.listpicker"	:["mui"],
@@ -31,7 +33,7 @@ require.config({
 		"mui.pullToRefresh"	:["mui"],
 		"mui.view"			:["mui"],
 		"mui.zoom"			:["mui"],
-		"common"				:["jquery","mui","mustache"]
+		"common"			:["jquery","mui","mustache"]
 	}
 });
 console.log("config is done")

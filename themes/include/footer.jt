@@ -1,4 +1,4 @@
-<#if MO_CLIENT != "android"&&MO_CLIENT != "ios">
+
 <!--底部-->
 <footer id="footer" class="bottom-nav">
     <nav class="mui-bar mui-bar-tab">
@@ -24,5 +24,4 @@
         </a>
     </nav>
 </footer>
-<script type="text/javascript" src="${jsEcRoot}/include/footer.js"></script>
-</#if>
+<script type="text/javascript" src="/themes/include/footer.js"></script>

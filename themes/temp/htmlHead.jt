@@ -1,61 +1,55 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 
-<#assign themeRoot="/resources">
-
-<#assign resRoot="${vars.root}${themeRoot}">
-<#assign jsEcRoot="${resRoot}/js/${vars.theme.id}/ec">
-<#assign jsWxRoot="${resRoot}/js/${vars.theme.id}/wx">
-
-<#assign ecImg="${resRoot}/images/ec">
-<#assign rootImg="${resRoot}/images">
-<#assign rootImgTemp="${resRoot}/img">
-
-<#assign formatPositiveMoney= "com.jerehsoft.mobile.ec.web.freemarker.fn.MoFormatPositiveMoneyMethod"?new()>
-
 <link href="/resources/css/mui/mui.min.css" rel="stylesheet"/>
 <link href="/resources/css/mui/iconfont.css" rel="stylesheet"/>
 
 <link href="/resources/css/mui/mui.picker.css" rel="stylesheet"/>
 <link href="/resources/css/mui/mui.poppicker.css" rel="stylesheet"/>
 
-<link href="/resources/css/mobile.css?v=${ver}" rel="stylesheet"/>
-<link href="/resources/css/ec/ec.less?v=${ver}" rel="stylesheet"/>
-<link href="/resources/css/ec/${themeCss}.css?v=${ver}" rel="stylesheet"/>
+<link href="/resources/css/mobile.css" rel="stylesheet"/>
+<link href="/resources/css/ec/ec.less" rel="stylesheet"/>
+<link href="/resources/css/ec/tmpl1.css" rel="stylesheet"/>
 
 <#if MO_CLIENT == "android"||MO_CLIENT=="ios">
 <link href="/resources/css/ec/app.css?v=${ver}" rel="stylesheet"/>
 </#if>
 
-<#if MO_CLIENT == "ios"||MO_CLIENT == "android">
-<script type="text/javascript" src="${resRoot}/js/jquery/jquery/jquery-1.10.2.min.js"></script>
-<#else>
-<script type="text/javascript" src="${resRoot}/html/resources/js/jquery/jquery/jquery-1.10.2.min.js"></script>
-</#if>
-<script type="text/javascript" src="${resRoot}/js/jquery/autoresize/autoresize.min.js"></script>
+<!-- <script type="text/javascript" src="${resRoot}/js/jquery/autoresize/autoresize.min.js"></script>
 <script type="text/javascript" src="${resRoot}/js/mui/mui.min.js"></script>
 <script type="text/javascript" src="${resRoot}/js/mui/mui.lazyload.js"></script>
 <script type="text/javascript" src="${resRoot}/js/mui/mui.lazyload.img.js"></script>
 <script type="text/javascript" src="${resRoot}/js/mui/mui.pullToRefresh.js"></script>
 <script type="text/javascript" src="${resRoot}/js/mui/mui.picker.js"></script>
-<script type="text/javascript" src="${resRoot}/js/mui/mui.poppicker.js"></script>
+<script type="text/javascript" src="${resRoot}/js/mui/mui.poppicker.js"></script> -->
 
-<script type="text/javascript" src="${resRoot}/js/comm/common.js?v=${ver}"></script>
+<!-- <script type="text/javascript" src="${resRoot}/js/comm/common.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/format.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/global.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/muiInit.js?v=${ver}"></script>
 <script type="text/javascript" src="${resRoot}/js/comm/storage.js?v=${ver}"></script>
-<script src="resources/js/require.js"></script>
-<script src="resources/js/config.js"></script>
+ -->
+ <script src="/resources/js/require.js"></script>
+<script src="/resources/js/config.js"></script>
 
 <script type="text/javascript">
+    // var vars = {
+    //     root: "${vars.root}",
+    //     uploadRoot: "${vars.uploadRoot}",
+    //     theme: {
+    //         id: "${vars.theme.id}",
+    //         root: "${themeRoot}",
+    //         ecImg: "${resRoot}/images/ec",
+    //         ecTmplImg: "${resRoot}/images/ec/${vars.theme.id}"
+    //     }
+    // };
     var vars = {
-        root: "${vars.root}",
-        uploadRoot: "${vars.uploadRoot}",
+        root: "",
+        uploadRoot: "",
         theme: {
-            id: "${vars.theme.id}",
-            root: "${themeRoot}",
-            ecImg: "${resRoot}/images/ec",
-            ecTmplImg: "${resRoot}/images/ec/${vars.theme.id}"
+            id: "",
+            root: "",
+            ecImg: "",
+            ecTmplImg: ""
         }
     };
 </script>

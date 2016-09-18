@@ -82,7 +82,7 @@
 <#list model.data as promo>
     <@moPromoOne promoId="${promo.promoId}"/>
 </#list>
-<script type="text/javascript" src="${jsEcRoot}/include/c_promo.js"></script>
+<script type="text/javascript" src="/themes/include/c_promo.js"></script>
 
 <!--热门市场-->
 <@moHotGoods  limit="10"/>
@@ -102,7 +102,7 @@
 
 <div class="replace-footer"></div>
 <script>
-	require(["jquery","mui","mustache","jquery.autoresize","mui.view","common"],function($,mui,mustache){
+	require(["jquery","mui","mustache","jquery.autoresize","mui.lazyload","common"],function($,mui,mustache){
 		__inline('/resources/js/tmpl1/ec/goods/index.js');
 
 	})
